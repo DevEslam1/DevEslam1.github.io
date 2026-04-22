@@ -963,18 +963,23 @@ a:focus:not(:focus-visible) { outline: none; }
 @media (max-width: 767px) {
   .hero__visual { max-width: 100%; perspective: none; }
   .hero__card { transform: none; border-radius: 32px; aspect-ratio: 1; }
-  .hero__float-badge { padding: 8px 12px; }
+  .hero__float-badge { padding: 8px 12px; opacity: 0.9; }
   .hero__float-badge span:last-child { font-size: 0.625rem; }
   
-  .hero__float-badge--flutter { top: 5%; left: 0; transform: none; }
-  .hero__float-badge--dart { top: 35%; left: -5%; transform: none; }
-  .hero__float-badge--web { bottom: 15%; left: 0; transform: none; }
-  
-  .hero__float-badge--rn { top: 10%; right: 0; transform: none; }
-  .hero__float-badge--ts { top: 45%; right: -5%; transform: none; }
-  .hero__float-badge--play { bottom: 15%; right: 0; transform: none; }
+  .hero__float-badge--flutter { top: 4%; left: 4%; transform: none; }
+  .hero__float-badge--rn { top: 4%; right: 4%; transform: none; }
+  .hero__float-badge--dart { top: 40%; left: -2%; transform: none; display: none; } /* Hide clutter */
+  .hero__float-badge--ts { top: auto; bottom: 14%; right: 4%; transform: none; }
+  .hero__float-badge--web { top: auto; bottom: 26%; left: 4%; transform: none; display: none; } /* Hide clutter */
+  .hero__float-badge--play { top: auto; bottom: 4%; right: 4%; transform: none; }
   
   .hero__float-badge--apple { bottom: 0; transform: translateX(-50%); }
+}
+
+@media (max-width: 480px) {
+  .hero__float-badge--ts, .hero__float-badge--play { display: none; } /* Keep it very clean on tiny screens */
+  .hero__float-badge--flutter { top: 2%; left: 2%; }
+  .hero__float-badge--rn { top: 2%; right: 2%; }
 }
 
 /* ── 17. PROJECTS PAGE ───────────────────────────────────── */
