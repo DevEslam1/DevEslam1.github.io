@@ -880,7 +880,170 @@ a:focus:not(:focus-visible) { outline: none; }
 }
 
 /* ── 17. PROJECTS PAGE ───────────────────────────────────── */
+
+/* Projects hero: mockup + header side by side */
+.projects-hero-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+@media (min-width: 768px) {
+  .projects-hero-layout {
+    flex-direction: row;
+    align-items: center;
+    gap: 64px;
+  }
+}
+
+/* ── iPhone 17 Pro Max Mockup ──────────────────────────── */
+.iphone-mockup-wrap {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(0 32px 64px rgba(0,0,0,0.6))
+         drop-shadow(0 0 40px rgba(173,198,255,0.08));
+}
+
+.iphone17-frame {
+  width: 260px;
+  height: 540px;
+  background: linear-gradient(145deg, #2a2a2a 0%, #1a1a1a 50%, #111 100%);
+  border-radius: 46px;
+  padding: 10px;
+  position: relative;
+  border: 2px solid rgba(255,255,255,0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.15),
+    inset 0 -1px 0 rgba(0,0,0,0.3),
+    0 0 0 1px rgba(0,0,0,0.5);
+}
+
+/* Side buttons */
+.iphone17-frame::before {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 120px;
+  width: 3px;
+  height: 56px;
+  background: linear-gradient(180deg, #333, #222);
+  border-radius: 0 2px 2px 0;
+  box-shadow: 1px 0 2px rgba(0,0,0,0.4);
+}
+.iphone17-frame::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: 100px;
+  width: 3px;
+  height: 36px;
+  background: linear-gradient(180deg, #333, #222);
+  border-radius: 2px 0 0 2px;
+  box-shadow: -1px 0 2px rgba(0,0,0,0.4);
+}
+
+/* Dynamic Island */
+.iphone17-notch {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+.iphone17-notch__pill {
+  width: 90px;
+  height: 26px;
+  background: #000;
+  border-radius: 20px;
+  box-shadow:
+    0 0 0 1.5px rgba(255,255,255,0.06),
+    inset 0 1px 3px rgba(0,0,0,0.8);
+}
+
+/* Screen */
+.iphone17-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 38px;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+/* Top & bottom fade overlays */
+.iphone17-screen::before,
+.iphone17-screen::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 60px;
+  z-index: 5;
+  pointer-events: none;
+}
+.iphone17-screen::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent);
+}
+.iphone17-screen::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+/* Auto-scrolling screenshot track */
+.iphone17-scroll-track {
+  display: flex;
+  flex-direction: column;
+  animation: mockup-scroll 45s linear infinite;
+}
+.iphone17-scroll-track img {
+  width: 100%;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* Pause on hover */
+.iphone17-frame:hover .iphone17-scroll-track {
+  animation-play-state: paused;
+}
+
+/* Home bar indicator */
+.iphone17-home-bar {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: rgba(255,255,255,0.35);
+  border-radius: 4px;
+  z-index: 10;
+}
+
+@keyframes mockup-scroll {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-80%); }
+}
+
+/* Responsive sizing */
+@media (max-width: 767px) {
+  .iphone17-frame {
+    width: 220px;
+    height: 460px;
+    border-radius: 40px;
+    padding: 8px;
+  }
+  .iphone17-screen { border-radius: 34px; }
+  .iphone17-notch__pill { width: 76px; height: 22px; }
+  .iphone17-home-bar { width: 80px; bottom: 12px; }
+}
+
 .projects-header { margin-bottom: 32px; }
+
 .projects-stats {
   display: flex;
   gap: var(--gutter);
