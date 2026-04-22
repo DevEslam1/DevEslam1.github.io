@@ -1,6 +1,6 @@
 /**
  * Eslam.OS — Portfolio Script
- * Router · Mobile Menu · Filters · Search · Scroll Reveals · Contact Form
+ * Mobile Menu · Filters · Search · Scroll Reveals · Contact Form
  */
 
 /* ── Scroll Spy (Highlight active nav link) ───────────────────── */
