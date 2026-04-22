@@ -1431,6 +1431,16 @@ a:focus:not(:focus-visible) { outline: none; }
 @media (min-width: 640px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 1024px) { .skills-grid { grid-template-columns: repeat(3, 1fr); } }
 
+/* Wide card spans full row on desktop */
+.skill-card--wide {
+  grid-column: 1 / -1;
+}
+@media (min-width: 1024px) {
+  .skill-card--wide {
+    grid-column: span 2;
+  }
+}
+
 .skill-card {
   background: var(--clr-surface-container-high);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -1496,6 +1506,23 @@ a:focus:not(:focus-visible) { outline: none; }
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--clr-on-surface-variant);
+  transition: border-color var(--tr-base), color var(--tr-base);
+}
+/* Colored chip variants */
+.skill-chip--primary {
+  color: var(--clr-primary);
+  border-color: rgba(173,198,255,0.35);
+  background: rgba(173,198,255,0.07);
+}
+.skill-chip--secondary {
+  color: var(--clr-secondary);
+  border-color: rgba(68,226,205,0.35);
+  background: rgba(68,226,205,0.07);
+}
+.skill-chip--tertiary {
+  color: var(--clr-tertiary);
+  border-color: rgba(221,183,255,0.35);
+  background: rgba(221,183,255,0.07);
 }
 
 /* Workflow strip */

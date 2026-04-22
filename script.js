@@ -264,17 +264,33 @@ window.addEventListener('scroll', () => {
 
 /* ── Mockup app label rotator ──────────────────────────────────── */
 (function () {
-  const apps = ['Maysur', 'Free Zone', 'Little Lemon', 'CineCurator', 'NewsCloud', 'Weather App', 'BeatFlow'];
   const labelEl = document.getElementById('mockupLabelText');
-  if (!labelEl) return;
-  let idx = 0;
-  // Switch every ~6.4s (45s animation / 7 unique apps ≈ 6.4s each)
-  setInterval(() => {
-    idx = (idx + 1) % apps.length;
-    labelEl.style.opacity = '0';
-    setTimeout(() => {
-      labelEl.textContent = apps[idx];
-      labelEl.style.opacity = '1';
-    }, 300);
-  }, 6400);
+  const scrollTrack = document.getElementById('mockupScroll');
+  const screen = document.querySelector('.iphone17-screen');
+  
+  if (!labelEl || !scrollTrack || !screen) return;
+
+  // Use a tiny target area in the middle of the screen to detect "active" image
+  const observerOptions = {
+    root: screen,
+    rootMargin: '-45% 0% -45% 0%', 
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const appName = entry.target.getAttribute('alt');
+        if (appName && labelEl.textContent !== appName) {
+          labelEl.style.opacity = '0';
+          setTimeout(() => {
+            labelEl.textContent = appName;
+            labelEl.style.opacity = '1';
+          }, 200);
+        }
+      }
+    });
+  }, observerOptions);
+
+  scrollTrack.querySelectorAll('img').forEach(img => observer.observe(img));
 })();
