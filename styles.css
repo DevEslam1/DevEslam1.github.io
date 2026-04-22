@@ -982,22 +982,7 @@ html {
   gap: 20px;
 }
 .featured-card-primary__image {
-  flex: 1;
-  min-height: 320px;
-  position: relative;
-  overflow: hidden;
-  background: var(--clr-surface-container-lowest);
-}
-.featured-card-primary__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: opacity var(--tr-slow), transform var(--tr-slow);
-}
-.featured-card-primary:hover .featured-card-primary__image img {
-  opacity: 1;
-  transform: scale(1.04);
+  display: none !important;
 }
 .featured-card-primary__image-overlay {
   position: absolute;
@@ -1054,21 +1039,7 @@ html {
   box-shadow: var(--glow-secondary);
 }
 .featured-card-secondary__img {
-  height: 200px;
-  overflow: hidden;
-  background: var(--clr-surface-container-lowest);
-  position: relative;
-}
-.featured-card-secondary__img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.7;
-  transition: opacity var(--tr-slow), transform var(--tr-slow);
-}
-.featured-card-secondary:hover .featured-card-secondary__img img {
-  opacity: 1;
-  transform: scale(1.05);
+  display: none !important;
 }
 .featured-card-secondary__content {
   padding: 24px;
@@ -1963,71 +1934,6 @@ html {
 .toast.show { transform: translateY(0); opacity: 1; }
 .toast.success { border-color: rgba(68, 226, 205, 0.4); }
 
-/* ── 24. Device Mockups ────────────────────────────────── */
-.device-mockup {
-  position: relative;
-  width: 100%;
-  max-width: 320px;
-  margin: 0 auto;
-  aspect-ratio: 9 / 19.5;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
-  transition: transform var(--tr-base);
-  perspective: 1000px;
-}
-
-.device-mockup:hover {
-  transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
-}
-
-/* Clean Image Display */
-.auto-scroll {
-  animation: scrollScreenshots 20s linear infinite alternate;
-}
-
-.screenshot-clean-container:hover .auto-scroll {
-  animation-play-state: paused;
-}
-
-@keyframes scrollScreenshots {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-70%); }
-}
-
-/* Featured Card Adjustments */
-.featured-card-primary__image,
-.featured-card-secondary__img {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  padding: 40px !important;
-  background: radial-gradient(circle at center, rgba(173, 198, 255, 0.05), transparent 70%);
-}
-
-.featured-card-secondary__img {
-  padding: 20px !important;
-}
-
-.featured-card-secondary__img .device-mockup {
-  max-width: 200px;
-}
-
-/* Archive Grid Mockup Preview */
-.archive-card__preview {
-  margin-top: 16px;
-  height: 200px;
-  background: rgba(255,255,255,0.03);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-}
-
-.archive-card__preview .device-mockup {
-  max-width: 120px;
-  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
-}
 
 /* Project App Icons */
 .app-icon {
