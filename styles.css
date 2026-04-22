@@ -1151,15 +1151,35 @@ a:focus:not(:focus-visible) { outline: none; }
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 10px 32px;
+  padding: 10px 24px;
   border-radius: 100px;
   z-index: 15;
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
   pointer-events: none;
-  min-width: 180px; 
+  min-width: fit-content; 
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 10px;
+}
+
+/* Live Indicator Inside Pill */
+.live-indicator {
+  display: flex;
+  align-items: center;
+}
+.live-indicator__dot {
+  width: 6px;
+  height: 6px;
+  background: #ff3b30;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 59, 48, 0.6);
+  animation: live-dot-pulse 2s infinite ease-in-out;
+}
+
+@keyframes live-dot-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.4; }
+  100% { transform: scale(1); opacity: 1; }
 }
 .mockup-side-pill__text {
   font-family: var(--font-display);
@@ -2105,7 +2125,130 @@ a:focus:not(:focus-visible) { outline: none; }
 .cert-card.cc-secondary .cert-view-btn:hover { border-color: var(--clr-secondary); color: var(--clr-secondary); }
 .cert-card.cc-tertiary .cert-view-btn:hover { border-color: var(--clr-tertiary); color: var(--clr-tertiary); }
 
-/* ── 20. EXPERIENCE PAGE ──────────────────────────────────── */
+/* ── 20. PREMIUM CERT MOCKUP (Google Style) ───────────────── */
+.cert-mockup {
+  width: 100%;
+  height: 100%;
+  background: #fdfdfd;
+  color: #202124;
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  font-family: var(--font-display);
+}
+
+/* Double Border */
+.cert-mockup__border {
+  position: absolute;
+  inset: 4px;
+  border: 1px solid #4b8eff;
+  pointer-events: none;
+}
+.cert-mockup__border::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 4px double #4b8eff;
+}
+
+.cert-mockup__inner {
+  flex: 1;
+  border: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header with Google-style branding */
+.cert-mockup__header {
+  margin-bottom: 8px;
+}
+.google-branding {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  display: flex;
+  gap: 1px;
+}
+.google-branding span:nth-child(1) { color: #4285F4; } /* G */
+.google-branding span:nth-child(2) { color: #EA4335; } /* o */
+.google-branding span:nth-child(3) { color: #FBBC05; } /* o */
+.google-branding span:nth-child(4) { color: #4285F4; } /* g */
+.google-branding span:nth-child(5) { color: #34A853; } /* l */
+.google-branding span:nth-child(6) { color: #EA4335; } /* e */
+
+.cert-mockup__title {
+  font-size: 0.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #5f6368;
+  margin-top: 4px;
+}
+
+.cert-mockup__degree {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: #1a73e8;
+  margin: 8px 0;
+  line-height: 1.1;
+}
+
+.cert-mockup__recipient {
+  font-size: 0.625rem;
+  color: #70757a;
+  border-bottom: 0.5px solid #bdc1c6;
+  padding-bottom: 2px;
+  margin-top: 2px;
+}
+
+/* Seal & Footer */
+.cert-mockup__footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.cert-mockup__seal {
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(circle at 30% 30%, #ffd700, #b8860b);
+  border-radius: 50%;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(184, 134, 11, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cert-mockup__seal::before {
+  content: "â˜…";
+  font-size: 14px;
+  color: #fff;
+}
+
+.cert-mockup__signature {
+  width: 40%;
+  border-top: 0.5px solid #bdc1c6;
+  padding-top: 4px;
+}
+.cert-mockup__signature-text {
+  font-family: 'Space Grotesk', sans-serif; /* Fallback for script */
+  font-size: 0.45rem;
+  font-style: italic;
+  color: #3c4043;
+}
+
+/* ── 21. EXPERIENCE PAGE ──────────────────────────────────── */
 .exp-stats {
   display: grid;
   grid-template-columns: 1fr;
