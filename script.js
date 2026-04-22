@@ -264,7 +264,7 @@ window.addEventListener('scroll', () => {
 
 /* ── Mockup app label rotator ──────────────────────────────────── */
 (function () {
-  const labelEl = document.getElementById('mockupLabelText');
+  const labelEl = document.getElementById('mockupSideLabel');
   const scrollTrack = document.getElementById('mockupScroll');
   const screen = document.querySelector('.iphone17-screen');
   

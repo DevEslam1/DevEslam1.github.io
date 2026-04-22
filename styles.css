@@ -325,6 +325,28 @@ a:focus:not(:focus-visible) { outline: none; }
   border-bottom-color: var(--clr-primary-container);
 }
 
+.nav__socials {
+  display: none;
+  align-items: center;
+  gap: 16px;
+  margin-right: 8px;
+}
+@media (min-width: 1024px) {
+  .nav__socials { display: flex; }
+}
+
+.nav__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: opacity var(--tr-base), transform var(--tr-base);
+}
+.nav__social-link:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
 .nav__cta {
   display: none;
   align-items: center;
@@ -391,6 +413,20 @@ a:focus:not(:focus-visible) { outline: none; }
 .mobile-menu__link.active { color: var(--clr-primary-container); }
 .mobile-menu__link:hover { color: #fff; }
 .mobile-menu__link:last-child { border-bottom: none; }
+
+.mobile-menu__socials {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.mobile-menu__social-icon {
+  opacity: 0.7;
+  transition: transform 0.2s;
+}
+.mobile-menu__social-icon:active { transform: scale(0.9); }
 
 /* ── 8. Footer ────────────────────────────────────────────── */
 .footer {
@@ -947,6 +983,8 @@ a:focus:not(:focus-visible) { outline: none; }
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+  position: relative;
+  padding-top: 52px; /* Space for the top pill */
   filter: drop-shadow(0 32px 64px rgba(0,0,0,0.6))
          drop-shadow(0 0 40px rgba(173,198,255,0.08));
 }
@@ -1101,6 +1139,57 @@ a:focus:not(:focus-visible) { outline: none; }
   backdrop-filter: blur(8px);
   width: fit-content;
   margin-inline: auto;
+}
+
+/* Featured Top Pill (Horizontal) - STUDIO CAPSULE */
+.mockup-side-pill {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(18, 18, 18, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 32px;
+  border-radius: 100px;
+  z-index: 15;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  pointer-events: none;
+  min-width: 180px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mockup-side-pill__text {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+  .projects-hero-layout { gap: 32px; margin-bottom: 48px; }
+  .iphone-mockup-wrap { 
+    transform: scale(0.72); 
+    height: 480px;
+    margin-bottom: -40px; 
+    width: 100%;
+    position: relative;
+    padding-top: 64px; /* Space for the mobile top pill */
+  }
+  .mockup-side-pill { 
+    top: 5px;
+    min-width: 160px;
+    padding: 8px 24px;
+  }
+  .projects-header { text-align: center; margin-top: 0; }
+  .projects-header__eyebrow { justify-content: center; }
+  .projects-stats { justify-content: center; }
+  .projects-tech-pills { justify-content: center; }
 }
 .mockup-app-label__dot {
   width: 7px; height: 7px;
