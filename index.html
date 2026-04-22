@@ -189,22 +189,7 @@
           </div>
           <div class="iphone17-screen">
             <div class="iphone17-scroll-track" id="mockupScroll">
-              <img src="./assets/Screenshots/mysour/unnamed.webp" alt="Maysur" loading="lazy" />
-              <img src="./assets/Screenshots/freezone/unnamed.webp" alt="Free Zone" loading="lazy" />
-              <img src="./assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.08.33.png" alt="Little Lemon" loading="lazy" />
-              <img src="./assets/Screenshots/Movie app/Screenshot_1776710756.png" alt="CineCurator" loading="lazy" />
-              <img src="./assets/Screenshots/NEWSAPP/Screenshot_1776705669.png" alt="NewsCloud" loading="lazy" />
-              <img src="./assets/Screenshots/weather app/Screenshot_1776720430.png" alt="Weather App" loading="lazy" />
-              <img src="./assets/Screenshots/beatflow/homepage.png" alt="BeatFlow" loading="lazy" />
-              <img src="./assets/Screenshots/mysour/unnamed (1).webp" alt="Maysur" loading="lazy" />
-              <img src="./assets/Screenshots/freezone/unnamed (1).webp" alt="Free Zone" loading="lazy" />
-              <img src="./assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.08.46.png" alt="Little Lemon" loading="lazy" />
-              <img src="./assets/Screenshots/Movie app/Screenshot_1776710769.png" alt="CineCurator" loading="lazy" />
-              <img src="./assets/Screenshots/NEWSAPP/Screenshot_1776705675.png" alt="NewsCloud" loading="lazy" />
-              <!-- Duplicate first few for seamless loop -->
-              <img src="./assets/Screenshots/mysour/unnamed.webp" alt="Maysur" loading="lazy" />
-              <img src="./assets/Screenshots/freezone/unnamed.webp" alt="Free Zone" loading="lazy" />
-              <img src="./assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.08.33.png" alt="Little Lemon" loading="lazy" />
+              <!-- Dynamically populated by script.js based on hovered project -->
             </div>
           </div>
           <div class="iphone17-home-bar"></div>
@@ -215,7 +200,7 @@
           <div class="live-indicator">
             <span class="live-indicator__dot"></span>
           </div>
-          <span class="mockup-side-pill__text" id="mockupSideLabel">LITTLE LEMON</span>
+          <span class="mockup-side-pill__text" id="mockupSideLabel">MAYSUR</span>
         </div>
       </div>
 
@@ -277,12 +262,12 @@
       <p class="featured-label">Professional Case Studies</p>
 
       <!-- Case Study: Maysur -->
-      <article class="case-study-card interactive-card" data-tags="flutter,api">
+      <article class="case-study-card interactive-card" data-tags="flutter,api" data-project="maysur">
         <div class="case-study-card__grid">
           <div class="case-study-card__visual">
-            <img src="./assets/apps%20icons/mysour.webp" class="case-study-card__icon" alt="Maysur Logo">
+            <img src="./assets/apps%20icons/maysour.webp" class="case-study-card__icon" alt="Maysur Logo">
             <div class="case-study-card__mockup-mini">
-               <img src="./assets/Screenshots/mysour/unnamed.webp" alt="Maysur Screenshot">
+               <img src="./assets/Screenshots/maysour/unnamed.webp" alt="Maysur Screenshot">
             </div>
           </div>
           <div class="case-study-card__main">
@@ -320,7 +305,7 @@
       </article>
 
       <!-- Case Study: Free Zone -->
-      <article class="case-study-card interactive-card" data-tags="flutter,api" style="border-color:rgba(68,226,205,0.2)">
+      <article class="case-study-card interactive-card" data-tags="flutter,api" data-project="freezone" style="border-color:rgba(68,226,205,0.2)">
         <div class="case-study-card__grid">
           <div class="case-study-card__visual">
             <img src="./assets/apps%20icons/free%20zone.webp" class="case-study-card__icon" alt="Free Zone Logo">
@@ -360,7 +345,7 @@
       </article>
 
       <!-- Case Study: NovaStore -->
-      <article class="case-study-card interactive-card" data-tags="flutter,firebase,open-source">
+      <article class="case-study-card interactive-card" data-tags="flutter,firebase,open-source" data-project="novastore">
         <div class="case-study-card__grid">
           <div class="case-study-card__visual">
             <img src="./assets/apps%20icons/NovaStore.png" class="case-study-card__icon" alt="NovaStore Logo">
@@ -410,7 +395,7 @@
       <p class="archive-label">Open Source & Experiments</p>
       <div class="archive-grid" id="archiveGrid">
         <!-- BeatFlow -->
-        <article class="interactive-card archive-card" data-tags="react-native,api,open-source">
+        <article class="interactive-card archive-card" data-tags="react-native,api,open-source" data-project="beatflow">
           <div class="archive-card__header">
             <div class="archive-card__icon"><img src="./assets/apps icons/BeatFlow_Music.png" class="app-icon" alt="BeatFlow"></div>
             <a class="archive-card__action" href="https://github.com/DevEslam1/BeatFlow_Music" target="_blank"><span class="material-symbols-outlined">code</span></a>
@@ -421,7 +406,7 @@
         </article>
 
         <!-- DevSync -->
-        <article class="interactive-card archive-card" data-tags="flutter,firebase,open-source">
+        <article class="interactive-card archive-card" data-tags="flutter,firebase,open-source" data-project="devsync">
           <div class="archive-card__header">
             <div class="archive-card__icon"><img src="./assets/apps icons/devsync.png" class="app-icon" alt="DevSync"></div>
             <a class="archive-card__action" href="https://github.com/DevEslam1/DevSync" target="_blank"><span class="material-symbols-outlined">code</span></a>
@@ -432,7 +417,7 @@
         </article>
 
         <!-- FoodApp -->
-        <article class="interactive-card archive-card" data-tags="react-native,ecommerce,firebase">
+        <article class="interactive-card archive-card" data-tags="react-native,ecommerce,firebase" data-project="foodapp">
           <div class="archive-card__header">
             <div class="archive-card__icon"><img src="./assets/apps icons/foodapp.png" class="app-icon" alt="FoodApp"></div>
             <a class="archive-card__action" href="https://github.com/DevEslam1/foodapp" target="_blank"><span class="material-symbols-outlined">code</span></a>
@@ -442,19 +427,9 @@
           <div class="archive-card__tech"><span>React Native</span><span>Redux</span><span>Firebase</span></div>
         </article>
 
-        <!-- Little Lemon -->
-        <article class="interactive-card archive-card" data-tags="react-native,architecture">
-          <div class="archive-card__header">
-            <div class="archive-card__icon"><img src="./assets/apps icons/Little Lemon.png" class="app-icon" alt="Little Lemon"></div>
-            <a class="archive-card__action" href="#" target="_blank"><span class="material-symbols-outlined">code</span></a>
-          </div>
-          <h3 class="archive-card__title">Little Lemon</h3>
-          <p class="archive-card__desc">Modern food ordering application following strict <strong>MVVM architecture</strong>, built with Expo and TypeScript.</p>
-          <div class="archive-card__tech"><span>React Native</span><span>Expo</span><span>MVVM</span></div>
-        </article>
 
         <!-- NewsCloud -->
-        <article class="interactive-card archive-card" data-tags="flutter,open-source">
+        <article class="interactive-card archive-card" data-tags="flutter,open-source" data-project="newscloud">
           <div class="archive-card__header">
             <div class="archive-card__icon"><img src="./assets/apps icons/news_app.png" class="app-icon" alt="NewsCloud"></div>
             <a class="archive-card__action" href="https://github.com/DevEslam1/news_app" target="_blank"><span class="material-symbols-outlined">code</span></a>
@@ -465,7 +440,7 @@
         </article>
 
         <!-- CineCurator -->
-        <article class="interactive-card archive-card" data-tags="flutter,api">
+        <article class="interactive-card archive-card" data-tags="flutter,api" data-project="cinecurator">
           <div class="archive-card__header">
             <div class="archive-card__icon"><span class="material-symbols-outlined" style="font-size:32px;color:var(--clr-primary)">movie</span></div>
             <a class="archive-card__action" href="https://github.com/DevEslam1/movie_app" target="_blank"><span class="material-symbols-outlined">code</span></a>
@@ -476,7 +451,7 @@
         </article>
 
         <!-- Weather App -->
-        <article class="interactive-card archive-card" data-tags="flutter,api">
+        <article class="interactive-card archive-card" data-tags="flutter,api" data-project="weather">
           <div class="archive-card__header">
             <div class="archive-card__icon"><span class="material-symbols-outlined" style="font-size:32px;color:var(--clr-secondary)">cloud</span></div>
             <a class="archive-card__action" href="https://github.com/DevEslam1/weather_app" target="_blank"><span class="material-symbols-outlined">code</span></a>
@@ -487,7 +462,7 @@
         </article>
 
         <!-- To-Do List -->
-        <article class="interactive-card archive-card" data-tags="react-native">
+        <article class="interactive-card archive-card" data-tags="react-native" data-project="todo">
           <div class="archive-card__header">
             <div class="archive-card__icon"><img src="./assets/apps%20icons/to%20do%20list.png" class="app-icon" alt="To-Do List"></div>
             <a class="archive-card__action" href="https://github.com/DevEslam1/to-do" target="_blank"><span class="material-symbols-outlined">code</span></a>

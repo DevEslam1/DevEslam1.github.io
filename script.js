@@ -262,37 +262,164 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-/* ── Mockup app label rotator ──────────────────────────────────── */
+/* ── MockupMaster: Dynamic Project Previews ───────────────────── */
 (function () {
-  const labelEl = document.getElementById('mockupSideLabel');
-  const scrollTrack = document.getElementById('mockupScroll');
-  const screen = document.querySelector('.iphone17-screen');
-  
-  if (!labelEl || !scrollTrack || !screen) return;
+  const mockupScroll = document.getElementById('mockupScroll');
+  const mockupLabel  = document.getElementById('mockupSideLabel');
+  if (!mockupScroll || !mockupLabel) return;
 
-  // Use a tiny target area in the middle of the screen to detect "active" image
-  const observerOptions = {
-    root: screen,
-    rootMargin: '-45% 0% -45% 0%', 
-    threshold: 0
+  const projectAssetMap = {
+    novastore: {
+      name: "NOVASTORE",
+      images: [
+        './assets/Screenshots/screenshots/home.png',
+        './assets/Screenshots/screenshots/categories.png',
+        './assets/Screenshots/screenshots/cart.png',
+        './assets/Screenshots/screenshots/orders.png'
+      ]
+    },
+    foodapp: {
+      name: "FOODAPP",
+      images: [
+        './assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.08.33.png',
+        './assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.08.46.png',
+        './assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.08.55.png',
+        './assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.09.18.png'
+      ]
+    },
+    beatflow: {
+      name: "BEATFLOW",
+      images: [
+        './assets/Screenshots/beatflow/homepage.png',
+        './assets/Screenshots/beatflow/drawerpage.png',
+        './assets/Screenshots/beatflow/playerpage.png',
+        './assets/Screenshots/beatflow/profilepage.png'
+      ]
+    },
+    devsync: {
+      name: "DEVSYNC",
+      images: [
+        './assets/Screenshots/devsync/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-15 at 12.15.15.png',
+        './assets/Screenshots/devsync/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-15 at 12.15.18.png',
+        './assets/Screenshots/devsync/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-15 at 12.50.08.png',
+        './assets/Screenshots/devsync/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-15 at 12.51.01.png'
+      ]
+    },
+    newscloud: {
+      name: "NEWSCLOUD",
+      images: [
+        './assets/Screenshots/NEWSAPP/Screenshot_1776705669.png',
+        './assets/Screenshots/NEWSAPP/Screenshot_1776705675.png',
+        './assets/Screenshots/NEWSAPP/Screenshot_1776705680.png',
+        './assets/Screenshots/NEWSAPP/Screenshot_1776705708.png'
+      ]
+    },
+    maysur: {
+      name: "MAYSUR",
+      images: [
+        './assets/Screenshots/maysour/unnamed.webp',
+        './assets/Screenshots/maysour/unnamed (2).webp',
+        './assets/Screenshots/maysour/unnamed (3).webp',
+        './assets/Screenshots/maysour/unnamed (4).webp'
+      ]
+    },
+    freezone: {
+      name: "FREE ZONE",
+      images: [
+        './assets/Screenshots/freezone/unnamed.webp',
+        './assets/Screenshots/freezone/unnamed (1).webp',
+        './assets/Screenshots/freezone/unnamed (2).webp',
+        './assets/Screenshots/freezone/unnamed (7).webp'
+      ]
+    },
+    cinecurator: {
+      name: "CINECURATOR",
+      images: [
+        './assets/Screenshots/Movie app/Screenshot_1776710756.png',
+        './assets/Screenshots/Movie app/Screenshot_1776710769.png',
+        './assets/Screenshots/Movie app/Screenshot_1776710778.png',
+        './assets/Screenshots/Movie app/Screenshot_1776710800.png'
+      ]
+    },
+    weather: {
+      name: "WEATHER APP",
+      images: [
+        './assets/Screenshots/weather app/Screenshot_1776720430.png',
+        './assets/Screenshots/weather app/Screenshot_1776720434.png',
+        './assets/Screenshots/weather app/Screenshot_1776720437.png',
+        './assets/Screenshots/weather app/Screenshot_1776720440.png'
+      ]
+    },
+    todo: {
+      name: "TO-DO LIST",
+      images: [
+        './assets/Screenshots/to do list/Home.png',
+        './assets/Screenshots/to do list/add task.png',
+        './assets/Screenshots/to do list/SideBar.png',
+        './assets/Screenshots/to do list/Screenshot_1776346260.png'
+      ]
+    }
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const appName = entry.target.getAttribute('alt');
-        if (appName && labelEl.textContent !== appName) {
-          labelEl.style.opacity = '0';
-          setTimeout(() => {
-            labelEl.textContent = appName;
-            labelEl.style.opacity = '1';
-          }, 200);
-        }
-      }
-    });
-  }, observerOptions);
+  const projectIds = Object.keys(projectAssetMap);
+  let currentProject = '';
+  let isUserInteracting = false;
+  let interactionTimeout;
 
-  scrollTrack.querySelectorAll('img').forEach(img => observer.observe(img));
+  function switchMockup(projectId) {
+    if (projectId === currentProject || !projectAssetMap[projectId]) return;
+    const data = projectAssetMap[projectId];
+    currentProject = projectId;
+
+    // Fade out
+    mockupLabel.style.opacity = '0';
+    mockupScroll.style.opacity = '0';
+
+    setTimeout(() => {
+      mockupLabel.textContent = data.name;
+      
+      // Inject images with space encoding
+      mockupScroll.innerHTML = data.images
+        .map(src => `<img src="${src.replace(/ /g, '%20')}" alt="${data.name}" />`)
+        .join('');
+
+      // Restart animation
+      mockupScroll.style.animation = 'none';
+      mockupScroll.offsetHeight; 
+      mockupScroll.style.animation = '';
+
+      // Fade in
+      mockupLabel.style.opacity = '1';
+      mockupScroll.style.opacity = '1';
+    }, 300);
+  }
+
+  // Auto-rotate logic
+  mockupScroll.addEventListener('animationiteration', () => {
+    if (isUserInteracting) return;
+    const nextIdx = (projectIds.indexOf(currentProject) + 1) % projectIds.length;
+    switchMockup(projectIds[nextIdx]);
+  });
+
+  document.querySelectorAll('[data-project]').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      isUserInteracting = true;
+      clearTimeout(interactionTimeout);
+      switchMockup(card.dataset.project);
+    });
+    card.addEventListener('mouseleave', () => {
+      interactionTimeout = setTimeout(() => { isUserInteracting = false; }, 5000);
+    });
+    card.addEventListener('click', () => {
+      isUserInteracting = true;
+      clearTimeout(interactionTimeout);
+      switchMockup(card.dataset.project);
+      interactionTimeout = setTimeout(() => { isUserInteracting = false; }, 8000);
+    });
+  });
+
+  // Initial
+  switchMockup('novastore');
 })();
 
 /* ── Interactive Card Spotlight & Tilt ─────────────────────── */
