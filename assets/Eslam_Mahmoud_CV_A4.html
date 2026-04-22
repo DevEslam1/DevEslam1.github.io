@@ -20,17 +20,12 @@
         .page { 
             width: 210mm; 
             height: 297mm;
-            padding: 12mm 15mm; 
+            padding: 8mm 12mm; 
             margin: 0 auto;
             overflow: hidden;
             position: relative;
         }
-        .page-2 {
-            padding-top: 14mm;
-        }
-        .page-break { 
-            page-break-before: always; 
-        }
+        /* Page breaks removed for single-page view */
 
         /* ===== HEADER ===== */
         .header { 
@@ -118,27 +113,36 @@
 
         /* ===== PROJECTS ===== */
         .project { 
-            margin-bottom: 2mm; 
+            margin-bottom: 1.5mm; 
         }
         .project:last-child {
             margin-bottom: 0;
         }
         .project-header { 
-            font-size: 10pt; 
+            font-size: 9.5pt; 
             font-weight: bold; 
-            margin-bottom: 0.5pt;
+            margin-bottom: 0.2mm;
         }
         .project-header .tech { 
             font-weight: normal; 
             font-style: italic;
+            font-size: 8.5pt;
         }
         .project-desc { 
-            margin-left: 5mm; 
-            font-size: 9pt; 
+            margin-left: 4mm; 
+            font-size: 8.5pt; 
         }
         .project-desc li { 
-            margin-bottom: 1pt; 
-            line-height: 1.35;
+            margin-bottom: 0.5pt; 
+            line-height: 1.3;
+        }
+
+        /* ===== TWO-COLUMN FOOTER ===== */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10mm;
+            margin-top: 2mm;
         }
 
         /* ===== SKILLS ===== */
@@ -203,7 +207,7 @@
             <div class="subtitle">Mobile Applications Engineer (Flutter & React Native)</div>
             <div class="contact-line">
                 Mansoura, Egypt<span class="sep">|</span>
-                <a href="mailto:xdev.eslam@gmail.com">xdev.eslam@gmail.com</a><span class="sep">|</span>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=xdev.eslam@gmail.com" target="_blank" rel="noopener noreferrer">xdev.eslam@gmail.com</a><span class="sep">|</span>
                 <a href="tel:+201122299831">+20 1122299831</a><span class="sep">|</span>
                 <a href="https://www.linkedin.com/in/deveslam-mahmoud/">LinkedIn</a><span class="sep">|</span>
                 <a href="https://github.com/DevEslam1">GitHub</a>
@@ -281,53 +285,56 @@
         </div>
 
         <div class="project">
-            <div class="project-header"><a href="https://github.com/DevEslam1/DevSync" style="color:#000;text-decoration:none;">DevSync (Team Collaboration Platform)</a> <span class="tech">| Flutter, Firebase, BLoC, Clean Architecture</span></div>
+            <div class="project-header"><a href="https://github.com/DevEslam1/foodapp" style="color:#000;text-decoration:none;">FoodApp (Food Ordering Service)</a> <span class="tech">| React Native, Redux, Firebase</span></div>
             <ul class="project-desc">
-                <li>Developed a scalable workspace app for engineering teams featuring interactive dashboards (fl_chart) and Agile Kanban boards with drag-and-drop.</li>
-                <li>Built unified real-time team chat utilizing Firestore streams for instant message delivery and persistence.</li>
+                <li>Built a complete food ordering solution with nested navigation, real-time cart persistence via Redux, and user authentication with Firebase.</li>
             </ul>
         </div>
-    </div>
 
-    <!-- ==================== PAGE 2 ==================== -->
-    <div class="page-break"></div>
-    <div class="page page-2">
-
-        <!-- SKILLS -->
-        <div class="section-title" style="margin-top: 0;">Skills</div>
-        <ul class="skills-list">
-            <li><strong>Core Mobile:</strong> Flutter, React Native, Dart, JavaScript, TypeScript</li>
-            <li><strong>Architecture & State Management:</strong> Clean Architecture, SOLID Principles, BLoC, Provider, Redux, MVVM</li>
-            <li><strong>Backend & APIs:</strong> Firebase (Auth, Firestore, Cloud Storage), RESTful APIs</li>
-            <li><strong>AI & Tooling:</strong> AI-Augmented Development, Prompt Engineering, MCP Servers (Gemini, Claude, ChatGPT), Git, GitHub, Figma</li>
-        </ul>
-
-        <!-- EDUCATION -->
-        <div class="section-title">Education</div>
-        <div class="edu-title">B.Sc. in Mechatronics Engineering</div>
-        <div class="edu-meta">
-            <span>Mansoura University — Mansoura, Egypt</span>
-            <span>Graduated: June 2022</span>
-        </div>
-        <div class="edu-highlight">
-            <em>Highlight:</em> 1st Place in the Mansoura University Robotics Challenge, demonstrating early expertise in complex systems integration and logic programming.
+        <div class="project">
+            <div class="project-header"><a href="https://github.com/DevEslam1/NewsCloud" style="color:#000;text-decoration:none;">NewsCloud (Editorial Discovery)</a> <span class="tech">| Flutter, Clean Architecture, REST API</span></div>
+            <ul class="project-desc">
+                <li>Developed a high-fidelity news aggregator using Clean Architecture to manage multi-source API integration and complex editorial layouts.</li>
+            </ul>
         </div>
 
-        <!-- CERTIFICATIONS -->
-        <div class="section-title">Certifications</div>
-        <ul class="cert-list">
-            <li><strong>Meta React Native Specialization</strong> – Coursera (Mar 2026)
-                <ul style="margin-left:5mm; margin-top:1pt; list-style-type:circle;">
-                    <li><a href="https://coursera.org/share/4b72cf9201759994cf04391571118aab">Introduction to Mobile Development</a></li>
-                    <li><a href="https://coursera.org/share/4d71a11bdb6c035b8f7982b2e7ed94f5">Programming with JavaScript</a></li>
-                    <li>React Native (In Progress)</li>
+        <div class="project" style="margin-bottom: 0;">
+            <div class="project-header"><a href="https://github.com/DevEslam1/to-do" style="color:#000;text-decoration:none;">Task Management (Local-First To-Do)</a> <span class="tech">| React Native, Expo, AsyncStorage</span></div>
+            <ul class="project-desc">
+                <li>Engineered a minimal-friction task manager featuring fast local persistence and responsive swipe-to-action interactions.</li>
+            </ul>
+        </div>
+
+        <!-- TWO COLUMN FOOTER -->
+        <div class="footer-grid">
+            <div class="col-left">
+                <!-- SKILLS -->
+                <div class="section-title">Skills</div>
+                <ul class="skills-list" style="font-size: 8.5pt;">
+                    <li><strong>Core:</strong> Flutter, React Native, Dart, JS/TS</li>
+                    <li><strong>Arch:</strong> Clean Architecture, SOLID, BLoC, Redux</li>
+                    <li><strong>Backend:</strong> Firebase (Auth, Firestore, FCM), Node.js</li>
+                    <li><strong>Tools:</strong> Git, Postman, Google Maps API, Expo</li>
                 </ul>
-            </li>
-            <li><a href="https://www.coursera.org/account/accomplishments/verify/NZGLZ3SF50LF">Advanced Flutter UI and State Management</a> – Packt (Jan 2026)</li>
-            <li><a href="https://ude.my/UC-3fe14c29-da6c-4a5e-b802-0c2adedf8a54">The Complete Flutter Development Bootcamp with Dart</a> – Udemy (Jan 2026)</li>
-            <li><a href="https://www.coursera.org/account/accomplishments/verify/1COJ0BVSKGQU">Getting Started with Flutter & Dart</a> – Coursera (Jan 2026)</li>
-        </ul>
+            </div>
+            <div class="col-right">
+                <!-- EDUCATION & CERTS -->
+                <div class="section-title">Education & Credentials</div>
+                <div class="edu-title" style="font-size: 9pt;">B.S. in Engineering (Mechanical)</div>
+                <div class="edu-meta" style="font-size: 8.5pt;">
+                    <span>Mansoura University</span>
+                </div>
+                <div class="edu-highlight" style="font-size: 8.5pt; margin-bottom: 2mm;">Graduated with distinction; Robotics specialist.</div>
 
+                <ul class="cert-list" style="font-size: 8.5pt; margin-left: 0; list-style-type: none;">
+                    <li>• Meta React Native Specialist</li>
+                    <li>• Google Certified Associate Android Developer</li>
+                    <li>• Complete Flutter & Dart Bootcamp (54h)</li>
+                    <li style="margin-top:1mm; font-style:italic;">Full portfolio (12+ certs) at: <a href="https://eslam.dev">eslam.dev</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
     </div>
 </body>
 </html>
