@@ -2061,12 +2061,17 @@ a:focus:not(:focus-visible) { outline: none; }
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
 }
 .contact-card:hover { background: var(--clr-surface-container-high); }
-.contact-card .material-symbols-outlined {
+.contact-card .material-symbols-outlined,
+.contact-card .brand-icon {
+  width: 24px;
+  height: 24px;
   font-size: 24px;
   transition: transform var(--tr-base);
   transform-origin: left center;
+  object-fit: contain;
 }
-.contact-card:hover .material-symbols-outlined { transform: scale(1.1); }
+.contact-card:hover .material-symbols-outlined,
+.contact-card:hover .brand-icon { transform: scale(1.1); }
 .contact-card__title { font-size: 0.875rem; font-weight: 500; color: var(--clr-on-background); }
 .contact-card__sub { font-size: 0.8125rem; color: var(--clr-on-surface-variant); }
 
