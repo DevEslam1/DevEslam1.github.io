@@ -1519,14 +1519,17 @@ a:focus:not(:focus-visible) { outline: none; }
   background: var(--clr-surface-container);
   border: 1px solid rgba(173, 198, 255, 0.2);
   border-radius: var(--radius-xl);
-  padding: 48px 40px;
+  padding: 40px 24px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 32px;
   position: relative;
   overflow: hidden;
   margin-bottom: var(--section-gap);
   box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+}
+@media (min-width: 768px) {
+  .skills-featured { padding: 48px 40px; gap: 40px; }
 }
 .skills-featured::before {
   content: '';
@@ -1560,10 +1563,13 @@ a:focus:not(:focus-visible) { outline: none; }
   border-radius: 50%;
 }
 .skills-featured__icon .material-symbols-outlined {
-  font-size: 96px;
+  font-size: 64px;
   color: var(--clr-secondary);
   opacity: 0.85;
   font-variation-settings: 'FILL' 0, 'wght' 200;
+}
+@media (min-width: 768px) {
+  .skills-featured__icon .material-symbols-outlined { font-size: 96px; }
 }
 
 /* Skills grid */
@@ -1593,13 +1599,16 @@ a:focus:not(:focus-visible) { outline: none; }
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-xl);
-  padding: 32px;
+  padding: 24px 20px;
   transition: all var(--tr-base);
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   height: 100%;
+}
+@media (min-width: 768px) {
+  .skill-card { padding: 32px; }
 }
 .skill-card::before {
   content: '';
@@ -1625,14 +1634,17 @@ a:focus:not(:focus-visible) { outline: none; }
 .skill-card:hover.sk-tertiary { border-color: rgba(221, 183, 255, 0.4); box-shadow: 0 8px 32px rgba(221, 183, 255, 0.15); }
 
 .skill-card__icon {
-  width: 52px; height: 52px;
+  width: 44px; height: 44px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   display: flex; align-items: center; justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   position: relative; z-index: 1;
   transition: all var(--tr-base);
+}
+@media (min-width: 768px) {
+  .skill-card__icon { width: 52px; height: 52px; margin-bottom: 24px; }
 }
 
 .sk-primary .skill-card__icon { box-shadow: inset 0 0 12px rgba(173, 198, 255, 0.1); }
@@ -1645,11 +1657,14 @@ a:focus:not(:focus-visible) { outline: none; }
 .skill-card:hover.sk-tertiary .skill-card__icon { background: rgba(221, 183, 255, 0.15); box-shadow: 0 0 20px rgba(221, 183, 255, 0.2); }
 .skill-card__title {
   font-family: var(--font-display);
-  font-size: 1.3125rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--clr-on-surface);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   position: relative; z-index: 1;
+}
+@media (min-width: 768px) {
+  .skill-card__title { font-size: 1.3125rem; margin-bottom: 16px; }
 }
 .skill-card__chips {
   display: flex;
@@ -2021,8 +2036,11 @@ a:focus:not(:focus-visible) { outline: none; }
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-xl);
-  padding: 32px;
+  padding: 24px 20px;
   transition: border-color var(--tr-base), transform var(--tr-base);
+}
+@media (min-width: 768px) {
+  .timeline__card { padding: 32px; }
 }
 .timeline__card:hover { border-color: rgba(255, 255, 255, 0.18); transform: translateY(-2px); }
 .timeline__card--active {
@@ -2039,19 +2057,24 @@ a:focus:not(:focus-visible) { outline: none; }
   background: var(--clr-surface-container-low);
   border: 1px solid rgba(255,255,255,0.05);
   border-radius: var(--radius-sm);
-  padding: 14px 16px;
+  padding: 12px 14px;
   margin-bottom: 20px;
 }
 .timeline__achievement-label {
   font-family: var(--font-display);
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--clr-tertiary);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
-.timeline__achievement p { font-size: 0.9375rem; color: var(--clr-on-surface); line-height: 1.5; }
+.timeline__achievement p { font-size: 0.8125rem; color: var(--clr-on-surface); line-height: 1.5; }
+@media (min-width: 640px) {
+  .timeline__achievement { padding: 14px 16px; }
+  .timeline__achievement-label { font-size: 0.6875rem; margin-bottom: 6px; }
+  .timeline__achievement p { font-size: 0.9375rem; }
+}
 .timeline__tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .timeline__tag {
   padding: 4px 10px;
