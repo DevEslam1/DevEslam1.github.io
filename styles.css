@@ -810,75 +810,118 @@ a:focus:not(:focus-visible) { outline: none; }
   z-index: 1;
   position: relative;
   width: 100%;
-  max-width: 540px;
+  max-width: 580px;
   align-self: center;
+  perspective: 1200px;
 }
 .hero__card {
-  background: var(--clr-surface-container);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 40px;
+  background: rgba(20, 20, 20, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 48px;
   overflow: hidden;
-  box-shadow: var(--glow-primary);
-  transform: rotate(2deg) scale(1.02);
-  aspect-ratio: 1;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.8), var(--glow-primary);
+  transform: rotateX(15deg) rotateY(-10deg) rotateZ(2deg);
+  aspect-ratio: 1 / 0.9;
   position: relative;
+  backdrop-filter: blur(8px);
 }
 .hero__card-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  opacity: 0.65;
-  mix-blend-mode: screen;
+  object-fit: contain;
+  opacity: 0.8;
+  mix-blend-mode: lighten;
+  transform: scale(1.1);
 }
 .hero__card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, var(--clr-background), transparent 50%);
+  background: radial-gradient(circle at center, transparent 30%, rgba(10,10,10,0.4) 100%);
 }
 
 /* Floating badges */
 .hero__float-badge {
   position: absolute;
-  z-index: 2;
+  z-index: 5;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
+  gap: 10px;
+  padding: 10px 16px;
   border-radius: var(--radius-md);
-  background: rgba(42, 42, 42, 0.8);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(18, 18, 18, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  transition: transform 0.3s var(--tr-base), border-color 0.3s;
 }
+.hero__float-badge:hover {
+  border-color: rgba(255,255,255,0.25);
+  transform: translateZ(20px) !important;
+}
+
+/* Specific Positions & Tilts */
 .hero__float-badge--flutter {
-  top: 10%;
-  left: -8%;
-  transform: rotate(-6deg);
+  top: 10%; left: -5%;
+  transform: rotateX(10deg) rotateY(15deg) translateZ(30px);
 }
+.hero__float-badge--dart {
+  top: 40%; left: -15%;
+  transform: rotateX(5deg) rotateY(20deg) translateZ(40px);
+}
+.hero__float-badge--web {
+  bottom: 12%; left: -5%;
+  transform: rotateX(-10deg) rotateY(15deg) translateZ(30px);
+}
+
 .hero__float-badge--rn {
-  bottom: 22%;
-  right: -6%;
-  transform: rotate(6deg);
+  top: 15%; right: -5%;
+  transform: rotateX(10deg) rotateY(-15deg) translateZ(30px);
 }
-.hero__float-badge--arch {
-  top: 48%;
-  right: -10%;
-  transform: rotate(3deg);
+.hero__float-badge--ts {
+  top: 48%; right: -15%;
+  transform: rotateX(5deg) rotateY(-20deg) translateZ(40px);
 }
-.hero__float-badge .material-symbols-outlined { font-size: 18px; }
+.hero__float-badge--play {
+  bottom: 12%; right: -5%;
+  transform: rotateX(-10deg) rotateY(-15deg) translateZ(30px);
+}
+
+.hero__float-badge--apple {
+  bottom: -5%; left: 50%;
+  transform: translateX(-50%) rotateX(-15deg);
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.15);
+}
+
+.hero__float-badge img {
+  filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
+}
+
 .hero__float-badge span:last-child {
   font-family: var(--font-display);
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--clr-on-surface);
 }
 
 @media (max-width: 767px) {
-  .hero__float-badge { padding: 6px 10px; }
-  .hero__float-badge span:last-child { font-size: 0.6rem; }
-  .hero__float-badge--flutter { top: 5%; left: 0; }
-  .hero__float-badge--rn { bottom: 15%; right: 0; }
-  .hero__float-badge--arch { top: 40%; right: -5%; }
+  .hero__visual { max-width: 100%; perspective: none; }
+  .hero__card { transform: none; border-radius: 32px; aspect-ratio: 1; }
+  .hero__float-badge { padding: 8px 12px; }
+  .hero__float-badge span:last-child { font-size: 0.625rem; }
+  
+  .hero__float-badge--flutter { top: 5%; left: 0; transform: none; }
+  .hero__float-badge--dart { top: 35%; left: -5%; transform: none; }
+  .hero__float-badge--web { bottom: 15%; left: 0; transform: none; }
+  
+  .hero__float-badge--rn { top: 10%; right: 0; transform: none; }
+  .hero__float-badge--ts { top: 45%; right: -5%; transform: none; }
+  .hero__float-badge--play { bottom: 15%; right: 0; transform: none; }
+  
+  .hero__float-badge--apple { bottom: 0; transform: translateX(-50%); }
 }
 
 /* ── 17. PROJECTS PAGE ───────────────────────────────────── */
