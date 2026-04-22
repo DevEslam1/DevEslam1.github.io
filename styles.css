@@ -234,14 +234,16 @@ a:focus:not(:focus-visible) { outline: none; }
   .container { padding: 0 var(--margin-desktop); }
 }
 
-/* Page sections — hidden by default, shown via JS */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Page sections — stacked sequentially */
 .page-section {
-  display: none;
   min-height: calc(100vh - var(--nav-height));
   padding-top: calc(var(--nav-height) + 48px);
   padding-bottom: 80px;
 }
-.page-section.active { display: block; }
 
 /* ── 6. Glass Effect ──────────────────────────────────────── */
 .glass-panel {

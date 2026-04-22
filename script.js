@@ -3,52 +3,38 @@
  * Router · Mobile Menu · Filters · Search · Scroll Reveals · Contact Form
  */
 
-/* ── Router ─────────────────────────────────────────────────── */
-const PAGES = ['home', 'projects', 'skills', 'certs', 'exp', 'contact'];
+/* ── Scroll Spy (Highlight active nav link) ───────────────────── */
+const sections = document.querySelectorAll('.page-section');
+const navLinks = document.querySelectorAll('.nav__link, .mobile-menu__link');
 
-function getPage() {
-  const hash = location.hash.replace('#', '');
-  return PAGES.includes(hash) ? hash : 'home';
-}
+const observerOptions = {
+  root: null,
+  rootMargin: '-50% 0px -50% 0px', // detects when section is in middle of viewport
+  threshold: 0
+};
 
-function navigate(page) {
-  if (!PAGES.includes(page)) page = 'home';
-
-  // Update sections
-  PAGES.forEach(p => {
-    const el = document.getElementById(p);
-    if (el) el.classList.toggle('active', p === page);
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.getAttribute('id');
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${id}`) {
+          link.classList.add('active');
+        }
+      });
+    }
   });
+}, observerOptions);
 
-  // Update nav links
-  document.querySelectorAll('.nav__link, .mobile-menu__link').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.page === page);
+sections.forEach(sec => sectionObserver.observe(sec));
+
+/* ── Mobile menu link click handles ────────────────────────────── */
+document.querySelectorAll('.mobile-menu__link').forEach(link => {
+  link.addEventListener('click', () => {
+    closeMobileMenu();
   });
-
-  // Update hash silently
-  history.replaceState(null, '', page === 'home' ? '#' : `#${page}`);
-
-  // Scroll to top
-  window.scrollTo({ top: 0, behavior: 'instant' });
-
-  // Trigger reveals for newly visible section
-  requestAnimationFrame(() => triggerReveals());
-
-  // Close mobile menu
-  closeMobileMenu();
-}
-
-/* ── Nav click delegation ────────────────────────────────────── */
-document.addEventListener('click', e => {
-  const btn = e.target.closest('[data-page]');
-  if (btn) {
-    e.preventDefault();
-    navigate(btn.dataset.page);
-  }
 });
-
-// Handle browser back/forward
-window.addEventListener('hashchange', () => navigate(getPage()));
 
 /* ── Mobile Menu ─────────────────────────────────────────────── */
 const menuToggle  = document.getElementById('menuToggle');
@@ -92,10 +78,13 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
 function triggerReveals() {
-  document.querySelectorAll('.page-section.active .reveal:not(.revealed)').forEach(el => {
+  document.querySelectorAll('.reveal:not(.revealed)').forEach(el => {
     revealObserver.observe(el);
   });
 }
+
+// Call on load
+document.addEventListener('DOMContentLoaded', triggerReveals);
 
 /* ── Projects: Filters & Search ─────────────────────────────── */
 const projectFilters = document.getElementById('projectFilters');
