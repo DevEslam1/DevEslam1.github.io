@@ -328,23 +328,25 @@ a:focus:not(:focus-visible) { outline: none; }
 .nav__cta {
   display: none;
   align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
-  border-radius: var(--radius-md);
-  background: rgba(173, 198, 255, 0.1);
-  border: 1px solid rgba(173, 198, 255, 0.2);
-  color: var(--clr-primary);
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  background: #25D366;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
   font-family: var(--font-display);
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  transition: background var(--tr-base), box-shadow var(--tr-base);
+  transition: all var(--tr-base);
   white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+  z-index: 2;
 }
 .nav__cta:hover {
-  background: rgba(173, 198, 255, 0.18);
-  box-shadow: 0 0 20px rgba(173, 198, 255, 0.15);
+  background: #128C7E;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
 }
 @media (min-width: 768px) { .nav__cta { display: flex; } }
 
@@ -2061,17 +2063,22 @@ a:focus:not(:focus-visible) { outline: none; }
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
 }
 .contact-card:hover { background: var(--clr-surface-container-high); }
-.contact-card .material-symbols-outlined,
-.contact-card .brand-icon {
+.contact-card .material-symbols-outlined {
+  font-size: 24px;
   width: 24px;
   height: 24px;
-  font-size: 24px;
-  transition: transform var(--tr-base);
-  transform-origin: left center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-card .brand-icon {
+  width: 20px; /* Reduced to match visual weight of Material Symbols */
+  height: 20px;
   object-fit: contain;
+  transition: transform var(--tr-base);
 }
 .contact-card:hover .material-symbols-outlined,
-.contact-card:hover .brand-icon { transform: scale(1.1); }
+.contact-card:hover .brand-icon { transform: scale(1.1) translateX(2px); }
 .contact-card__title { font-size: 0.875rem; font-weight: 500; color: var(--clr-on-background); }
 .contact-card__sub { font-size: 0.8125rem; color: var(--clr-on-surface-variant); }
 
