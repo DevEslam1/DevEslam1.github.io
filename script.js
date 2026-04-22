@@ -216,17 +216,37 @@ if (contactForm) {
     submitBtn.style.opacity = '0.7';
     sendIcon.textContent = 'hourglass_empty';
 
-    // Simulate send (replace with your Formspree endpoint or EmailJS)
-    await new Promise(r => setTimeout(r, 1200));
+    // Real send logic via Formspree or custom API
+    // Replace the URL payload with your actual endpoint URL for this to function
+    const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_ENDPOINT_ID';
+    
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, email, subject, message })
+      });
 
-    // Reset
-    submitBtn.disabled = false;
-    submitBtn.style.opacity = '';
-    sendIcon.textContent = 'check_circle';
-    contactForm.reset();
-    showToast('Message sent! I\'ll get back to you soon.', 'success');
-
-    setTimeout(() => { sendIcon.textContent = 'arrow_forward'; }, 3000);
+      if (response.ok) {
+        showToast('Message sent! I\'ll get back to you soon.', 'success');
+        contactForm.reset();
+        sendIcon.textContent = 'check_circle';
+      } else {
+        showToast('Failed to send message. Please try again.', 'error');
+        sendIcon.textContent = 'error';
+      }
+    } catch (error) {
+      console.error(error);
+      showToast('Network error. Failed to send message.', 'error');
+      sendIcon.textContent = 'error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '';
+      setTimeout(() => { sendIcon.textContent = 'arrow_forward'; }, 3000);
+    }
   });
 }
 
