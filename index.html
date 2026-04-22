@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eslam — Mobile Applications Engineer</title>
+  <meta name="description" content="Portfolio of a Mobile Applications Engineer specializing in Flutter & React Native. Building production-ready, high-performance mobile experiences with clean architectural patterns." />
+  <meta name="keywords" content="Flutter, React Native, Mobile Engineer, Android, iOS, Clean Architecture, Dart, JavaScript" />
+  <meta property="og:title" content="Eslam — Mobile Applications Engineer" />
+  <meta property="og:description" content="Building production-ready, high-performance mobile experiences with Flutter, React Native, and clean architectural patterns." />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://eslam.github.io/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════════════ -->
+<header>
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <button class="nav__logo" data-page="home" aria-label="Go to home">ENGINEER.OS</button>
+
+      <div class="nav__links" role="list">
+        <button class="nav__link" data-page="projects" role="listitem">Projects</button>
+        <button class="nav__link" data-page="skills"   role="listitem">Stack</button>
+        <button class="nav__link" data-page="certs"    role="listitem">Certificates</button>
+        <button class="nav__link" data-page="exp"      role="listitem">Experience</button>
+        <button class="nav__link" data-page="contact"  role="listitem">Contact</button>
+      </div>
+
+      <button class="nav__cta" data-page="contact" aria-label="Get in touch">
+        <span class="material-symbols-outlined" style="font-size:16px">terminal</span>
+        Get in Touch
+      </button>
+
+      <button class="nav__hamburger" id="menuToggle" aria-label="Toggle mobile menu" aria-expanded="false">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mobile-menu__link" data-page="home">Home</button>
+    <button class="mobile-menu__link" data-page="projects">Projects</button>
+    <button class="mobile-menu__link" data-page="skills">Stack</button>
+    <button class="mobile-menu__link" data-page="certs">Certificates</button>
+    <button class="mobile-menu__link" data-page="exp">Experience</button>
+    <button class="mobile-menu__link" data-page="contact">Contact</button>
+  </nav>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: HOME
+═══════════════════════════════════════════════════════════ -->
+<main>
+<section id="home" class="page-section active" aria-labelledby="home-title">
+  <div class="hero">
+    <div class="hero__inner">
+      <!-- Ambient orbs -->
+      <div class="hero__orb hero__orb--primary" aria-hidden="true"></div>
+      <div class="hero__orb hero__orb--secondary" aria-hidden="true"></div>
+
+      <!-- Content -->
+      <div class="hero__content reveal">
+        <div class="hero__badge" aria-label="Availability status">
+          <span class="hero__badge-dot" aria-hidden="true"></span>
+          <span class="hero__badge-text">Available for Opportunities</span>
+        </div>
+
+        <div class="hero__headline">
+          <h1 id="home-title" class="text-h1">
+            Mobile Applications<br />
+            <span class="text-gradient">Engineer</span>
+          </h1>
+        </div>
+
+        <p class="hero__desc">
+          Building production-ready, high-performance mobile experiences with Flutter, React Native, and clean architectural patterns.
+        </p>
+
+        <div class="hero__actions">
+          <button class="btn btn-primary" data-page="projects">View Projects</button>
+          <button class="btn btn-glass" data-page="contact">Contact Me</button>
+        </div>
+      </div>
+
+      <!-- Visual -->
+      <div class="hero__visual reveal" style="transition-delay:0.15s" aria-hidden="true">
+        <div class="hero__card">
+          <img
+            class="hero__card-img"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwTzR-SZrDAsWoTgXwOKLQNFaX7gaN1O4F8zv7vXiaGv81OhJ5Tw0P59MP51NcrmfN9OAJXLXCvg3do7exDF1Aa_97WKF1WW8iL2In-MXp4hskB7yEJMTaXkowetELE_kNjc_ddK8puo8e9hL2WfAxcH5zP-65HUypW6p9aClWJ7R1GHmg17xEnCVHFk3E5EPr5HSTVKYVGoGCSSYvYArpNaqG3GJGXp1EdGhEgik1zuYwsSLJkxHOlidKq2tf4tS93acLeeEdFOk"
+            alt="Abstract rendering of mobile UI elements with neon blue and cyan wireframes"
+            loading="lazy"
+          />
+          <div class="hero__card-overlay"></div>
+        </div>
+
+        <!-- Floating Badges -->
+        <div class="hero__float-badge hero__float-badge--flutter">
+          <span class="material-symbols-outlined text-primary">code</span>
+          <span>Flutter</span>
+        </div>
+        <div class="hero__float-badge hero__float-badge--arch">
+          <span class="material-symbols-outlined text-secondary">layers</span>
+          <span>Clean Arch</span>
+        </div>
+        <div class="hero__float-badge hero__float-badge--rn">
+          <span class="material-symbols-outlined text-tertiary">api</span>
+          <span>React Native</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer inside home so it's part of the scroll -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__logo">ENGINEER.OS</div>
+      <nav class="footer__links" aria-label="Social links">
+        <a class="footer__link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="footer__link" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__link" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__link" href="mailto:hello@example.com">Email</a>
+      </nav>
+      <p class="footer__copy">© 2024 Mobile Architect. Built with Precision.</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: PROJECTS
+═══════════════════════════════════════════════════════════ -->
+<section id="projects" class="page-section" aria-labelledby="projects-title">
+  <div class="container">
+    <!-- Header -->
+    <header class="projects-header reveal">
+      <h1 id="projects-title" class="text-h1" style="color:#fff">Projects</h1>
+      <p class="text-body-lg text-muted" style="max-width:640px;margin-top:12px">A curated collection of production-ready mobile applications and architectural prototypes.</p>
+      <div class="projects-stats mt-6">
+        <div class="stat-glass">
+          <span class="stat-glass__label text-primary">Projects</span>
+          <span class="stat-glass__value">12+</span>
+        </div>
+        <div class="stat-glass">
+          <span class="stat-glass__label text-secondary">Tech Used</span>
+          <span class="stat-glass__value">8</span>
+        </div>
+        <div class="stat-glass">
+          <span class="stat-glass__label text-tertiary">Featured</span>
+          <span class="stat-glass__value">3</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="filter-bar__inner">
+        <div class="search-wrapper">
+          <span class="search-icon material-symbols-outlined">search</span>
+          <input class="search-input" id="projectSearch" type="text" placeholder="Search projects..." aria-label="Search projects" />
+        </div>
+        <div class="filter-chips" id="projectFilters" role="group" aria-label="Filter by technology">
+          <button class="filter-chip active" data-filter="all">All</button>
+          <button class="filter-chip" data-filter="flutter">Flutter</button>
+          <button class="filter-chip" data-filter="react-native">React Native</button>
+          <button class="filter-chip" data-filter="firebase">Firebase</button>
+          <button class="filter-chip" data-filter="api">API</button>
+          <button class="filter-chip" data-filter="open-source">Open Source</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Showcase -->
+    <section aria-label="Featured projects" class="reveal" id="projectsContent">
+      <p class="featured-label">Featured Showcase</p>
+
+      <!-- Primary Featured Card -->
+      <article class="featured-card-primary" data-tags="flutter,firebase,api">
+        <div class="featured-card-primary__content">
+          <div style="display:flex;align-items:center;gap:10px">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--clr-primary);animation:pulse 2.5s ease-in-out infinite;display:block"></span>
+            <span class="text-label-caps text-primary" style="letter-spacing:0.15em">Flagship Project</span>
+          </div>
+          <h2 class="text-h2" style="color:#fff">FinTech Mobile Suite</h2>
+          <p class="text-muted" style="font-size:0.9375rem;line-height:1.7">A comprehensive financial dashboard offering real-time market data analysis, secure biometric transactions, and multi-currency wallet management.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span class="chip-mono chip">Flutter</span>
+            <span class="chip-mono chip">BLoC</span>
+            <span class="chip-mono chip">Firebase</span>
+            <span class="chip-mono chip">GraphQL</span>
+          </div>
+          <div class="project-quote">
+            <p>"Processed over $1M in secure transactions during beta phase."</p>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
+            <button class="btn btn-primary" style="font-size:0.75rem;padding:10px 20px">
+              <span class="material-symbols-outlined" style="font-size:15px">open_in_new</span>
+              Live Demo
+            </button>
+            <button class="btn btn-outline" style="font-size:0.75rem;padding:10px 20px">
+              <span class="material-symbols-outlined" style="font-size:15px">code</span>
+              Case Study
+            </button>
+          </div>
+        </div>
+        <div class="featured-card-primary__image">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjy8cjVpS32fUTzxg6nWcPp6RXcqAT6o7j0hK98w566rYN0RnfduNvg-1MhgGHVw8c-P_k7exnMGthFw2OtuYBMrTaah0ZXGJcYdZQusanRNsPfWipDm2fboB8oprZgf1cI-5utzBxXqgg7kj_Yh_sS8vV-v-A7Fdon5Pkld45FmGVnuSXMVXyD-i-XE_9nK55n5Aep-SGORYsGmfWIuJtiE5nbjomAnuLJTSuzMMqmMapr4f3nZ_1NsrIfk6l3IfNZPLdHQ-0Y-w"
+            alt="FinTech Mobile Suite - dark mode financial dashboard"
+            loading="lazy"
+          />
+          <div class="featured-card-primary__image-overlay img-overlay-lr"></div>
+          <div class="featured-card-primary__image-overlay img-overlay-bt"></div>
+        </div>
+      </article>
+
+      <!-- Secondary featured cards -->
+      <div class="featured-grid-secondary">
+        <article class="featured-card-secondary" data-tags="react-native,api">
+          <div class="featured-card-secondary__img">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_q744WhHL08HL5JMp_dFQS9Ht4ecB9gSo8zB94WhyJxc5Rvu01d23X67OBAYzkekbfstjoqYSI4nQm_z1-AhPgJjGZdHZ5flBQkQHBVJI7vn4qeCCNGi6D-b0j6NHoMi1cZLK6J_tEM0yFXDuL1B_seSoDeFEH-VnSq0JTSlzX1Rr8a1ABrh75_2e7ZEt7kyj-xLWtpU33uQjRXj1KfkxQhB8--Womy7kmb2vfPiEkPqIExmbZ9XWUZVnPqRgMxiBS4UmkdMNuOM"
+              alt="Social Connect App — real-time messaging platform"
+              loading="lazy"
+            />
+          </div>
+          <div class="featured-card-secondary__content">
+            <h3 class="text-h3" style="color:#fff">Social Connect App</h3>
+            <p class="text-muted" style="font-size:0.875rem;line-height:1.6;flex:1">Real-time messaging platform with threaded conversations and rich media sharing.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="chip-mono chip" style="color:var(--clr-tertiary)">React Native</span>
+              <span class="chip-mono chip" style="color:var(--clr-tertiary)">Socket.io</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="featured-card-secondary" data-tags="flutter,api">
+          <div class="featured-card-secondary__img">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfvzmIIFM1NtKUfe3RuiOpm94BQph46GkFK0HexT142eo2u5Bk_EJ_-ciSW3qx_frvssuEzq8U-NlW_JvpSIOGmppWTBxJgdm75T2nppnm9gsKwUySZTeAE6teZXnM8gVU2Zrb7MzixRnoHdVu6SIeguAkZ4AW6_-AHOstImqgnL4w6IrMOGq5uB_uMUjXh-xwXuPlGpUxlrJWhB6DScBGtLHtGl1XaMn3YEnKVE5SfMX37Y2MjM5S7ulxFwWMZScx7buXZmi__Ec"
+              alt="HealthTrack AI — predictive health monitoring"
+              loading="lazy"
+            />
+          </div>
+          <div class="featured-card-secondary__content">
+            <h3 class="text-h3" style="color:#fff">HealthTrack AI</h3>
+            <p class="text-muted" style="font-size:0.875rem;line-height:1.6;flex:1">Predictive health monitoring using device sensors and local machine learning models.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span class="chip-mono chip">Flutter</span>
+              <span class="chip-mono chip">TensorFlow Lite</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Archive Grid -->
+      <p class="archive-label">Archive &amp; Experiments</p>
+      <div class="archive-grid" id="archiveGrid">
+        <article class="archive-card" data-tags="open-source,api">
+          <div class="archive-card__header">
+            <div class="archive-card__icon">
+              <span class="material-symbols-outlined text-primary">shopping_cart</span>
+            </div>
+            <div class="archive-card__actions">
+              <a class="archive-card__action" href="#" aria-label="View source code"><span class="material-symbols-outlined">code</span></a>
+              <a class="archive-card__action" href="#" aria-label="Live demo"><span class="material-symbols-outlined">open_in_new</span></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="archive-card__title">E-Commerce Proto</h3>
+            <p class="archive-card__desc">Smooth transition animations and complex state management for a modern retail experience.</p>
+          </div>
+          <div class="archive-card__tech">
+            <span>SwiftUI</span><span>CoreData</span>
+          </div>
+        </article>
+
+        <article class="archive-card" data-tags="api">
+          <div class="archive-card__header">
+            <div class="archive-card__icon">
+              <span class="material-symbols-outlined text-tertiary">map</span>
+            </div>
+            <div class="archive-card__actions">
+              <a class="archive-card__action" href="#" aria-label="View source code"><span class="material-symbols-outlined">code</span></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="archive-card__title" style="transition:color 0.2s">GeoTracker Utility</h3>
+            <p class="archive-card__desc">Background location tracking with aggressive battery optimization techniques.</p>
+          </div>
+          <div class="archive-card__tech">
+            <span>Kotlin</span><span>Google Maps API</span>
+          </div>
+        </article>
+
+        <article class="archive-card" data-tags="react-native,firebase,open-source">
+          <div class="archive-card__header">
+            <div class="archive-card__icon">
+              <span class="material-symbols-outlined text-secondary">home_iot_device</span>
+            </div>
+            <div class="archive-card__actions">
+              <a class="archive-card__action" href="#" aria-label="View source code"><span class="material-symbols-outlined">code</span></a>
+              <a class="archive-card__action" href="#" aria-label="Live demo"><span class="material-symbols-outlined">open_in_new</span></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="archive-card__title">IoT Home Hub</h3>
+            <p class="archive-card__desc">Centralized dashboard for smart home devices communicating via MQTT.</p>
+          </div>
+          <div class="archive-card__tech">
+            <span>React Native</span><span>MQTT</span><span>Redux</span>
+          </div>
+        </article>
+
+        <article class="archive-card" data-tags="flutter,open-source">
+          <div class="archive-card__header">
+            <div class="archive-card__icon">
+              <span class="material-symbols-outlined text-primary">music_note</span>
+            </div>
+            <div class="archive-card__actions">
+              <a class="archive-card__action" href="#" aria-label="View source code"><span class="material-symbols-outlined">code</span></a>
+            </div>
+          </div>
+          <div>
+            <h3 class="archive-card__title">Audio Visualizer</h3>
+            <p class="archive-card__desc">Low-latency audio processing and custom canvas rendering engine.</p>
+          </div>
+          <div class="archive-card__tech">
+            <span>Flutter</span><span>CustomPaint</span><span>FFI</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer" role="contentinfo" style="margin-top:64px">
+    <div class="footer__inner">
+      <div class="footer__logo">ENGINEER.OS</div>
+      <nav class="footer__links" aria-label="Social links">
+        <a class="footer__link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="footer__link" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__link" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__link" href="mailto:hello@example.com">Resume</a>
+      </nav>
+      <p class="footer__copy">© 2024 Engineer Portfolio. Built for Precision.</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: SKILLS (Stack)
+═══════════════════════════════════════════════════════════ -->
+<section id="skills" class="page-section" aria-labelledby="skills-title">
+  <div class="container">
+    <!-- Header -->
+    <header class="mb-8 reveal">
+      <h1 id="skills-title" class="text-h1" style="color:var(--clr-on-surface);margin-bottom:20px">Skills</h1>
+      <p style="font-size:var(--text-body-lg-size);color:var(--clr-outline);max-width:640px;line-height:1.6">A technical breakdown of my core competencies, from cross-platform development to scalable clean architecture.</p>
+    </header>
+
+    <!-- Stats Row -->
+    <div class="skills-stats reveal">
+      <div class="stat-card">
+        <div class="stat-card__label">Years Learning</div>
+        <div class="stat-card__value stat-card__value--primary">2+</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__label">Technologies</div>
+        <div class="stat-card__value stat-card__value--secondary">15+</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__label">Projects</div>
+        <div class="stat-card__value stat-card__value--tertiary">12+</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-card__label">Main Focus</div>
+        <div class="stat-card__value stat-card__value--primary" style="font-size:1.25rem;line-height:1.25">Flutter &amp; Clean Arch</div>
+      </div>
+    </div>
+
+    <!-- Featured Highlight -->
+    <div class="skills-featured reveal">
+      <div class="skills-featured__orb" aria-hidden="true"></div>
+      <div class="skills-featured__content">
+        <p class="text-label-caps text-secondary mb-4" style="display:flex;align-items:center;gap:8px">
+          <span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:'FILL' 1">star</span>
+          Core Stack
+        </p>
+        <h2 class="text-h2 mb-4" style="color:var(--clr-on-surface)">The Power Trio</h2>
+        <p style="font-size:var(--text-body-lg-size);color:var(--clr-outline);line-height:1.6;margin-bottom:28px">Combining Flutter's UI flexibility with Clean Architecture's scalability, backed by Firebase's robust real-time infrastructure.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <span style="padding:8px 16px;background:#0d0d0d;border:1px solid rgba(173,198,255,0.3);border-radius:4px;font-family:var(--font-display);font-size:0.6875rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-primary)">Flutter</span>
+          <span style="padding:8px 16px;background:#0d0d0d;border:1px solid rgba(68,226,205,0.3);border-radius:4px;font-family:var(--font-display);font-size:0.6875rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-secondary)">Clean Architecture</span>
+          <span style="padding:8px 16px;background:#0d0d0d;border:1px solid rgba(221,183,255,0.3);border-radius:4px;font-family:var(--font-display);font-size:0.6875rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--clr-tertiary)">Firebase</span>
+        </div>
+      </div>
+      <div class="skills-featured__icon" aria-hidden="true">
+        <div class="skills-featured__icon-bg"></div>
+        <span class="material-symbols-outlined" style="font-size:100px;color:var(--clr-secondary);opacity:0.8">layers</span>
+      </div>
+    </div>
+
+    <!-- Technical Competencies -->
+    <div class="section-header reveal">
+      <div class="section-header__line"></div>
+      <h2 class="section-header__title">Technical Competencies</h2>
+    </div>
+
+    <div class="skills-grid reveal">
+      <div class="skill-card sk-primary">
+        <div class="skill-card__icon"><span class="material-symbols-outlined text-primary">smartphone</span></div>
+        <h3 class="skill-card__title">Mobile Development</h3>
+        <div class="skill-card__chips">
+          <span class="skill-chip">Flutter</span>
+          <span class="skill-chip">Dart</span>
+          <span class="skill-chip">React Native</span>
+          <span class="skill-chip">JavaScript</span>
+          <span class="skill-chip">Responsive UI</span>
+        </div>
+      </div>
+      <div class="skill-card sk-secondary">
+        <div class="skill-card__icon"><span class="material-symbols-outlined text-secondary">account_tree</span></div>
+        <h3 class="skill-card__title">State Management</h3>
+        <div class="skill-card__chips">
+          <span class="skill-chip">BLoC</span>
+          <span class="skill-chip">Provider</span>
+          <span class="skill-chip">Redux</span>
+          <span class="skill-chip">State Machine</span>
+        </div>
+      </div>
+      <div class="skill-card sk-tertiary">
+        <div class="skill-card__icon"><span class="material-symbols-outlined text-tertiary">cloud</span></div>
+        <h3 class="skill-card__title">Backend &amp; APIs</h3>
+        <div class="skill-card__chips">
+          <span class="skill-chip">Firebase</span>
+          <span class="skill-chip">REST APIs</span>
+          <span class="skill-chip">JSON Parsing</span>
+          <span class="skill-chip">Auth</span>
+          <span class="skill-chip">Push Notifications</span>
+        </div>
+      </div>
+      <div class="skill-card sk-primary">
+        <div class="skill-card__icon"><span class="material-symbols-outlined text-primary">architecture</span></div>
+        <h3 class="skill-card__title">Architecture</h3>
+        <div class="skill-card__chips">
+          <span class="skill-chip">Clean Architecture</span>
+          <span class="skill-chip">SOLID</span>
+          <span class="skill-chip">Design Patterns</span>
+          <span class="skill-chip">TDD</span>
+        </div>
+      </div>
+      <div class="skill-card sk-secondary" style="grid-column: span 1">
+        <div class="skill-card__icon"><span class="material-symbols-outlined text-secondary">build</span></div>
+        <h3 class="skill-card__title">Tools &amp; Workflow</h3>
+        <div class="skill-card__chips">
+          <span class="skill-chip">Git</span>
+          <span class="skill-chip">GitHub</span>
+          <span class="skill-chip">CI/CD</span>
+          <span class="skill-chip">Debugging</span>
+          <span class="skill-chip">Offline First</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Development Lifecycle -->
+    <div style="margin-bottom:var(--section-gap)" class="reveal">
+      <h2 class="text-h3" style="color:var(--clr-on-surface);text-align:center;margin-bottom:32px">Development Lifecycle</h2>
+      <div class="workflow-strip">
+        <div class="workflow-nodes">
+          <div class="workflow-line" aria-hidden="true"></div>
+          <div class="workflow-node">
+            <div class="workflow-node__dot" style="border-color:var(--clr-primary);box-shadow:0 0 15px rgba(173,198,255,0.2)">
+              <span class="material-symbols-outlined text-primary">design_services</span>
+            </div>
+            <span class="workflow-node__label">Design</span>
+          </div>
+          <div class="workflow-node">
+            <div class="workflow-node__dot" style="border-color:var(--clr-secondary);box-shadow:0 0 15px rgba(68,226,205,0.2)">
+              <span class="material-symbols-outlined text-secondary">code</span>
+            </div>
+            <span class="workflow-node__label">Build</span>
+          </div>
+          <div class="workflow-node">
+            <div class="workflow-node__dot" style="border-color:var(--clr-tertiary);box-shadow:0 0 15px rgba(221,183,255,0.2)">
+              <span class="material-symbols-outlined text-tertiary">bug_report</span>
+            </div>
+            <span class="workflow-node__label">Test</span>
+          </div>
+          <div class="workflow-node">
+            <div class="workflow-node__dot" style="border-color:var(--clr-primary);box-shadow:0 0 15px rgba(173,198,255,0.2)">
+              <span class="material-symbols-outlined text-primary">rocket_launch</span>
+            </div>
+            <span class="workflow-node__label">Deploy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Currently Learning -->
+    <section aria-label="Currently learning" class="reveal" style="margin-bottom:var(--section-gap)">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--clr-secondary);animation:pulse 2.5s ease-in-out infinite;box-shadow:0 0 10px rgba(68,226,205,0.5);display:block"></span>
+        <h2 class="text-h3" style="color:var(--clr-on-surface)">Currently Learning</h2>
+      </div>
+      <div class="learning-items">
+        <div class="learning-item">
+          <span class="material-symbols-outlined">terminal</span>
+          <span>SwiftUI</span>
+        </div>
+        <div class="learning-item">
+          <span class="material-symbols-outlined">terminal</span>
+          <span>Kotlin Multiplatform</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__logo">ENGINEER.OS</div>
+      <nav class="footer__links" aria-label="Social links">
+        <a class="footer__link" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="footer__link" href="#" target="_blank" rel="noopener noreferrer">Source Code</a>
+      </nav>
+      <p class="footer__copy">© 2024 Precision Engineered by Portfolio.OS</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: CERTIFICATES
+═══════════════════════════════════════════════════════════ -->
+<section id="certs" class="page-section" aria-labelledby="certs-title">
+  <div class="container">
+    <!-- Page Header -->
+    <div class="certs-hero reveal">
+      <h1 id="certs-title" class="text-h1" style="color:var(--clr-on-surface);margin-bottom:16px">Certificates</h1>
+      <p class="text-body-lg text-muted">Continuous learning and professional growth in mobile architecture, modern frameworks, and engineering best practices.</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="certs-stats">
+      <div class="cert-stat reveal">
+        <span class="text-label-caps text-primary" style="margin-bottom:6px">Total Certifications</span>
+        <span class="text-h2" style="color:var(--clr-on-surface)">12</span>
+      </div>
+      <div class="cert-stat reveal" style="transition-delay:0.1s">
+        <span class="text-label-caps text-secondary" style="margin-bottom:6px">Course Hours</span>
+        <span class="text-h2" style="color:var(--clr-on-surface)">450+</span>
+      </div>
+      <div class="cert-stat reveal" style="transition-delay:0.2s">
+        <span class="text-label-caps text-tertiary" style="margin-bottom:6px">Main Focus</span>
+        <span class="text-h3" style="color:var(--clr-on-surface);text-align:center">Flutter &amp; React Native</span>
+      </div>
+    </div>
+
+    <!-- Featured Certificate -->
+    <section class="featured-cert reveal" aria-label="Featured certificate">
+      <div class="featured-cert__glow" aria-hidden="true"></div>
+      <div class="featured-cert__card">
+        <div class="featured-cert__img">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_g1JKqNKgz8APN_vuuJAOmBzgeeigR-OouOJvMWHe-iTGkzswc0F-qOV3gVvKKqu1V4fzwJRJFr_nJFsvp2jMVDZKLz_5qsLyEboi3gO1SThneEmQibxhCRsu7ie30wLVsTgZhPhRuor1vpkkATy77St_MjSkiP-s6I9p1Fxnyrc4uP_ehQTKInxvK1k68bV6RsoRl1rDY1KrcDpvvEqOTmmE40Fmdx5xepUiWrohQpAa9nDRDvcFQwFyth5hYtWZJKNKDOGBR8o"
+            alt="Google Certified Associate Android Developer Certificate"
+            loading="lazy"
+          />
+        </div>
+        <div class="featured-cert__content">
+          <div class="cert-badge">
+            <span class="chip chip-primary" style="border-radius:var(--radius-full)">Featured</span>
+            <span class="text-muted" style="font-size:0.875rem">Issued: 2023</span>
+          </div>
+          <div>
+            <h2 class="text-h2" style="color:var(--clr-on-surface);margin-bottom:12px">Google Certified Associate Android Developer</h2>
+            <p class="text-muted" style="font-size:0.9375rem;line-height:1.7">Demonstrates fundamental knowledge of Android development, focusing on UI creation, data management, debugging, and testing using Kotlin and modern architectural components.</p>
+          </div>
+          <div>
+            <button class="btn btn-primary" style="letter-spacing:0.1em;font-size:0.6875rem">Verify Credential</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="cert-filter-bar reveal">
+      <div class="search-wrapper">
+        <span class="search-icon material-symbols-outlined">search</span>
+        <input class="search-input" id="certSearch" type="text" placeholder="Search certificates..." aria-label="Search certificates" />
+      </div>
+      <div class="cert-filter-chips" id="certFilters" role="group" aria-label="Filter by category">
+        <button class="filter-chip active" data-cert-filter="all">All</button>
+        <button class="filter-chip" data-cert-filter="flutter">Flutter</button>
+        <button class="filter-chip" data-cert-filter="react-native">React Native</button>
+        <button class="filter-chip" data-cert-filter="ui-ux">UI/UX</button>
+        <button class="filter-chip" data-cert-filter="backend">Backend</button>
+      </div>
+    </div>
+
+    <!-- Cert Grid -->
+    <div class="cert-grid reveal" id="certGrid">
+      <article class="cert-card cc-secondary" data-cert-tags="react-native">
+        <div class="cert-card__img">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLteiOXfu68n8c0085AnpjIakS3U61VMNmQ2_O5LKqXHhGjk8jUVd2U3axf9cgVcW-nLE_qq3ou4quVXMEtPBeiuHpVMjio2I4CiLHes64HAoPuQuxepM_hW7lr3p1E5mTxmPmuzjwiR06z6ZsZVXQHDW0apAJELYJUUwbEIS_XKt8H0SilD68pHJ0PoExSUDC36n-bLyvGuLDuGNHsMk7-r93wkrKmvWSFIc50qbG43XqFCVR57HmkgYyyoizhO29TRbP-igypBU"
+            alt="React Native Specialist Certificate"
+            loading="lazy"
+          />
+          <div class="cert-card__badge" style="color:var(--clr-secondary);border-color:rgba(68,226,205,0.3)">React Native</div>
+        </div>
+        <div class="cert-card__content">
+          <div class="cert-card__meta"><span>Meta</span><span>2023</span></div>
+          <h3 class="cert-card__title">React Native Specialist</h3>
+          <p class="cert-card__desc">Advanced cross-platform development focusing on native modules, performance optimization, and complex state management.</p>
+          <div class="cert-card__footer">
+            <button class="cert-view-btn">
+              View Certificate <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="cert-card cc-primary" data-cert-tags="flutter">
+        <div class="cert-card__img">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCsxF4CcI4PEn4mMUwLPbWAtKafa9dfQd3PMU9LTqnLimXVXgt-x6mtdSIOjSotQv-eWs3K9ATh140dHHDJ6FV_uni65lcjyGNVqk7N1NQeM1ghdM-aTPglz7VE0yIW0mgVODnrFCbyUM1SIjbE55iKTSagJwD9SzVzWSx9gSBHwqLOcj36ZUtLa4Jweh1QM_iRkkX4uWGy1qaAiZu6pDSMI0ngoTdwdQjPJa778f7WHWuNChO4k4d89nICXY5MhF_H2NzCahw8qA"
+            alt="Flutter & Dart - The Complete Guide Certificate"
+            loading="lazy"
+          />
+          <div class="cert-card__badge" style="color:var(--clr-primary);border-color:rgba(173,198,255,0.3)">Flutter</div>
+        </div>
+        <div class="cert-card__content">
+          <div class="cert-card__meta"><span>Udemy</span><span>2022</span></div>
+          <h3 class="cert-card__title">Flutter &amp; Dart — The Complete Guide</h3>
+          <p class="cert-card__desc">Comprehensive course covering UI design, state management (Provider/Riverpod), and Firebase integration.</p>
+          <div class="cert-card__footer">
+            <button class="cert-view-btn">
+              View Certificate <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="cert-card cc-tertiary" data-cert-tags="backend">
+        <div class="cert-card__img">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM7qkls9ZBBDob98uSOFFQpYV5fHOkFV55rZAF5FWbrXRuu-67BZaTS1SqZzkXxFse1FIt-n6E4yXt4eR8j-TElt7MoVRahEtxv1sJYqVwkO_qgXJT6sdYxS12sW4jUw01FZKaCZ0Rd9hcccR0ed1n1x1v-B7c4VG201TEreO9jlg2AkuH87K0cLdZ8cG4gCszSvREIeLnQguYvg33kS_Xb_POgq0VRosPHonIn2ybgxeWjIBMFg6ywUTeq0MWYpl8US1_gC3Bm14"
+            alt="AWS Certified Developer Certificate"
+            loading="lazy"
+          />
+          <div class="cert-card__badge" style="color:var(--clr-tertiary);border-color:rgba(221,183,255,0.3)">Backend</div>
+        </div>
+        <div class="cert-card__content">
+          <div class="cert-card__meta"><span>AWS</span><span>2022</span></div>
+          <h3 class="cert-card__title">AWS Certified Developer</h3>
+          <p class="cert-card__desc">Developing and maintaining AWS-based applications, focusing on serverless architecture and cloud-native services.</p>
+          <div class="cert-card__footer">
+            <button class="cert-view-btn">
+              View Certificate <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo" style="margin-top:64px">
+    <div class="footer__inner">
+      <div class="footer__logo">ENGINEER.OS</div>
+      <nav class="footer__links" aria-label="Social links">
+        <a class="footer__link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="footer__link" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__link" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__link" href="mailto:hello@example.com">Resume</a>
+      </nav>
+      <p class="footer__copy">© 2024 Engineer Portfolio. Built for Precision.</p>
+    </div>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: EXPERIENCE
+═══════════════════════════════════════════════════════════ -->
+<section id="exp" class="page-section" aria-labelledby="exp-title">
+  <div class="container">
+    <!-- Header -->
+    <header class="mb-8 reveal">
+      <h1 id="exp-title" class="text-h1" style="color:#fff;margin-bottom:16px">Experience</h1>
+      <p class="text-body-lg text-muted" style="max-width:580px">A journey of continuous technical growth, scaling from individual UI clones to production-grade mobile architectures.</p>
+    </header>
+
+    <!-- Stats -->
+    <div class="exp-stats reveal">
+      <div class="glass-panel glass-panel-top" style="border-radius:var(--radius-md);padding:24px;box-shadow:var(--glow-primary)">
+        <div class="text-h2 text-primary" style="margin-bottom:4px">3+</div>
+        <div class="text-label-caps text-muted">Years Experience</div>
+      </div>
+      <div class="glass-panel glass-panel-top" style="border-radius:var(--radius-md);padding:24px">
+        <div class="text-h2 text-tertiary" style="margin-bottom:4px">15+</div>
+        <div class="text-label-caps text-muted">Production Apps</div>
+      </div>
+      <div class="glass-panel glass-panel-top" style="border-radius:var(--radius-md);padding:24px">
+        <div class="text-h2 text-secondary" style="margin-bottom:4px">12+</div>
+        <div class="text-label-caps text-muted">Core Technologies</div>
+      </div>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="exp-layout">
+      <!-- Timeline -->
+      <div class="timeline">
+        <div class="timeline__line" aria-hidden="true"></div>
+        <div class="timeline__entries">
+
+          <!-- Entry: Current -->
+          <article class="timeline__entry reveal">
+            <div class="timeline__dot-col">
+              <div class="timeline__dot timeline__dot--active"></div>
+            </div>
+            <div class="timeline__card timeline__card--active">
+              <div class="timeline__card-header">
+                <div>
+                  <h3 class="timeline__title">Current Focus</h3>
+                  <div class="timeline__period text-primary">Present · Architecture &amp; Scaling</div>
+                </div>
+              </div>
+              <p class="timeline__desc">Building scalable, production-ready mobile applications with Clean Architecture and TDD. Focused on performance optimization, maintaining large codebases, and leading technical decisions.</p>
+              <div class="timeline__achievement">
+                <div class="timeline__achievement-label">Key Achievement</div>
+                <p>Implemented a monolithic app architecture that reduced crash rates by 40% and improved test coverage to over 85%.</p>
+              </div>
+              <div class="timeline__tags">
+                <span class="timeline__tag" style="border-color:rgba(173,198,255,0.2);color:var(--clr-primary)">Clean Architecture</span>
+                <span class="timeline__tag" style="border-color:rgba(221,183,255,0.2);color:var(--clr-tertiary)">TDD</span>
+                <span class="timeline__tag" style="border-color:rgba(68,226,205,0.2);color:var(--clr-secondary)">Flutter</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.1);color:var(--clr-on-surface-variant)">CI/CD</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Entry: Freelance -->
+          <article class="timeline__entry reveal">
+            <div class="timeline__dot-col">
+              <div class="timeline__dot timeline__dot--inactive"></div>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__card-header">
+                <div>
+                  <h3 class="timeline__title">Freelance &amp; Open Source</h3>
+                  <div class="timeline__period text-muted">2023 · Independent Work</div>
+                </div>
+              </div>
+              <p class="timeline__desc">Improved portfolio projects and delivered freelance client work. Focused on end-to-end delivery from requirements gathering to App Store deployment.</p>
+              <div class="timeline__tags">
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">React Native</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">App Store Connect</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">Client Management</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Entry: Full-Stack -->
+          <article class="timeline__entry reveal">
+            <div class="timeline__dot-col">
+              <div class="timeline__dot timeline__dot--inactive"></div>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__card-header">
+                <div>
+                  <h3 class="timeline__title">Full-Stack Integration</h3>
+                  <div class="timeline__period text-muted">2022 – 2023 · Backend Connectivity</div>
+                </div>
+              </div>
+              <p class="timeline__desc">Transitioned to full-stack mobile development. Built complex apps integrating Firebase, custom REST APIs, OAuth authentication, and complex responsive UIs handling varied data states.</p>
+              <div class="timeline__tags">
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">Firebase</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">REST APIs</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">Auth</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Entry: Architecture Shift -->
+          <article class="timeline__entry reveal">
+            <div class="timeline__dot-col">
+              <div class="timeline__dot timeline__dot--inactive"></div>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__card-header">
+                <div>
+                  <h3 class="timeline__title">Architecture Shift</h3>
+                  <div class="timeline__period text-muted">2022 · Structural Integrity</div>
+                </div>
+              </div>
+              <p class="timeline__desc">Moved beyond simple apps to production-style projects prioritizing maintainability. Adopted Clean Architecture principles and deeply explored advanced state management patterns.</p>
+              <div class="timeline__tags">
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">BLoC</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">Provider</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">SOLID Principles</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Entry: First Deployments -->
+          <article class="timeline__entry reveal">
+            <div class="timeline__dot-col">
+              <div class="timeline__dot timeline__dot--inactive"></div>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__card-header">
+                <div>
+                  <h3 class="timeline__title">First Deployments</h3>
+                  <div class="timeline__period text-muted">2021 – 2022 · Practical Application</div>
+                </div>
+              </div>
+              <p class="timeline__desc">Built early mobile apps and focused UI practice projects. Grappled with basic state management and understanding lifecycle hooks across different mobile platforms.</p>
+              <div class="timeline__tags">
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">State Management</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">UI/UX Basics</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Entry: Foundation -->
+          <article class="timeline__entry reveal">
+            <div class="timeline__dot-col">
+              <div class="timeline__dot timeline__dot--inactive"></div>
+            </div>
+            <div class="timeline__card">
+              <div class="timeline__card-header">
+                <div>
+                  <h3 class="timeline__title">Foundation</h3>
+                  <div class="timeline__period text-muted">2021 · Genesis</div>
+                </div>
+              </div>
+              <p class="timeline__desc">Started learning Flutter &amp; Dart. Built 10+ UI clones and logic exercises to understand the widget tree and core declarative programming concepts.</p>
+              <div class="timeline__tags">
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">Dart</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">Widget Tree</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="exp-sidebar reveal" style="transition-delay:0.2s">
+        <div class="highlights-card">
+          <h3 class="highlights-card__title">Career Highlights</h3>
+          <ul class="highlights-list">
+            <li class="highlight-item">
+              <span class="material-symbols-outlined text-secondary" style="font-variation-settings:'FILL' 1">speed</span>
+              <div>
+                <p class="highlight-item__title">Performance Optimization</p>
+                <p class="highlight-item__desc">Consistently reduced app load times and memory footprint.</p>
+              </div>
+            </li>
+            <li class="highlight-item">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1">architecture</span>
+              <div>
+                <p class="highlight-item__title">Scalable Architecture</p>
+                <p class="highlight-item__desc">Designing systems built to grow without tech debt.</p>
+              </div>
+            </li>
+            <li class="highlight-item">
+              <span class="material-symbols-outlined text-tertiary" style="font-variation-settings:'FILL' 1">build</span>
+              <div>
+                <p class="highlight-item__title">Modern Tooling</p>
+                <p class="highlight-item__desc">Leveraging CI/CD, fastlane, and automated testing suites.</p>
+              </div>
+            </li>
+            <li class="highlight-item">
+              <span class="material-symbols-outlined" style="color:#fff;font-variation-settings:'FILL' 1">group</span>
+              <div>
+                <p class="highlight-item__title">Cross-Functional Comm</p>
+                <p class="highlight-item__desc">Bridging the gap between design, backend, and product.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="learning-card">
+          <div class="learning-card__glow" aria-hidden="true"></div>
+          <h3 class="learning-card__title">What I've Learned</h3>
+          <p class="learning-card__quote">"Architecture is about intent, not frameworks."</p>
+          <p class="learning-card__body">Over the years, I've realized that the tools change, but core engineering principles remain. The shift from writing code that works to writing code that scales has been my most significant professional evolution.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo" style="margin-top:80px">
+    <div class="footer__inner">
+      <div class="footer__logo" style="color:var(--clr-primary-container)">© 2024 Mobile Architect. Built with Precision.</div>
+      <nav class="footer__links" aria-label="Social links">
+        <a class="footer__link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="footer__link" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__link" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__link" href="mailto:hello@example.com">Email</a>
+      </nav>
+    </div>
+  </footer>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     PAGE: CONTACT
+═══════════════════════════════════════════════════════════ -->
+<section id="contact" class="page-section" aria-labelledby="contact-title">
+  <div class="container">
+    <!-- Hero -->
+    <div class="contact-hero reveal">
+      <h1 id="contact-title" class="text-h1">Let's Connect</h1>
+      <p class="text-body-lg">Whether you have a question, a project proposal, or just want to say hi, my inbox is always open. Let's collaborate on building the next big mobile experience.</p>
+    </div>
+
+    <!-- Main Layout -->
+    <div class="contact-layout">
+      <!-- Left: Info -->
+      <div class="contact-left reveal">
+        <div class="availability-badge">
+          <div class="availability-dot">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </div>
+          <span class="availability-badge__text">Available for Hire</span>
+        </div>
+
+        <div class="contact-direct">
+          <h2>Direct Contact</h2>
+          <p>I prefer email for detailed inquiries and project discussions. Expect a response within 24–48 hours during standard business days.</p>
+        </div>
+
+        <div class="contact-cards">
+          <a class="contact-card" href="mailto:hello@example.com">
+            <span class="material-symbols-outlined text-primary">mail</span>
+            <div>
+              <p class="contact-card__title">Email</p>
+              <p class="contact-card__sub">hello@example.com</p>
+            </div>
+          </a>
+          <a class="contact-card" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined text-tertiary">link</span>
+            <div>
+              <p class="contact-card__title">LinkedIn</p>
+              <p class="contact-card__sub">/in/mobiledev</p>
+            </div>
+          </a>
+          <a class="contact-card" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            <span class="material-symbols-outlined">code</span>
+            <div>
+              <p class="contact-card__title">GitHub</p>
+              <p class="contact-card__sub">@mobiledev</p>
+            </div>
+          </a>
+          <div class="contact-card">
+            <span class="material-symbols-outlined text-outline">location_on</span>
+            <div>
+              <p class="contact-card__title">Location</p>
+              <p class="contact-card__sub">Egypt, Remote</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-form-wrap reveal" style="transition-delay:0.15s">
+        <div class="contact-form-wrap__glow" aria-hidden="true"></div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label" for="contactName">Name</label>
+              <input class="form-input" id="contactName" type="text" placeholder="John Doe" required autocomplete="name" />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="contactEmail">Email</label>
+              <input class="form-input" id="contactEmail" type="email" placeholder="john@company.com" required autocomplete="email" style="font-family:monospace;font-size:0.875rem" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="contactSubject">Subject</label>
+            <input class="form-input" id="contactSubject" type="text" placeholder="Project Inquiry" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="contactMessage">Message</label>
+            <textarea class="form-textarea" id="contactMessage" placeholder="Tell me about your project..." required rows="6"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit" id="submitBtn" style="width:100%;padding:16px;font-size:0.9375rem;justify-content:center;letter-spacing:0.05em">
+            Send Message
+            <span class="material-symbols-outlined" id="sendIcon" style="transition:transform 0.2s">arrow_forward</span>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section reveal">
+      <h2 class="faq-section__title">Frequently Asked Questions</h2>
+      <p class="faq-section__sub">Quick answers to common inquiries.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>
+            <span class="material-symbols-outlined text-primary">work</span>
+            Are you available for full-time roles?
+          </h3>
+          <p>Yes, I am actively exploring senior mobile engineering roles, particularly those focused on Flutter or cross-platform architectures.</p>
+        </div>
+        <div class="faq-item">
+          <h3>
+            <span class="material-symbols-outlined text-tertiary">schedule</span>
+            Do you take on freelance work?
+          </h3>
+          <p>I accept select freelance projects depending on my current workload. If you have a specific timeline and budget, please include those details in your message.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo" style="margin-top:64px">
+    <div class="footer__inner">
+      <div class="footer__logo">ENGINEER.OS</div>
+      <nav class="footer__links" aria-label="Social links">
+        <a class="footer__link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="footer__link" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer__link" href="https://twitter.com/" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a class="footer__link" href="mailto:hello@example.com">Email</a>
+      </nav>
+      <p class="footer__copy">© 2024 Mobile Architect. Built with Precision.</p>
+    </div>
+  </footer>
+</section>
+</main>
+
+<!-- Toast notification -->
+<div class="toast" id="toast" role="alert" aria-live="assertive" aria-atomic="true"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
