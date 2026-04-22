@@ -262,3 +262,19 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
+/* ── Mockup app label rotator ──────────────────────────────────── */
+(function () {
+  const apps = ['Maysur', 'Free Zone', 'Little Lemon', 'CineCurator', 'NewsCloud', 'Weather App', 'BeatFlow'];
+  const labelEl = document.getElementById('mockupLabelText');
+  if (!labelEl) return;
+  let idx = 0;
+  // Switch every ~6.4s (45s animation / 7 unique apps ≈ 6.4s each)
+  setInterval(() => {
+    idx = (idx + 1) % apps.length;
+    labelEl.style.opacity = '0';
+    setTimeout(() => {
+      labelEl.textContent = apps[idx];
+      labelEl.style.opacity = '1';
+    }, 300);
+  }, 6400);
+})();
