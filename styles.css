@@ -1979,94 +1979,18 @@ html {
   transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
 }
 
-/* iPhone 17 Pro Max Frame */
-.mockup-iphone-17 {
-  width: 100%;
-  height: 100%;
-  border: 12px solid #1a1a1a;
-  border-radius: 54px;
-  background: #000;
-  box-shadow: 
-    inset 0 0 2px 2px rgba(255, 255, 255, 0.15),
-    0 0 0 2px #333;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Dynamic Island */
-.mockup-iphone-17::before {
-  content: '';
-  position: absolute;
-  top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 28px;
-  background: #000;
-  border-radius: 14px;
-  z-index: 10;
-}
-
-/* Pixel 10 Pro XL Frame */
-.mockup-pixel-10 {
-  width: 100%;
-  height: 100%;
-  border: 10px solid #222;
-  border-radius: 36px;
-  background: #000;
-  box-shadow: 
-    inset 0 0 2px 2px rgba(255, 255, 255, 0.1),
-    0 0 0 2px #444;
-  overflow: hidden;
-  position: relative;
-}
-
-/* Screen Content */
-.screen-container {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: #111;
-  overflow: hidden;
-  border-radius: inherit;
-}
-
-.screen-content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.screen-content img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Auto-scroll Animation for tall screenshots */
+/* Clean Image Display */
 .auto-scroll {
   animation: scrollScreenshots 20s linear infinite alternate;
 }
 
-.device-mockup:hover .auto-scroll {
+.screenshot-clean-container:hover .auto-scroll {
   animation-play-state: paused;
 }
 
 @keyframes scrollScreenshots {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-70%); } /* Adjust based on typical screenshot height */
-}
-
-/* Reflection Overlay */
-.mockup-reflection {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 40%, rgba(255,255,255,0.05) 60%, transparent 100%);
-  pointer-events: none;
-  z-index: 5;
+  100% { transform: translateY(-70%); }
 }
 
 /* Featured Card Adjustments */
@@ -2103,4 +2027,71 @@ html {
 .archive-card__preview .device-mockup {
   max-width: 120px;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+/* Project App Icons */
+.app-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  display: block;
+  background: var(--bg-card); /* Background for translucent icons */
+}
+
+.archive-card__icon img.app-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.featured-card-icon-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+/* Clean Screenshot Presentation */
+.screenshot-clean-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  background: #000;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.screenshot-clean {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Store Badges */
+.store-badge-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.store-badge {
+  display: block;
+  height: 40px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.store-badge:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.store-badge svg {
+  height: 100%;
+  width: auto;
+  border-radius: 6px;
 }
