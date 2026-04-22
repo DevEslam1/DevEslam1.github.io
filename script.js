@@ -244,8 +244,15 @@ document.querySelectorAll('.archive-card').forEach(card => {
   });
 });
 
-/* ── Nav highlight on scroll (for non-SPA usage) ─────────────── */
-// No need — we handle this per page via navigate()
+/* ── Nav highlight on scroll ───────────────────────────────────── */
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+}, { passive: true });
 
 /* ── Init ────────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
