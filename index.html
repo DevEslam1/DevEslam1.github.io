@@ -197,14 +197,12 @@
           <div class="project-quote">
             <p>"Published on Google Play for thousands of users."</p>
           </div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px">
-            <a href="https://play.google.com/store/apps/details?id=com.AlexEgel.Maysur&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" style="text-decoration:none;">
-              <button class="btn btn-primary" style="font-size:0.75rem;padding:10px 20px">
-                <span class="material-symbols-outlined" style="font-size:15px">shop</span>
-                Google Play
-              </button>
+          <div class="store-badge-group">
+            <a href="https://play.google.com/store/apps/details?id=com.AlexEgel.Maysur&pcampaignid=web_share" class="store-badge" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 135 40" xmlns="http://www.w3.org/2000/svg" style="height:100%;width:auto"><rect width="135" height="40" rx="6" fill="#000"/><path d="M12.9 8.2l12.4 7.2-12.4 7.2V8.2z" fill="#fff"/><text x="35" y="16" font-family="Roboto,Arial,sans-serif" font-size="5" fill="#fff">GET IT ON</text><text x="35" y="30" font-family="Roboto,Arial,sans-serif" font-size="10" font-weight="bold" fill="#fff">Google Play</text></svg>
             </a>
           </div>
+
         </div>
       </article>
 
@@ -588,13 +586,13 @@
       </div>
     </div>
 
-    <!-- Featured Certificate -->
+    <!-- Featured Certificate: Meta -->
     <section class="featured-cert reveal" aria-label="Featured certificate">
       <div class="featured-cert__glow" aria-hidden="true"></div>
       <div class="featured-cert__card">
         <div class="featured-cert__img">
           <img
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLteiOXfu68n8c0085AnpjIakS3U61VMNmQ2_O5LKqXHhGjk8jUVd2U3axf9cgVcW-nLE_qq3ou4quVXMEtPBeiuHpVMjio2I4CiLHes64HAoPuQuxepM_hW7lr3p1E5mTxmPmuzjwiR06z6ZsZVXQHDW0apAJELYJUUwbEIS_XKt8H0SilD68pHJ0PoExSUDC36n-bLyvGuLDuGNHsMk7-r93wkrKmvWSFIc50qbG43XqFCVR57HmkgYyyoizhO29TRbP-igypBU"
+            src="./assets/Certificates/Meta.png"
             alt="Meta React Native Specialization"
             loading="lazy"
           />
@@ -617,6 +615,44 @@
       </div>
     </section>
 
+    <!-- Featured Certificate: Packt -->
+    <section class="featured-cert reveal" aria-label="Featured certificate" style="margin-bottom:64px">
+      <div class="featured-cert__glow" aria-hidden="true" style="background:rgba(68,226,205,0.04)"></div>
+      <div class="featured-cert__card" style="box-shadow:var(--glow-secondary)">
+        <div class="featured-cert__img">
+          <img
+            src="./assets/Certificates/Packt.png"
+            alt="Flutter & Dart - Complete App Development Course"
+            loading="lazy"
+          />
+        </div>
+        <div class="featured-cert__content">
+          <div class="cert-badge">
+            <span class="chip chip-secondary" style="border-radius:var(--radius-full)">Specialization</span>
+            <span class="text-muted" style="font-size:0.875rem">Packt · 4.6 (30 ratings) · 2,542 enrolled</span>
+          </div>
+          <div>
+            <h2 class="text-h2" style="color:var(--clr-on-surface);margin-bottom:12px">Flutter & Dart - Complete App Development</h2>
+            <p class="text-muted" style="font-size:0.9375rem;line-height:1.7">Master Flutter & Dart from UI/UX to SQLite, Firebase, and Clean Architecture. Covers stateful/stateless widgets, OOP, async operations, and data persistence for professional-grade app development.</p>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">
+            <span class="chip-mono" style="font-size:0.65rem;padding:3px 8px">Data Persistence</span>
+            <span class="chip-mono" style="font-size:0.65rem;padding:3px 8px">Firebase</span>
+            <span class="chip-mono" style="font-size:0.65rem;padding:3px 8px">OOP</span>
+            <span class="chip-mono" style="font-size:0.65rem;padding:3px 8px">SQLite</span>
+            <span class="chip-mono" style="font-size:0.65rem;padding:3px 8px">UI Design</span>
+            <span class="chip-mono" style="font-size:0.65rem;padding:3px 8px">Data Modeling</span>
+          </div>
+          <div>
+            <a href="https://www.coursera.org/account/accomplishments/specialization/SGRSWYJOP6K5" target="_blank" rel="noopener noreferrer">
+                <button class="btn btn-primary" style="letter-spacing:0.1em;font-size:0.6875rem;background:var(--clr-secondary);color:var(--clr-on-secondary);box-shadow:0 0 24px rgba(68,226,205,0.25)">Verify Credential</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <!-- Filter Bar -->
     <div class="cert-filter-bar reveal">
       <div class="search-wrapper">
@@ -634,33 +670,6 @@
 
     <!-- Cert Grid -->
     <div class="cert-grid reveal" id="certGrid">
-      <article class="cert-card cc-secondary" data-cert-tags="flutter,ui-ux,backend">
-        <div class="cert-card__img">
-          <img
-            src="./assets/Certificates/Packt.png"
-            alt="Flutter & Dart - Complete App Development Course"
-            loading="lazy"
-          />
-          <div class="cert-card__badge" style="color:var(--clr-secondary);border-color:rgba(68,226,205,0.3)">Specialization</div>
-        </div>
-        <div class="cert-card__content">
-          <div class="cert-card__meta"><span>Packt</span><span>4.6 (30 ratings)</span></div>
-          <h3 class="cert-card__title">Flutter & Dart - Complete App Development</h3>
-          <p class="cert-card__desc">Master Flutter & Dart: from UI/UX to SQLite, Firebase, and Clean Architecture. Comprehensive specialization for professional app development.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:4px;margin:8px 0;">
-            <span class="chip-mono" style="font-size:0.65rem;padding:2px 6px">Data Persistence</span>
-            <span class="chip-mono" style="font-size:0.65rem;padding:2px 6px">Firebase</span>
-            <span class="chip-mono" style="font-size:0.65rem;padding:2px 6px">Data Modeling</span>
-          </div>
-          <div class="cert-card__footer">
-            <a href="https://www.coursera.org/account/accomplishments/specialization/SGRSWYJOP6K5" target="_blank" rel="noopener noreferrer" style="text-decoration:none;color:inherit;">
-              <button class="cert-view-btn">
-                View Specialization <span class="material-symbols-outlined">arrow_forward</span>
-              </button>
-            </a>
-          </div>
-        </div>
-      </article>
 
       <article class="cert-card cc-primary" data-cert-tags="flutter">
         <div class="cert-card__img">
