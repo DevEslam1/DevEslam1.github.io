@@ -286,7 +286,7 @@
             </div>
           </div>
           <div class="case-study-card__main">
-            <h2 class="text-h2" style="color:#fff;margin-bottom:8px">Maysur <span class="chip-mono" style="font-size:0.6rem;vertical-align:middle">Production</span></h2>
+            <h2 class="text-h2" style="color:#fff;margin-bottom:8px">Maysur <span class="chip-mono" style="font-size:0.6rem;vertical-align:middle;background:rgba(173,198,255,0.15);color:var(--clr-primary);border-color:rgba(173,198,255,0.4)">&#x2022; Live</span></h2>
             <div class="case-study-meta">
               <span class="text-primary">Role: Junior Flutter Developer</span>
               <span class="text-muted">•</span>
@@ -308,9 +308,10 @@
               </div>
             </div>
 
-            <div class="case-study-actions">
-              <a href="https://play.google.com/store/apps/details?id=com.AlexEgel.Maysur" target="_blank" class="btn btn-primary" style="font-size:0.75rem;padding:10px 20px">View on Play Store</a>
-              <div class="tech-pills-mini">
+            <div class="case-study-actions" style="flex-wrap:wrap;gap:8px">
+              <a href="https://play.google.com/store/apps/details?id=com.AlexEgel.Maysur" target="_blank" class="btn btn-primary" style="font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px"><i class="ph ph-google-play-logo" style="font-size:16px"></i>Google Play</a>
+              <a href="https://apps.apple.com/app/maysur/id6740742736" target="_blank" class="btn btn-glass" style="font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px;border-color:rgba(173,198,255,0.3);color:var(--clr-primary)"><i class="ph ph-apple-logo" style="font-size:16px"></i>App Store</a>
+              <div class="tech-pills-mini" style="width:100%;margin-top:4px">
                 <span>Dart</span><span>Dio</span><span>Clean Arch</span>
               </div>
             </div>
@@ -328,7 +329,7 @@
             </div>
           </div>
           <div class="case-study-card__main">
-            <h2 class="text-h2" style="color:#fff;margin-bottom:8px">Free Zone <span class="chip-mono" style="font-size:0.6rem;vertical-align:middle">Store Ready</span></h2>
+            <h2 class="text-h2" style="color:#fff;margin-bottom:8px">Free Zone <span class="chip-mono" style="font-size:0.6rem;vertical-align:middle;background:rgba(68,226,205,0.15);color:var(--clr-secondary);border-color:rgba(68,226,205,0.4)">&#x2022; Live</span></h2>
             <div class="case-study-meta">
               <span class="text-secondary">Role: Flutter Developer (H Solution)</span>
               <span class="text-muted">•</span>
@@ -350,9 +351,9 @@
               </div>
             </div>
 
-            <div class="case-study-actions">
-              <a href="https://apps.apple.com/us/app/free-zone/id6754777406" target="_blank" class="btn btn-primary" style="background:var(--clr-secondary);font-size:0.75rem;padding:10px 20px">App Store</a>
-              <a href="https://play.google.com/store/apps/details?id=com.hsolutions.freezone" target="_blank" class="btn btn-outline" style="font-size:0.75rem;padding:10px 20px">Play Store</a>
+            <div class="case-study-actions" style="flex-wrap:wrap;gap:8px">
+              <a href="https://apps.apple.com/us/app/free-zone/id6754777406" target="_blank" class="btn btn-primary" style="background:var(--clr-secondary);color:var(--clr-on-secondary);font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px"><i class="ph ph-apple-logo" style="font-size:16px"></i>App Store</a>
+              <a href="https://play.google.com/store/apps/details?id=com.hsolutions.freezone" target="_blank" class="btn btn-glass" style="font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px;border-color:rgba(68,226,205,0.3);color:var(--clr-secondary)"><i class="ph ph-google-play-logo" style="font-size:16px"></i>Google Play</a>
             </div>
           </div>
         </div>
@@ -400,8 +401,6 @@
           </div>
         </div>
       </article>
-
-      <!-- Archive Showcase -->
       <p class="archive-label">Open Source & Experiments</p>
       <div class="archive-grid" id="archiveGrid">
         <!-- BeatFlow -->
@@ -446,6 +445,41 @@
           <h3 class="archive-card__title">NewsCloud</h3>
           <p class="archive-card__desc">Premium news app featuring Clean Architecture, editorial UI, and multi-source API.</p>
           <div class="archive-card__tech"><span>Flutter</span><span>Clean Arch</span></div>
+        </article>
+
+        <!-- CineCurator -->
+        <article class="interactive-card archive-card" data-tags="flutter,api">
+          <div class="archive-card__header">
+            <div class="archive-card__icon"><span class="material-symbols-outlined" style="font-size:32px;color:var(--clr-primary)">movie</span></div>
+            <a class="archive-card__action" href="https://github.com/DevEslam1/CineCurator" target="_blank"><span class="material-symbols-outlined">code</span></a>
+          </div>
+          <h3 class="archive-card__title">CineCurator</h3>
+          <p class="archive-card__desc">Cinematic movie discovery app with TMDB integration, offline caching, and curated UI.</p>
+          <div class="archive-card__tech"><span>Flutter</span><span>TMDB API</span></div>
+        </article>
+
+        <!-- Weather App -->
+        <article class="interactive-card archive-card" data-tags="flutter,api">
+          <div class="archive-card__header">
+            <div class="archive-card__icon"><span class="material-symbols-outlined" style="font-size:32px;color:var(--clr-secondary)">cloud</span></div>
+            <a class="archive-card__action" href="https://github.com/DevEslam1/WeatherApp" target="_blank"><span class="material-symbols-outlined">code</span></a>
+          </div>
+          <h3 class="archive-card__title">Weather App</h3>
+          <p class="archive-card__desc">Real-time weather detection with GPS, animated transitions, and floating UI.</p>
+          <div class="archive-card__tech"><span>Flutter</span><span>OpenWeather</span></div>
+        </article>
+
+        <!-- To-Do List -->
+        <article class="interactive-card archive-card" data-tags="react-native">
+          <div class="archive-card__header">
+            <div class="archive-card__icon"><img src="./assets/apps%20icons/to%20do%20list.png" class="app-icon" alt="To-Do List"></div>
+            <a class="archive-card__action" href="https://github.com/DevEslam1/to-do" target="_blank"><span class="material-symbols-outlined">code</span></a>
+          </div>
+          <h3 class="archive-card__title">To-Do List</h3>
+          <p class="archive-card__desc">Local-first task manager with minimal friction parsing and secure persistence.</p>
+          <div class="archive-card__tech"><span>React Native</span><span>AsyncStorage</span></div>
+        </article>
+      </div>tech"><span>Flutter</span><span>Clean Arch</span></div>
         </article>
 
         <!-- To-Do List -->
@@ -902,12 +936,19 @@
                 <div>
                   <h3 class="timeline__title">Quality Control Supervisor (Army Officer)</h3>
                   <div class="timeline__period text-muted">Oct 2022 &ndash; Oct 2024 &middot; Egyptian Armed Forces</div>
+                  <div style="margin-top:6px">
+                    <span style="display:inline-flex;align-items:center;gap:5px;font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:#4ade80;background:rgba(74,222,128,0.1);border:1px solid rgba(74,222,128,0.3);border-radius:4px;padding:3px 8px">
+                      <span class="material-symbols-outlined" style="font-size:13px;font-variation-settings:'FILL' 1">verified</span>
+                      Military Service Completed
+                    </span>
+                  </div>
                 </div>
               </div>
-              <p class="timeline__desc">Served as an Army Officer leading production and quality control processes. Developed strong leadership, discipline, and operational integrity.</p>
+              <p class="timeline__desc">Served as a <strong style="color:var(--clr-on-surface)">Reserve Officer</strong> in the Egyptian Armed Forces, overseeing production lines and quality control. Military obligation is fully completed &mdash; immediately available for full-time roles.</p>
               <div class="timeline__tags">
                 <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">Leadership</span>
                 <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">Operations</span>
+                <span class="timeline__tag" style="border-color:rgba(74,222,128,0.25);color:#4ade80">Reserve Officer</span>
               </div>
             </div>
           </article>
