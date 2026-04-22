@@ -244,7 +244,6 @@ document.querySelectorAll('.archive-card').forEach(card => {
   const title = card.querySelector('.archive-card__title');
   if (!title) return;
   const icon = card.querySelector('.archive-card__icon .material-symbols-outlined');
-  const iconInitialColor = icon ? getComputedStyle(icon).color : '';
   card.addEventListener('mouseenter', () => {
     if (title) title.style.color = 'var(--clr-primary)';
   });
@@ -263,7 +262,3 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-/* ── Init ────────────────────────────────────────────────────── */
-document.addEventListener('DOMContentLoaded', () => {
-  navigate(getPage());
-});
