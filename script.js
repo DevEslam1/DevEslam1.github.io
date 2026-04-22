@@ -294,3 +294,36 @@ window.addEventListener('scroll', () => {
 
   scrollTrack.querySelectorAll('img').forEach(img => observer.observe(img));
 })();
+
+/* ── Interactive Card Spotlight & Tilt ─────────────────────── */
+(function() {
+  const cards = document.querySelectorAll('.interactive-card');
+  
+  if (window.matchMedia('(hover: hover)').matches) {
+    cards.forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        // Spotlight variables
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+        
+        // Subtle Tilt variables (limit to ~5 degrees)
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+        const tiltX = (y - centerY) / (rect.height / 10);
+        const tiltY = (centerX - x) / (rect.width / 10);
+        
+        card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+        card.style.setProperty('--mouse-x', '50%');
+        card.style.setProperty('--mouse-y', '50%');
+      });
+    });
+  }
+})();

@@ -2258,3 +2258,43 @@ a:focus:not(:focus-visible) { outline: none; }
   width: auto;
   border-radius: 6px;
 }
+
+/* ── 20. INTERACTIVE CARD EFFECTS ────────────────────────────── */
+.interactive-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.interactive-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.interactive-card:hover::after {
+  opacity: 1;
+}
+
+/* Specific card type adjustments for depth */
+.featured-card-primary.interactive-card,
+.skills-featured.interactive-card,
+.highlights-card.interactive-card {
+  perspective: 1000px;
+}
+
+@media (hover: none) {
+  .interactive-card::after { display: none; }
+  .interactive-card:hover { transform: none !important; }
+}
