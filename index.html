@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eslam Mahmoud — Junior Flutter & React Native Developer</title>
+  <title>Eslam Mahmoud - Junior Flutter & React Native Developer</title>
   <meta name="description" content="Portfolio of Eslam Mahmoud, a Junior Flutter & React Native Developer. Focused on building scalable, testable mobile applications with modern architecture." />
   <meta name="keywords" content="Flutter Developer, React Native Developer, Junior Mobile Developer, Clean Architecture, Dart, TypeScript" />
-  <meta property="og:title" content="Eslam Mahmoud — Junior Flutter & React Native Developer" />
+  <meta property="og:title" content="Eslam Mahmoud - Junior Flutter & React Native Developer" />
   <meta property="og:description" content="Building modern mobile experiences with Flutter and React Native. Scaling through clean code and robust architectural patterns." />
   <meta property="og:type" content="website" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0a0a0a" />
   <link rel="canonical" href="https://deveslam1.github.io/" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>âš¡</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>EM</text></svg>" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,6 +22,40 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <link rel="stylesheet" href="styles.css" />
+  <!-- Tailwind for Hero Bento -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary": "#adc6ff",
+            "secondary": "#44e2cd",
+            "tertiary": "#ddb7ff",
+          },
+          "fontFamily": {
+            "h1": ["Space Grotesk"],
+            "h2": ["Space Grotesk"],
+            "body": ["Inter"],
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .glass-panel-bento {
+      background: rgba(20, 20, 20, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .profile-mask-bento {
+      mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    }
+    .ach-badge-bento {
+      background: linear-gradient(135deg, rgba(173, 198, 255, 0.1), rgba(68, 226, 205, 0.1));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  </style>
 </head>
 <body>
 
@@ -35,6 +69,7 @@
 
       <div class="nav__links" role="list">
         <a class="nav__link" href="#home"     role="listitem" style="text-decoration:none"><i class="ph ph-house-line"></i> Home</a>
+        <a class="nav__link" href="about.html" role="listitem" style="text-decoration:none"><i class="ph ph-user"></i> About</a>
         <a class="nav__link" href="#projects" role="listitem" style="text-decoration:none"><i class="ph ph-stack"></i> Projects</a>
         <a class="nav__link" href="#skills"   role="listitem" style="text-decoration:none"><i class="ph ph-lightning"></i> Skills</a>
         <a class="nav__link" href="#certs"    role="listitem" style="text-decoration:none"><i class="ph ph-certificate"></i> Certificates</a>
@@ -65,6 +100,7 @@
   <!-- Mobile Menu -->
   <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation" aria-hidden="true">
     <a class="mobile-menu__link" href="#home" style="text-decoration:none"><i class="ph ph-house-line"></i> Home</a>
+    <a class="mobile-menu__link" href="about.html" style="text-decoration:none"><i class="ph ph-user"></i> About</a>
     <a class="mobile-menu__link" href="#projects" style="text-decoration:none"><i class="ph ph-stack"></i> Projects</a>
     <a class="mobile-menu__link" href="#skills" style="text-decoration:none"><i class="ph ph-lightning"></i> Skills</a>
     <a class="mobile-menu__link" href="#certs" style="text-decoration:none"><i class="ph ph-certificate"></i> Certificates</a>
@@ -89,89 +125,111 @@
      PAGE: HOME
 â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â•  -->
 <main>
-<section id="home" class="page-section active" aria-labelledby="home-title">
-  <div class="hero">
-    <div class="hero__inner">
-      <!-- Ambient orbs -->
-      <div class="hero__orb hero__orb--primary" aria-hidden="true"></div>
-      <div class="hero__orb hero__orb--secondary" aria-hidden="true"></div>
+<section id="home" class="page-section active flex flex-col justify-center" style="min-height: calc(100vh - 80px); padding-top: 80px; padding-bottom: 80px;">
+  <div class="container mx-auto px-6 max-w-7xl">
+    <!-- Hero Section -->
+    <header class="mb-12 relative reveal">
+        <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-2 text-primary font-bold text-xs tracking-widest uppercase">
+                <span class="w-8 h-[1px] bg-primary"></span>
+                Welcome to my World
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight text-white font-h1">
+                Engineering <span class="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent italic pr-2">Scalable Digital Ecosystems</span>
+            </h1>
+        </div>
+    </header>
 
-      <!-- Content -->
-      <div class="hero__content reveal">
-        <div class="hero__badge" aria-label="Availability status">
-          <span class="hero__badge-dot" aria-hidden="true"></span>
-          <span class="hero__badge-text">Available for Opportunities</span>
-        </div>
+    <!-- Content Grid (Bento) -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-20">
+        <!-- Image Panel -->
+        <div class="lg:col-span-5 relative group reveal" style="transition-delay: 0.1s">
+            <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <!-- Floating Badges Surround -->
+            <div class="hero__float-badge hero__float-badge--web z-20">
+                <img src="https://cdn.simpleicons.org/html5/44e2cd" width="16" height="16" alt="" style="opacity:0.9" />
+                <span>HTML/CSS</span>
+            </div>
+            <div class="hero__float-badge hero__float-badge--flutter z-20">
+                <img src="https://cdn.simpleicons.org/flutter/adc6ff" width="16" height="16" alt="" style="opacity:0.9" />
+                <span>Flutter</span>
+            </div>
+            <div class="hero__float-badge hero__float-badge--rn z-20">
+                <img src="https://cdn.simpleicons.org/react/44e2cd" width="16" height="16" alt="" style="opacity:0.9" />
+                <span>React Native</span>
+            </div>
+            <div class="hero__float-badge hero__float-badge--dart z-20">
+                <i class="ph ph-code" style="font-size:16px;color:var(--clr-primary)"></i>
+                <span>Dart</span>
+            </div>
+            <div class="hero__float-badge hero__float-badge--ts z-20">
+                <img src="https://cdn.simpleicons.org/typescript/ddb7ff" width="16" height="16" alt="" style="opacity:0.9" />
+                <span>TypeScript</span>
+            </div>
+            <div class="hero__float-badge hero__float-badge--play z-20">
+                <i class="ph ph-google-play-logo" style="font-size:16px;color:var(--clr-secondary)"></i>
+                <span>Play Store</span>
+            </div>
 
-        <div class="hero__headline">
-          <h1 id="home-title" class="text-h1">
-            Junior Flutter &<br />
-            <span class="text-gradient">React Native Developer</span>
-          </h1>
-        </div>
-
-        <p class="hero__desc">
-          Building scalable, testable mobile applications with a focus on Clean Architecture and high-quality UI/UX. 1st Place Winner of the <strong>Mansoura University Robotics Challenge</strong>. Expert in modular engineering and AI-augmented workflows.
-        </p>
-
-        <div class="hero__actions">
-          <a class="btn btn-primary" href="#projects" style="text-decoration:none; display:inline-flex;">Featured Cases</a>
-          <a class="btn btn-glass" href="./assets/Eslam_Mahmoud_CV_A4.html" target="_blank" style="text-decoration:none; display:inline-flex;">View Resume <span class="material-symbols-outlined" style="font-size:18px;margin-left:6px">description</span></a>
-        </div>
-      </div>
-
-      <!-- Visual -->
-      <div class="hero__visual reveal" style="transition-delay:0.15s" aria-hidden="true">
-        <div class="hero__card">
-          <img
-            class="hero__card-img"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwTzR-SZrDAsWoTgXwOKLQNFaX7gaN1O4F8zv7vXiaGv81OhJ5Tw0P59MP51NcrmfN9OAJXLXCvg3do7exDF1Aa_97WKF1WW8iL2In-MXp4hskB7yEJMTaXkowetELE_kNjc_ddK8puo8e9hL2WfAxcH5zP-65HUypW6p9aClWJ7R1GHmg17xEnCVHFk3E5EPr5HSTVKYVGoGCSSYvYArpNaqG3GJGXp1EdGhEgik1zuYwsSLJkxHOlidKq2tf4tS93acLeeEdFOk"
-            alt="Abstract rendering of mobile UI elements with neon blue and cyan wireframes"
-            loading="lazy"
-          />
-          <div class="hero__card-overlay"></div>
-        </div>
-
-        <!-- Floating Badges Layered Surround -->
-        <!-- Left Column -->
-        <div class="hero__float-badge hero__float-badge--flutter">
-          <img src="https://cdn.simpleicons.org/flutter/adc6ff" width="16" height="16" alt="" style="opacity:0.9" />
-          <span>Flutter</span>
-        </div>
-        <div class="hero__float-badge hero__float-badge--dart">
-          <i class="ph ph-code" style="font-size:16px;color:var(--clr-primary)"></i>
-          <span>Dart</span>
-        </div>
-        <div class="hero__float-badge hero__float-badge--web">
-          <img src="https://cdn.simpleicons.org/html5/44e2cd" width="16" height="16" alt="" style="opacity:0.9" />
-          <span>HTML/CSS</span>
-        </div>
-
-        <!-- Right Column -->
-        <div class="hero__float-badge hero__float-badge--rn">
-          <img src="https://cdn.simpleicons.org/react/ddb7ff" width="16" height="16" alt="" style="opacity:0.9" />
-          <span>React Native</span>
-        </div>
-        <div class="hero__float-badge hero__float-badge--ts">
-          <img src="https://cdn.simpleicons.org/typescript/adc6ff" width="16" height="16" alt="" style="opacity:0.9" />
-          <span>TypeScript</span>
-        </div>
-        <div class="hero__float-badge hero__float-badge--play">
-          <i class="ph ph-google-play-logo" style="font-size:16px;color:var(--clr-secondary)"></i>
-          <span>Google Play</span>
+            <div class="relative rounded-3xl glass-panel-bento h-[550px] border border-white/10 border-t-white/20 shadow-2xl overflow-hidden">
+                <img src="./assets/my-photo.jpg" alt="Eslam Mahmoud" class="w-full h-full object-cover transition-all duration-700 hover:scale-105 profile-mask-bento rounded-3xl">
+                
+                <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/40 to-transparent z-10">
+                    <div class="ach-badge inline-flex items-center gap-3 px-4 py-2 rounded-xl mb-6 border border-white/5">
+                        <span class="material-symbols-outlined text-secondary text-xl">verified</span>
+                        <span class="text-xs font-bold tracking-widest uppercase text-slate-300 px-1">Meta RN Specialist &bull; Packt Flutter Developer</span>
+                    </div>
+                    <div class="text-2xl font-bold font-h1 text-white">Eslam Mahmoud</div>
+                    <div class="text-sm text-primary font-medium tracking-widest uppercase mt-1">Junior Mobile Developer</div>
+                </div>
+            </div>
         </div>
 
-        <!-- Bottom Center -->
-        <div class="hero__float-badge hero__float-badge--apple">
-          <i class="ph ph-apple-logo" style="font-size:16px;color:var(--clr-primary)"></i>
-          <span>iOS Apps</span>
+        <!-- Bio & Skills Panel -->
+        <div class="lg:col-span-7 flex flex-col gap-8 reveal" style="transition-delay: 0.2s">
+            <div class="glass-panel-bento p-8 md:p-10 rounded-3xl border-t-white/10">
+                <div class="ach-badge-bento inline-flex items-center gap-3 px-4 py-2 rounded-xl mb-6 border border-white/5">
+                    <span class="material-symbols-outlined text-secondary text-xl">architecture</span>
+                    <span class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-slate-300">Engineering Rigor & Modern Mobile UI</span>
+                </div>
+
+                <div class="space-y-4 md:space-y-6 text-slate-300 text-base md:text-lg leading-relaxed">
+                    <p class="font-body text-slate-300">
+                        I build mobile apps with a practical engineering mindset shaped by hands-on technical support, hardware diagnostics, and quality-control experience. 
+                    </p>
+                    <p class="font-body text-slate-300">
+                        With <span class="text-white font-semibold">5 years in technical IT services</span> and a background as an <span class="text-white font-semibold">Army Officer (Quality Control)</span>, I bring disciplined problem solving to mobile development. My current focus is improving <span class="text-white font-semibold">BLoC</span>, <span class="text-white font-semibold">Clean Architecture</span>, React Native, and reliable app delivery.
+                    </p>
+                </div>
+
+                <!-- Expertise Pills -->
+                <div class="flex flex-wrap gap-2 mt-8">
+                    <div class="bg-secondary/10 border border-secondary/20 px-4 py-2 rounded-full text-[10px] font-bold tracking-wide text-secondary uppercase">Flutter</div>
+                    <div class="bg-primary/10 border border-primary/20 px-4 py-2 rounded-full text-[10px] font-bold tracking-wide text-primary uppercase">React Native</div>
+                    <div class="bg-tertiary/10 border border-tertiary/20 px-4 py-2 rounded-full text-[10px] font-bold tracking-wide text-tertiary uppercase">Clean Arch</div>
+                    <div class="bg-white/5 px-4 py-2 rounded-full text-[10px] font-bold tracking-wide text-white/60">BLoC</div>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="grid grid-cols-3 gap-4">
+                <div class="glass-panel-bento p-5 rounded-2xl text-center">
+                    <div class="text-2xl font-bold text-primary">12+</div>
+                    <div class="text-[8px] text-slate-500 uppercase tracking-widest mt-1 font-bold">Projects</div>
+                </div>
+                <div class="glass-panel-bento p-5 rounded-2xl text-center">
+                    <div class="text-2xl font-bold text-secondary">5+</div>
+                    <div class="text-[8px] text-slate-500 uppercase tracking-widest mt-1 font-bold">Production</div>
+                </div>
+                <div class="glass-panel-bento p-5 rounded-2xl text-center">
+                    <div class="text-2xl font-bold text-tertiary">#1</div>
+                    <div class="text-[8px] text-slate-500 uppercase tracking-widest mt-1 font-bold">Challenge</div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   </div>
-
-  <!-- Footer inside home so it's part of the scroll -->
-
 </section>
 
 <!-- â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• â• 
@@ -471,6 +529,7 @@
           <p class="archive-card__desc">Local-first task manager with minimal friction parsing and secure persistence.</p>
           <div class="archive-card__tech"><span>React Native</span><span>AsyncStorage</span></div>
         </article>
+      </div>
     </section>
   </div>
 </section>
@@ -611,8 +670,6 @@
         </div>
       </div>
     </div>
-      </div>
-    </section>
   </div>
 
 
@@ -812,7 +869,6 @@
         </div>
       </article>
 
-      </article>
     </div>
   </div>
 
@@ -863,7 +919,7 @@
                   <div class="timeline__period text-primary">Feb 2026 &ndash; Present &middot; Nile University</div>
                 </div>
               </div>
-              <p class="timeline__desc">Pioneering high-fidelity React Native applications and integrating advanced AI techniques to redefine mobile performance and modularity under Banque Misr sponsorship.</p>
+              <p class="timeline__desc">Building React Native applications and learning how AI-assisted workflows can support faster planning, implementation, and iteration under Banque Misr sponsorship.</p>
               <div class="timeline__achievement">
                 <div class="timeline__achievement-label">Focus Area</div>
                 <p>React Native & Modern Mobile Techniques in the Age of AI.</p>
@@ -923,8 +979,28 @@
               </div>
             </div>
           </article>
+
+          <!-- Entry: IT Services -->
+          <article class="timeline__entry reveal">
+            <div class="timeline__dot-col">
+              <div class="timeline__dot timeline__dot--inactive"></div>
+            </div>
+            <div class="timeline__card interactive-card">
+              <div class="timeline__card-header">
+                <div>
+                  <h3 class="timeline__title">IT Technical Services & Support</h3>
+                  <div class="timeline__period text-muted">2017 &ndash; 2022 &middot; Independent / Technical Support</div>
+                </div>
+              </div>
+              <p class="timeline__desc">Provided comprehensive IT solutions and hardware diagnostics. Managed large-scale laptop repair services and system infrastructure maintenance over a 5-year period.</p>
+              <div class="timeline__tags">
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">Hardware Diagnostics</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">System Optimization</span>
+                <span class="timeline__tag" style="border-color:rgba(255,255,255,0.08);color:var(--clr-on-surface-variant)">Troubleshooting</span>
+              </div>
+            </div>
+          </article>
         </div>
-      </div>
 
       <!-- Sidebar -->
       <aside class="exp-sidebar reveal" style="transition-delay:0.2s">
@@ -1000,7 +1076,7 @@
 
         <div class="contact-direct">
           <h2>Direct Contact</h2>
-          <p>I prefer email for detailed inquiries and project discussions. Expect a response within 24–48 hours during standard business days.</p>
+          <p>I prefer email for detailed inquiries and project discussions. Expect a response within 24-48 hours during standard business days.</p>
         </div>
 
         <div class="contact-cards">

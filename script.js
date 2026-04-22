@@ -1,6 +1,6 @@
 /**
- * Eslam.OS — Portfolio Script
- * Mobile Menu · Filters · Search · Scroll Reveals · Contact Form
+ * Eslam.OS - Portfolio Script
+ * Mobile Menu - Filters - Search - Scroll Reveals
  */
 
 /* ── Scroll Spy (Highlight active nav link) ───────────────────── */
@@ -167,76 +167,6 @@ if (certFilters) {
 }
 if (certSearch) {
   certSearch.addEventListener('input', filterCerts);
-}
-
-/* ── Contact Form ────────────────────────────────────────────── */
-const contactForm = document.getElementById('contactForm');
-const toast       = document.getElementById('toast');
-
-function showToast(msg, type = '') {
-  toast.textContent = msg;
-  toast.className = 'toast show';
-  if (type) toast.classList.add(type);
-  setTimeout(() => { toast.className = 'toast'; }, 4000);
-}
-
-function validateEmail(email) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
-if (contactForm) {
-  contactForm.addEventListener('submit', async e => {
-    e.preventDefault();
-    const name    = document.getElementById('contactName').value.trim();
-    const email   = document.getElementById('contactEmail').value.trim();
-    const subject = document.getElementById('contactSubject').value.trim();
-    const message = document.getElementById('contactMessage').value.trim();
-    const sendIcon = document.getElementById('sendIcon');
-    const submitBtn = document.getElementById('submitBtn');
-
-    // Validate
-    if (!name) return showToast('Please enter your name.');
-    if (!validateEmail(email)) return showToast('Please enter a valid email.');
-    if (!subject) return showToast('Please enter a subject.');
-    if (!message || message.length < 10) return showToast('Please enter a message (min 10 characters).');
-
-    // Visual loading state
-    submitBtn.disabled = true;
-    submitBtn.style.opacity = '0.7';
-    sendIcon.textContent = 'hourglass_empty';
-
-    // Real send logic via Formspree or custom API
-    // Replace the URL payload with your actual endpoint URL for this to function
-    const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_ENDPOINT_ID';
-    
-    try {
-      const response = await fetch(FORM_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ name, email, subject, message })
-      });
-
-      if (response.ok) {
-        showToast('Message sent! I\'ll get back to you soon.', 'success');
-        contactForm.reset();
-        sendIcon.textContent = 'check_circle';
-      } else {
-        showToast('Failed to send message. Please try again.', 'error');
-        sendIcon.textContent = 'error';
-      }
-    } catch (error) {
-      console.error(error);
-      showToast('Network error. Failed to send message.', 'error');
-      sendIcon.textContent = 'error';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.style.opacity = '';
-      setTimeout(() => { sendIcon.textContent = 'arrow_forward'; }, 3000);
-    }
-  });
 }
 
 /* ── Hover effects on archive cards ──────────────────────────── */

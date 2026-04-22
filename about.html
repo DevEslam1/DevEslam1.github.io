@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>About Me - Eslam Mahmoud</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#8b90a0",
+                      "on-background": "#e5e2e1",
+                      "background": "#000000",
+                      "surface": "#0a0a0a",
+                      "primary": "#adc6ff",
+                      "secondary": "#44e2cd",
+                      "tertiary": "#ddb7ff",
+                      "primary-container": "#1a1a1a",
+                      "surface-container": "#121212",
+              },
+              "borderRadius": {
+                      "DEFAULT": "12px",
+                      "lg": "16px",
+                      "xl": "24px",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1200px",
+                      "section-gap": "100px",
+              },
+              "fontFamily": {
+                      "h1": ["Space Grotesk"],
+                      "h2": ["Space Grotesk"],
+                      "h3": ["Space Grotesk"],
+                      "body": ["Inter"],
+              }
+            },
+          },
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .tech-pill:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--pill-color, #fff);
+            box-shadow: 0 0 20px var(--pill-glow, rgba(255,255,255,0.1));
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(173, 198, 255, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(40px);
+        }
+        
+        .profile-mask {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        .ach-badge {
+            background: linear-gradient(135deg, rgba(173, 198, 255, 0.1), rgba(68, 226, 205, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased font-body">
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 md:px-16 h-20 bg-black/50 backdrop-blur-xl border-b border-white/5">
+    <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center font-bold text-black text-sm">EM</div>
+        <span class="text-xl font-bold tracking-tight font-h1">ESLAM.DEV</span>
+    </div>
+    
+    <div class="hidden md:flex items-center gap-10">
+        <a href="index.html#home" class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">HOME</a>
+        <a href="index.html#projects" class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">WORK</a>
+        <a href="about.html" class="text-primary font-bold text-sm tracking-wide border-b-2 border-primary pb-1">ABOUT</a>
+        <a href="#journey" class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">JOURNEY</a>
+        <a href="index.html#contact" class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide">CONTACT</a>
+    </div>
+
+    <a href="mailto:eslam.mahmoud.eng@gmail.com" class="hidden md:flex bg-white/5 hover:bg-white/10 text-white px-6 py-2.5 rounded-full border border-white/10 transition-all text-xs font-bold tracking-widest uppercase active:scale-95">Get in Touch</a>
+</nav>
+
+<main class="pt-32 pb-24 px-6 md:px-16 max-w-7xl mx-auto">
+    <!-- Hero Section -->
+    <header class="mb-20 relative">
+        <div class="hero-glow -top-20 -left-20"></div>
+        <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-2 text-primary font-bold text-xs tracking-widest uppercase">
+                <span class="w-8 h-[1px] bg-primary"></span>
+                The Story So Far
+            </div>
+            <h1 class="text-5xl md:text-7xl font-h1 font-bold tracking-tight leading-tight">
+                Engineering <span class="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent italic pr-2">Scalable Digital Ecosystems</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-2xl mt-4 leading-relaxed">
+                I bridge the gap between complex hardware foundations and high-scale mobile architecture. From diagnosing board-level failures to architecting <span class="text-white font-semibold">Meta-certified mobile ecosystems</span>, I deliver code that is as resilient as it is visually stunning.
+            </p>
+        </div>
+    </header>
+
+    <!-- Content Grid -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-32">
+        <!-- Image Panel -->
+        <div class="lg:col-span-5 relative group">
+            <div class="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-[2rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div class="relative rounded-3xl overflow-hidden glass-panel h-[600px] border border-white/10 border-t-white/20 shadow-2xl">
+                <img src="./assets/my-photo.jpg" alt="Eslam Mahmoud" class="w-full h-full object-cover transition-all duration-700 hover:scale-105 profile-mask">
+                <div class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-black via-black/40 to-transparent">
+                    <div class="text-2xl font-bold font-h1">Eslam Mahmoud</div>
+                    <div class="text-sm text-primary font-medium tracking-widest uppercase mt-1">Flutter & React Native Developer</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bio & Skills Panel -->
+        <div class="lg:col-span-7 flex flex-col gap-8">
+            <div class="glass-panel p-10 rounded-3xl border-t-white/10">
+                <div class="ach-badge inline-flex items-center gap-3 px-4 py-2 rounded-xl mb-8 border border-white/5">
+                    <span class="material-symbols-outlined text-secondary text-xl">verified</span>
+                    <span class="text-xs font-bold tracking-widest uppercase text-slate-300">Meta RN Specialist &bull; Packt Flutter Developer</span>
+                </div>
+
+                <h2 class="text-3xl font-h2 font-bold mb-6 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary">terminal</span>
+                    Engineering at Heart
+                </h2>
+                <div class="space-y-6 text-slate-300 text-lg leading-relaxed">
+                    <p>
+                        I am a <span class="text-white font-semibold">27-year-old</span> junior mobile developer with a solid foundation as a <span class="text-white font-semibold">Bachelor of Engineering</span>. My technical journey is backed by <span class="text-white font-semibold">5 years of experience in IT services and laptop repair</span>, giving me a practical understanding of the hardware-software intersection.
+                    </p>
+                    <div class="flex gap-4 items-center">
+                        <div class="flex-1 h-[1px] bg-white/10"></div>
+                        <div class="text-[10px] text-primary font-bold uppercase tracking-widest">Personal Details</div>
+                        <div class="flex-1 h-[1px] bg-white/10"></div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="glass-panel px-4 py-3 rounded-xl border-white/5 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-secondary text-sm">cake</span>
+                            <span class="text-xs font-bold text-slate-400">AGE: <span class="text-white">27 YEARS</span></span>
+                        </div>
+                        <div class="glass-panel px-4 py-3 rounded-xl border-white/5 flex items-center gap-3">
+                            <span class="material-symbols-outlined text-green-500 text-sm">verified</span>
+                            <span class="text-xs font-bold text-slate-400 uppercase">MILITARY: <span class="text-white">COMPLETED</span></span>
+                        </div>
+                    </div>
+                    <p>
+                        I build apps with a practical engineering mindset shaped by hardware diagnostics, technical support, and quality-control work. With <span class="text-white font-semibold">5 years in technical IT services</span> and a background as an <span class="text-white font-semibold">Army Officer (Quality Control)</span>, I bring disciplined problem solving to mobile development. 
+                    </p>
+                    <p class="font-body">
+                        My current focus is improving <span class="text-white font-semibold">BLoC</span>, <span class="text-white font-semibold">Clean Architecture</span>, React Native, and reliable app delivery through real projects and continuous practice.
+                    </p>
+                </div>
+
+                <!-- Expertise Pills -->
+                <div class="flex flex-wrap gap-3 mt-10">
+                    <div class="tech-pill px-5 py-2.5 rounded-full text-sm font-bold tracking-wide text-secondary flex items-center gap-2" style="--pill-color: #44e2cd; --pill-glow: rgba(68, 226, 205, 0.15)">
+                        <span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span> FLUTTER
+                    </div>
+                    <div class="tech-pill px-5 py-2.5 rounded-full text-sm font-bold tracking-wide text-primary flex items-center gap-2" style="--pill-color: #adc6ff; --pill-glow: rgba(173, 198, 255, 0.15)">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> REACT NATIVE
+                    </div>
+                    <div class="tech-pill px-5 py-2.5 rounded-full text-sm font-bold tracking-wide text-tertiary flex items-center gap-2" style="--pill-color: #ddb7ff; --pill-glow: rgba(221, 183, 255, 0.15)">
+                        <span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span> CLEAN ARCH
+                    </div>
+                    <div class="tech-pill px-5 py-2.5 rounded-full text-sm font-bold tracking-wide text-white/60">FIREBASE</div>
+                    <div class="tech-pill px-5 py-2.5 rounded-full text-sm font-bold tracking-wide text-white/60">BLOC</div>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="grid grid-cols-3 gap-4">
+                <div class="glass-panel p-6 rounded-2xl text-center border-t-white/5">
+                    <div class="text-3xl font-bold font-h1 text-primary">12+</div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-[0.2em] mt-1 font-bold">Total Projects</div>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border-t-white/5">
+                    <div class="text-3xl font-bold font-h1 text-secondary">5+</div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-[0.2em] mt-1 font-bold">Production Shipped</div>
+                </div>
+                <div class="glass-panel p-6 rounded-2xl text-center border-t-white/5">
+                    <div class="text-3xl font-bold font-h1 text-tertiary">#1</div>
+                    <div class="text-[10px] text-slate-500 uppercase tracking-[0.2em] mt-1 font-bold">Challenge Winner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services / Focus Section -->
+    <section class="mb-32">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h3 class="text-3xl font-h2 font-bold tracking-tight">Core Competencies</h3>
+                <p class="text-slate-400 mt-2">Professional focus areas extracted from my production workflow</p>
+            </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass-panel p-8 rounded-[2rem] hover:-translate-y-2 transition-transform border-t-white/10 group">
+                <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 transition-colors group-hover:bg-primary group-hover:text-black">
+                    <span class="material-symbols-outlined font-light">dynamic_feed</span>
+                </div>
+                <h4 class="text-xl font-bold mb-3 font-h3">Modular Engineering</h4>
+                <p class="text-slate-400 leading-relaxed text-sm">Designing systems with clear separation of concerns, ensuring features can be developed and tested in isolation.</p>
+            </div>
+            <div class="glass-panel p-8 rounded-[2rem] hover:-translate-y-2 transition-transform border-t-white/10 group">
+                <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-6 transition-colors group-hover:bg-secondary group-hover:text-black">
+                    <span class="material-symbols-outlined font-light">architecture</span>
+                </div>
+                <h4 class="text-xl font-bold mb-3 font-h3">Architectural Intent</h4>
+                <p class="text-slate-400 leading-relaxed text-sm">Focusing on BLoC and Provider patterns alongside Clean Architecture for resilient app states.</p>
+            </div>
+            <div class="glass-panel p-8 rounded-[2rem] hover:-translate-y-2 transition-transform border-t-white/10 group">
+                <div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary mb-6 transition-colors group-hover:bg-tertiary group-hover:text-black">
+                    <span class="material-symbols-outlined font-light">robot_2</span>
+                </div>
+                <h4 class="text-xl font-bold mb-3 font-h3">AI-Augmented Flow</h4>
+                <p class="text-slate-400 leading-relaxed text-sm">Leveraging modern AI tooling to accelerate development cycles and ensure zero-latency user flows.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section id="journey" class="mb-32">
+        <h3 class="text-3xl font-h2 font-bold mb-16 text-center">Professional Evolution</h3>
+        <div class="max-w-4xl mx-auto space-y-12 relative before:absolute before:left-1/2 before:-translate-x-1/2 before:w-[1px] before:h-full before:bg-white/10">
+            <!-- Timeline 0: IT Services -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 relative">
+                <div class="hidden md:block w-1/2 text-left">
+                    <div class="text-slate-500 font-bold text-xs tracking-widest uppercase">2017 - 2022</div>
+                    <div class="text-lg font-bold text-white mt-1">IT Services & Hardware Diagnostics</div>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-black border-2 border-slate-500 z-10 flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                    <div class="w-2 h-2 rounded-full bg-slate-500"></div>
+                </div>
+                <div class="md:w-1/2 glass-panel p-6 rounded-2xl text-right">
+                    <h4 class="font-bold text-slate-400 mb-1">Foundational Technical Support</h4>
+                    <p class="text-sm text-slate-400">Managed end-to-end IT services and hardware maintenance. Specialized in laptop repair and system optimization for 5 years.</p>
+                </div>
+            </div>
+            <!-- Timeline 1: University -->
+            <div class="flex flex-col md:flex-row items-center gap-8 relative">
+                <div class="hidden md:block w-1/2 text-right">
+                    <div class="text-slate-500 font-bold text-xs tracking-widest uppercase">2017 - 2022</div>
+                    <div class="text-lg font-bold text-white mt-1">Bachelor of Engineering</div>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-black border-2 border-primary z-10 flex items-center justify-center shadow-[0_0_20px_rgba(173,198,255,0.3)]">
+                    <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <div class="md:w-1/2 glass-panel p-6 rounded-2xl">
+                    <h4 class="font-bold text-primary mb-1">Academic Foundation</h4>
+                    <p class="text-sm text-slate-400">Mansoura University. Specialized in systems design and technical analysis. Won #1 Place in Robotics Challenge.</p>
+                </div>
+            </div>
+            <!-- Timeline 2: Army -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 relative">
+                <div class="hidden md:block w-1/2 text-left">
+                    <div class="text-slate-500 font-bold text-xs tracking-widest uppercase">2022 - 2024</div>
+                    <div class="text-lg font-bold text-white mt-1">Egyptian Armed Forces</div>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-black border-2 border-secondary z-10 flex items-center justify-center shadow-[0_0_20px_rgba(68,226,205,0.3)]">
+                    <div class="w-2 h-2 rounded-full bg-secondary"></div>
+                </div>
+                <div class="md:w-1/2 glass-panel p-6 rounded-2xl text-right">
+                    <h4 class="font-bold text-secondary mb-1">Leadership & QC</h4>
+                    <p class="text-sm text-slate-400">Reserve Officer overseeing production lines. Developed discipline and cross-functional leadership skills.</p>
+                </div>
+            </div>
+            <!-- Timeline 3: H Solution -->
+            <div class="flex flex-col md:flex-row items-center gap-8 relative">
+                <div class="hidden md:block w-1/2 text-right">
+                    <div class="text-slate-500 font-bold text-xs tracking-widest uppercase">2025</div>
+                    <div class="text-lg font-bold text-white mt-1">H Solution</div>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-black border-2 border-tertiary z-10 flex items-center justify-center shadow-[0_0_20px_rgba(221,183,255,0.3)]">
+                    <div class="w-2 h-2 rounded-full bg-tertiary"></div>
+                </div>
+                <div class="md:w-1/2 glass-panel p-6 rounded-2xl">
+                    <h4 class="font-bold text-tertiary mb-1">Production App Experience</h4>
+                    <p class="text-sm text-slate-400">Junior Flutter Developer. Shipped Maysur and Free Zone apps using Clean Architecture and BLoC.</p>
+                </div>
+            </div>
+            <!-- Timeline 4: Nile University -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 relative">
+                <div class="hidden md:block w-1/2 text-left">
+                    <div class="text-slate-500 font-bold text-xs tracking-widest uppercase">2026 - Present</div>
+                    <div class="text-lg font-bold text-white mt-1">Nile University</div>
+                </div>
+                <div class="w-10 h-10 rounded-full bg-black border-2 border-primary z-10 flex items-center justify-center shadow-[0_0_20px_rgba(173,198,255,0.3)]">
+                    <div class="w-2 h-2 rounded-full bg-primary"></div>
+                </div>
+                <div class="md:w-1/2 glass-panel p-6 rounded-2xl text-right">
+                    <h4 class="font-bold text-primary mb-1">AI & Advanced Mobile</h4>
+                    <p class="text-sm text-slate-400">Developing high-fidelity React Native apps with AI integration under Banque Misr sponsorship.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer id="contact" class="px-8 md:px-16 py-20 bg-black border-t border-white/5">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+        <div class="flex flex-col gap-6 max-w-sm">
+            <div class="text-2xl font-bold tracking-tight font-h1">ESLAM.DEV</div>
+            <p class="text-slate-500 text-sm leading-relaxed">Let's build something exceptional. I'm always open to discussing high-impact projects and architectural contributions.</p>
+            <div class="flex gap-4">
+                <a href="https://www.linkedin.com/in/deveslam-mahmoud/" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-primary hover:border-primary transition-all">
+                    <i class="ph ph-linkedin-logo"></i>
+                </a>
+                <a href="https://github.com/DevEslam1" target="_blank" class="w-10 h-10 rounded-full glass-panel flex items-center justify-center hover:text-secondary hover:border-secondary transition-all">
+                    <i class="ph ph-github-logo"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="flex flex-col gap-4">
+            <div class="text-[10px] text-slate-500 uppercase tracking-[0.3em] font-bold mb-2">Capabilities</div>
+            <a href="index.html#projects" class="text-slate-400 hover:text-white transition-colors text-sm">Selected Work</a>
+            <a href="about.html" class="text-slate-400 hover:text-white transition-colors text-sm">Technical Bio</a>
+            <a href="index.html#skills" class="text-slate-400 hover:text-white transition-colors text-sm">Core Skills</a>
+        </div>
+
+        <div class="flex flex-col gap-4">
+            <div class="text-[10px] text-slate-500 uppercase tracking-[0.3em] font-bold mb-2">Connect</div>
+            <a href="https://www.linkedin.com/in/deveslam-mahmoud/" class="text-slate-400 hover:text-white transition-colors text-sm">LinkedIn</a>
+            <a href="https://github.com/DevEslam1" class="text-slate-400 hover:text-white transition-colors text-sm">GitHub</a>
+            <a href="https://wa.me/201122299831" class="text-slate-400 hover:text-white transition-colors text-sm">WhatsApp</a>
+        </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-[10px] text-slate-600 uppercase tracking-widest font-bold">© 2026 ESLAM MAHMOUD — ALL RIGHTS RESERVED.</p>
+        <p class="text-[10px] text-slate-600 uppercase tracking-widest font-bold">ENGINEERED WITH ARCHITECTURAL INTENT</p>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/@phosphor-icons/web"></script>
+</body>
+</html>
