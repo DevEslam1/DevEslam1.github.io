@@ -1962,3 +1962,145 @@ html {
 }
 .toast.show { transform: translateY(0); opacity: 1; }
 .toast.success { border-color: rgba(68, 226, 205, 0.4); }
+
+/* ── 24. Device Mockups ────────────────────────────────── */
+.device-mockup {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  aspect-ratio: 9 / 19.5;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+  transition: transform var(--tr-base);
+  perspective: 1000px;
+}
+
+.device-mockup:hover {
+  transform: translateY(-10px) rotateX(2deg) rotateY(-2deg);
+}
+
+/* iPhone 17 Pro Max Frame */
+.mockup-iphone-17 {
+  width: 100%;
+  height: 100%;
+  border: 12px solid #1a1a1a;
+  border-radius: 54px;
+  background: #000;
+  box-shadow: 
+    inset 0 0 2px 2px rgba(255, 255, 255, 0.15),
+    0 0 0 2px #333;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Dynamic Island */
+.mockup-iphone-17::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 28px;
+  background: #000;
+  border-radius: 14px;
+  z-index: 10;
+}
+
+/* Pixel 10 Pro XL Frame */
+.mockup-pixel-10 {
+  width: 100%;
+  height: 100%;
+  border: 10px solid #222;
+  border-radius: 36px;
+  background: #000;
+  box-shadow: 
+    inset 0 0 2px 2px rgba(255, 255, 255, 0.1),
+    0 0 0 2px #444;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Screen Content */
+.screen-container {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: #111;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.screen-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.screen-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Auto-scroll Animation for tall screenshots */
+.auto-scroll {
+  animation: scrollScreenshots 20s linear infinite alternate;
+}
+
+.device-mockup:hover .auto-scroll {
+  animation-play-state: paused;
+}
+
+@keyframes scrollScreenshots {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-70%); } /* Adjust based on typical screenshot height */
+}
+
+/* Reflection Overlay */
+.mockup-reflection {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 40%, rgba(255,255,255,0.05) 60%, transparent 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Featured Card Adjustments */
+.featured-card-primary__image,
+.featured-card-secondary__img {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 40px !important;
+  background: radial-gradient(circle at center, rgba(173, 198, 255, 0.05), transparent 70%);
+}
+
+.featured-card-secondary__img {
+  padding: 20px !important;
+}
+
+.featured-card-secondary__img .device-mockup {
+  max-width: 200px;
+}
+
+/* Archive Grid Mockup Preview */
+.archive-card__preview {
+  margin-top: 16px;
+  height: 200px;
+  background: rgba(255,255,255,0.03);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.archive-card__preview .device-mockup {
+  max-width: 120px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
