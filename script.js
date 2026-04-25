@@ -202,91 +202,91 @@ window.addEventListener('scroll', () => {
     novastore: {
       name: "NOVASTORE",
       images: [
-        './assets/Screenshots/screenshots/home.png',
-        './assets/Screenshots/screenshots/categories.png',
-        './assets/Screenshots/screenshots/cart.png',
-        './assets/Screenshots/screenshots/orders.png'
+        './assets/Screenshots/NovaStore/1.webp',
+        './assets/Screenshots/NovaStore/2.webp',
+        './assets/Screenshots/NovaStore/3.webp',
+        './assets/Screenshots/NovaStore/4.webp'
       ]
     },
     foodapp: {
       name: "FOODAPP",
       images: [
-        './assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.08.33.png',
-        './assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.08.46.png',
-        './assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.08.55.png',
-        './assets/Screenshots/food/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-17 at 12.09.18.png'
+        './assets/Screenshots/food/1.webp',
+        './assets/Screenshots/food/2.webp',
+        './assets/Screenshots/food/3.webp',
+        './assets/Screenshots/food/4.webp'
       ]
     },
     beatflow: {
       name: "BEATFLOW",
       images: [
-        './assets/Screenshots/beatflow/homepage.png',
-        './assets/Screenshots/beatflow/drawerpage.png',
-        './assets/Screenshots/beatflow/playerpage.png',
-        './assets/Screenshots/beatflow/profilepage.png'
+        './assets/Screenshots/beatflow/1.webp',
+        './assets/Screenshots/beatflow/2.webp',
+        './assets/Screenshots/beatflow/3.webp',
+        './assets/Screenshots/beatflow/4.webp'
       ]
     },
     devsync: {
       name: "DEVSYNC",
       images: [
-        './assets/Screenshots/devsync/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-15 at 12.15.15.png',
-        './assets/Screenshots/devsync/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-15 at 12.15.18.png',
-        './assets/Screenshots/devsync/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-15 at 12.50.08.png',
-        './assets/Screenshots/devsync/Simulator Screenshot - iPhone 17 Pro Max - 2026-04-15 at 12.51.01.png'
+        './assets/Screenshots/devsync/1.webp',
+        './assets/Screenshots/devsync/2.webp',
+        './assets/Screenshots/devsync/3.webp',
+        './assets/Screenshots/devsync/4.webp'
       ]
     },
     newscloud: {
       name: "NEWSCLOUD",
       images: [
-        './assets/Screenshots/NEWSAPP/Screenshot_1776705669.png',
-        './assets/Screenshots/NEWSAPP/Screenshot_1776705675.png',
-        './assets/Screenshots/NEWSAPP/Screenshot_1776705680.png',
-        './assets/Screenshots/NEWSAPP/Screenshot_1776705708.png'
+        './assets/Screenshots/NEWSAPP/1.webp',
+        './assets/Screenshots/NEWSAPP/2.webp',
+        './assets/Screenshots/NEWSAPP/3.webp',
+        './assets/Screenshots/NEWSAPP/4.webp'
       ]
     },
     maysur: {
       name: "MAYSUR",
       images: [
-        './assets/Screenshots/maysour/unnamed.webp',
-        './assets/Screenshots/maysour/unnamed (2).webp',
-        './assets/Screenshots/maysour/unnamed (3).webp',
-        './assets/Screenshots/maysour/unnamed (4).webp'
+        './assets/Screenshots/maysour/1.webp',
+        './assets/Screenshots/maysour/2.webp',
+        './assets/Screenshots/maysour/3.webp',
+        './assets/Screenshots/maysour/4.webp'
       ]
     },
     freezone: {
       name: "FREE ZONE",
       images: [
-        './assets/Screenshots/freezone/unnamed.webp',
-        './assets/Screenshots/freezone/unnamed (1).webp',
-        './assets/Screenshots/freezone/unnamed (2).webp',
-        './assets/Screenshots/freezone/unnamed (7).webp'
+        './assets/Screenshots/freezone/1.webp',
+        './assets/Screenshots/freezone/2.webp',
+        './assets/Screenshots/freezone/3.webp',
+        './assets/Screenshots/freezone/4.webp'
       ]
     },
     cinecurator: {
       name: "CINECURATOR",
       images: [
-        './assets/Screenshots/Movie app/Screenshot_1776710756.png',
-        './assets/Screenshots/Movie app/Screenshot_1776710769.png',
-        './assets/Screenshots/Movie app/Screenshot_1776710778.png',
-        './assets/Screenshots/Movie app/Screenshot_1776710800.png'
+        './assets/Screenshots/Movie app/1.webp',
+        './assets/Screenshots/Movie app/2.webp',
+        './assets/Screenshots/Movie app/3.webp',
+        './assets/Screenshots/Movie app/4.webp'
       ]
     },
     weather: {
       name: "WEATHER APP",
       images: [
-        './assets/Screenshots/weather app/Screenshot_1776720430.png',
-        './assets/Screenshots/weather app/Screenshot_1776720434.png',
-        './assets/Screenshots/weather app/Screenshot_1776720437.png',
-        './assets/Screenshots/weather app/Screenshot_1776720440.png'
+        './assets/Screenshots/weather app/1.webp',
+        './assets/Screenshots/weather app/2.webp',
+        './assets/Screenshots/weather app/3.webp',
+        './assets/Screenshots/weather app/4.webp'
       ]
     },
     todo: {
       name: "TO-DO LIST",
       images: [
-        './assets/Screenshots/to do list/Home.png',
-        './assets/Screenshots/to do list/add task.png',
-        './assets/Screenshots/to do list/SideBar.png',
-        './assets/Screenshots/to do list/Screenshot_1776346260.png'
+        './assets/Screenshots/to do list/1.webp',
+        './assets/Screenshots/to do list/2.webp',
+        './assets/Screenshots/to do list/3.webp',
+        './assets/Screenshots/to do list/4.webp'
       ]
     }
   };
