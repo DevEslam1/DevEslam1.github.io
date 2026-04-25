@@ -271,7 +271,7 @@ window.addEventListener('scroll', () => {
     },
     cinecurator: {
       name: "CINECURATOR",
-      icon: "", /* Missing icon from dir */
+      icon: "./assets/apps icons/movie.webp",
       images: [
         './assets/Screenshots/Movie app/1.webp',
         './assets/Screenshots/Movie app/2.webp',
@@ -281,7 +281,7 @@ window.addEventListener('scroll', () => {
     },
     weather: {
       name: "WEATHER APP",
-      icon: "", /* Missing icon from dir */
+      icon: "./assets/apps icons/weather.webp",
       images: [
         './assets/Screenshots/weather app/1.webp',
         './assets/Screenshots/weather app/2.webp',
@@ -364,8 +364,15 @@ window.addEventListener('scroll', () => {
         mainMockupSwitcher.querySelectorAll('.proj-thumb').forEach(b => {
           if (b.dataset.project === projectId) {
             b.classList.add('active');
-            // Check if center is basically visible
-            b.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // Scroll container locally instead of scrollIntoView to prevent page jump
+            const container = mainMockupSwitcher;
+            const btnTop = b.offsetTop;
+            const btnHeight = b.offsetHeight;
+            const containerHeight = container.clientHeight;
+            container.scrollTo({
+              top: btnTop - (containerHeight / 2) + (btnHeight / 2),
+              behavior: 'smooth'
+            });
           } else {
             b.classList.remove('active');
           }
@@ -596,5 +603,20 @@ window.addEventListener('scroll', () => {
   }, { threshold: 0.5 });
 
   counters.forEach(c => observer.observe(c));
+})();
+
+/* ── CURSOR TRACKING GLOW ────────────────────────────────── */
+(function initCursorGlow() {
+  const orb = document.getElementById('bgOrb');
+  if (!orb) return;
+
+  // Track cursor movement
+  document.addEventListener('mousemove', (e) => {
+    // Only smooth if we are tracking fast, requestAnimationFrame helps
+    requestAnimationFrame(() => {
+      orb.style.left = `${e.clientX}px`;
+      orb.style.top = `${e.clientY}px`;
+    });
+  }, { passive: true });
 })();
 

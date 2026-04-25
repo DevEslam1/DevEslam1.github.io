@@ -18,9 +18,10 @@
   <meta name="twitter:description" content="Building modern mobile experiences with Flutter and React Native." />
   <meta name="twitter:image" content="https://deveslam1.github.io/assets/my-photo_edited.webp" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0a0a0a" />
+  <meta name="theme-color" content="#0f172a" />
   <link rel="canonical" href="https://deveslam1.github.io/" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>EM</text></svg>" />
+  <link rel="preload" as="image" href="./assets/my-photo_edited.webp" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -53,6 +54,9 @@
 
 <!-- Subtle dot-grid background -->
 <div class="dot-grid-bg" aria-hidden="true"></div>
+
+<!-- Mouse Tracking Orb -->
+<div class="bg-orb" id="bgOrb" aria-hidden="true"></div>
 
 <!-- Scroll Progress Bar -->
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -494,7 +498,7 @@
         <!-- CineCurator -->
         <article class="interactive-card archive-card" data-tags="flutter,api" data-project="cinecurator">
           <div class="archive-card__header">
-            <div class="archive-card__icon"><span class="material-symbols-outlined" style="font-size:32px;color:var(--clr-primary)">movie</span></div>
+            <div class="archive-card__icon"><img src="./assets/apps%20icons/movie.webp" class="app-icon" loading="lazy" alt="CineCurator"></div>
             <a class="archive-card__action" href="https://github.com/DevEslam1/movie_app" target="_blank"><span class="material-symbols-outlined">code</span></a>
           </div>
           <h3 class="archive-card__title">CineCurator</h3>
@@ -505,7 +509,7 @@
         <!-- Weather App -->
         <article class="interactive-card archive-card" data-tags="flutter,api" data-project="weather">
           <div class="archive-card__header">
-            <div class="archive-card__icon"><span class="material-symbols-outlined" style="font-size:32px;color:var(--clr-secondary)">cloud</span></div>
+            <div class="archive-card__icon"><img src="./assets/apps%20icons/weather.webp" class="app-icon" loading="lazy" alt="Weather App"></div>
             <a class="archive-card__action" href="https://github.com/DevEslam1/weather_app" target="_blank"><span class="material-symbols-outlined">code</span></a>
           </div>
           <h3 class="archive-card__title">Weather App</h3>
@@ -833,7 +837,7 @@
               <div class="cert-card__badge" style="color:var(--clr-primary);border-color:rgba(173,198,255,0.3)">Flutter</div>
             </div>
             <div class="cert-card__content">
-              <div class="cert-card__meta"><span>Udemy</span><span>Jan 24, 2026</span></div>
+              <div class="cert-card__meta"><span>Udemy</span><span>2026</span></div>
               <h3 class="cert-card__title">Flutter & Dart Course [Arabic]</h3>
               <p class="cert-card__desc">A comprehensive 54-hour deep dive into mobile engineering with Flutter, BLoC, and Clean Architecture by Tharwat Samy.</p>
               <div class="cert-card__footer">
@@ -872,14 +876,14 @@
           <article class="cert-card cc-secondary" data-cert-tags="flutter">
             <div class="cert-card__img">
               <img
-                src="./assets/Certificates/State mangemennt.png"
+                src="./assets/Certificates/State mangemennt_edited.webp"
                 alt="Advanced Flutter UI and State Management Certificate"
                 loading="lazy"
               />
               <div class="cert-card__badge" style="color:var(--clr-secondary);border-color:rgba(183,255,221,0.3)">Flutter</div>
             </div>
             <div class="cert-card__content">
-              <div class="cert-card__meta"><span>Packt</span><span>Jan 2026</span></div>
+              <div class="cert-card__meta"><span>Packt</span><span>2026</span></div>
               <h3 class="cert-card__title">Advanced Flutter UI & State Management</h3>
               <p class="cert-card__desc">Mastering complex UI patterns and scalable state management solutions in Flutter applications.</p>
               <div class="cert-card__footer">
@@ -902,7 +906,7 @@
               <div class="cert-card__badge" style="color:var(--clr-secondary);border-color:rgba(183,255,221,0.3)">Firebase</div>
             </div>
             <div class="cert-card__content">
-              <div class="cert-card__meta"><span>Packt</span><span>Jan 2026</span></div>
+              <div class="cert-card__meta"><span>Packt</span><span>2026</span></div>
               <h3 class="cert-card__title">Data Persistence & Firebase Integration</h3>
               <p class="cert-card__desc">Implementing robust data storage with SQLite and real-time backend synchronization using Firebase services.</p>
               <div class="cert-card__footer">
@@ -925,7 +929,7 @@
               <div class="cert-card__badge" style="color:var(--clr-primary);border-color:rgba(173,198,255,0.3)">Specialization</div>
             </div>
             <div class="cert-card__content">
-              <div class="cert-card__meta"><span>Meta</span><span>Mar 2026</span></div>
+              <div class="cert-card__meta"><span>Meta</span><span>2026</span></div>
               <h3 class="cert-card__title">Meta React Native Specialization</h3>
               <p class="cert-card__desc">Comprehensive 9-course series covering React Native, JavaScript, UX/UI, and mobile deployment.</p>
               <div class="cert-card__footer">
@@ -948,7 +952,7 @@
               <div class="cert-card__badge" style="color:var(--clr-secondary);border-color:rgba(183,255,221,0.3)">Specialization</div>
             </div>
             <div class="cert-card__content">
-              <div class="cert-card__meta"><span>Packt</span><span>Feb 2026</span></div>
+              <div class="cert-card__meta"><span>Packt</span><span>2026</span></div>
               <h3 class="cert-card__title">Flutter & Dart Specialization</h3>
               <p class="cert-card__desc">Mastery of Flutter application development, from basic widgets to SQLite and advanced architectures.</p>
               <div class="cert-card__footer">
