@@ -201,6 +201,7 @@ window.addEventListener('scroll', () => {
   const projectAssetMap = {
     novastore: {
       name: "NOVASTORE",
+      icon: "./assets/apps icons/NovaStore_edited.webp",
       images: [
         './assets/Screenshots/NovaStore/1.webp',
         './assets/Screenshots/NovaStore/2.webp',
@@ -210,6 +211,7 @@ window.addEventListener('scroll', () => {
     },
     foodapp: {
       name: "FOODAPP",
+      icon: "./assets/apps icons/foodapp_edited.webp",
       images: [
         './assets/Screenshots/food/1.webp',
         './assets/Screenshots/food/2.webp',
@@ -219,6 +221,7 @@ window.addEventListener('scroll', () => {
     },
     beatflow: {
       name: "BEATFLOW",
+      icon: "./assets/apps icons/BeatFlow_Music_edited.webp",
       images: [
         './assets/Screenshots/beatflow/1.webp',
         './assets/Screenshots/beatflow/2.webp',
@@ -228,6 +231,7 @@ window.addEventListener('scroll', () => {
     },
     devsync: {
       name: "DEVSYNC",
+      icon: "./assets/apps icons/devsync_edited.webp",
       images: [
         './assets/Screenshots/devsync/1.webp',
         './assets/Screenshots/devsync/2.webp',
@@ -237,6 +241,7 @@ window.addEventListener('scroll', () => {
     },
     newscloud: {
       name: "NEWSCLOUD",
+      icon: "./assets/apps icons/news_app_edited.webp",
       images: [
         './assets/Screenshots/NEWSAPP/1.webp',
         './assets/Screenshots/NEWSAPP/2.webp',
@@ -246,6 +251,7 @@ window.addEventListener('scroll', () => {
     },
     maysur: {
       name: "MAYSUR",
+      icon: "./assets/apps icons/maysour.webp",
       images: [
         './assets/Screenshots/maysour/1.webp',
         './assets/Screenshots/maysour/2.webp',
@@ -255,6 +261,7 @@ window.addEventListener('scroll', () => {
     },
     freezone: {
       name: "FREE ZONE",
+      icon: "./assets/apps icons/free zone.webp",
       images: [
         './assets/Screenshots/freezone/1.webp',
         './assets/Screenshots/freezone/2.webp',
@@ -264,6 +271,7 @@ window.addEventListener('scroll', () => {
     },
     cinecurator: {
       name: "CINECURATOR",
+      icon: "", /* Missing icon from dir */
       images: [
         './assets/Screenshots/Movie app/1.webp',
         './assets/Screenshots/Movie app/2.webp',
@@ -273,6 +281,7 @@ window.addEventListener('scroll', () => {
     },
     weather: {
       name: "WEATHER APP",
+      icon: "", /* Missing icon from dir */
       images: [
         './assets/Screenshots/weather app/1.webp',
         './assets/Screenshots/weather app/2.webp',
@@ -282,6 +291,7 @@ window.addEventListener('scroll', () => {
     },
     todo: {
       name: "TO-DO LIST",
+      icon: "./assets/apps icons/to do list_edited.webp",
       images: [
         './assets/Screenshots/to do list/1.webp',
         './assets/Screenshots/to do list/2.webp',
@@ -295,6 +305,34 @@ window.addEventListener('scroll', () => {
   let currentProject = '';
   let isUserInteracting = false;
   let interactionTimeout;
+
+  const mainMockupSwitcher = document.getElementById('mainMockupSwitcher');
+
+  // Initialize Project Thumbnails
+  if (mainMockupSwitcher) {
+    mainMockupSwitcher.innerHTML = projectIds.map(id => {
+      const data = projectAssetMap[id];
+      const iconHtml = data.icon 
+        ? `<img src="${data.icon.replace(/ /g, '%20')}" class="app-icon" alt="${data.name} icon" loading="lazy">` 
+        : `<div class="app-icon-fallback">${data.name.charAt(0)}</div>`;
+
+      return `
+        <button class="thumb-btn proj-thumb" data-project="${id}" title="${data.name}">
+          ${iconHtml}
+          <span class="app-name">${data.name}</span>
+        </button>
+      `;
+    }).join('');
+
+    mainMockupSwitcher.querySelectorAll('.proj-thumb').forEach(btn => {
+      btn.addEventListener('click', () => {
+        isUserInteracting = true;
+        clearTimeout(interactionTimeout);
+        switchMockup(btn.dataset.project);
+        interactionTimeout = setTimeout(() => { isUserInteracting = false; }, 10000);
+      });
+    });
+  }
 
   function switchMockup(projectId) {
     if (projectId === currentProject || !projectAssetMap[projectId]) return;
@@ -321,6 +359,18 @@ window.addEventListener('scroll', () => {
       // Fade in
       mockupLabel.style.opacity = '1';
       mockupScroll.style.opacity = '1';
+
+      if (mainMockupSwitcher) {
+        mainMockupSwitcher.querySelectorAll('.proj-thumb').forEach(b => {
+          if (b.dataset.project === projectId) {
+            b.classList.add('active');
+            // Check if center is basically visible
+            b.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            b.classList.remove('active');
+          }
+        });
+      }
     }, 300);
   }
 
