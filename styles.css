@@ -2056,13 +2056,86 @@ a:focus:not(:focus-visible) { outline: none; }
   justify-content: flex-end;
 }
 
-.cert-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+.cert-grid-viewport {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
-@media (min-width: 640px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .cert-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.cert-grid {
+  display: flex !important;
+  gap: 24px;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  width: 100%;
+}
+
+/* Cert grid card width in carousel */
+.cert-card {
+  flex: 0 0 100%; /* Default Mobile: 1 card */
+  min-width: 0;
+}
+
+@media (min-width: 640px) {
+  .cert-card {
+    flex: 0 0 calc((100% - 24px) / 2); /* Tablet: 2 cards */
+  }
+}
+
+@media (min-width: 1024px) {
+  .cert-card {
+    flex: 0 0 calc((100% - 48px) / 3); /* Desktop: 3 cards */
+  }
+}
+
+.cert-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.cert-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(42, 42, 42, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s var(--tr-base);
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.cert-nav-btn:hover:not(:disabled) {
+  background: var(--clr-primary);
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 20px rgba(173, 198, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.cert-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .cert-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(10, 10, 10, 0.6);
+  }
+  .cert-nav-btn.prev { left: -12px; }
+  .cert-nav-btn.next { right: -12px; }
+  .cert-carousel-wrapper { gap: 0; }
+}
 
 .cert-card {
   background: rgba(42, 42, 42, 0.4);

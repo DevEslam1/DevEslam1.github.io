@@ -384,3 +384,82 @@ window.addEventListener('scroll', () => {
     });
   }
 })();
+
+/* ── Certification Carousel ────────────────────────────────── */
+(function() {
+  const grid = document.getElementById('certGrid');
+  const prevBtn = document.getElementById('certPrev');
+  const nextBtn = document.getElementById('certNext');
+  if (!grid || !prevBtn || !nextBtn) return;
+
+  let currentIndex = 0;
+
+  function getCardsPerView() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 640) return 2;
+    return 1;
+  }
+
+  function updateCarousel() {
+    const cards = Array.from(grid.querySelectorAll('.cert-card')).filter(c => c.style.display !== 'none');
+    const cardsPerView = getCardsPerView();
+    const maxIndex = Math.max(0, cards.length - cardsPerView);
+    
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+    if (currentIndex < 0) currentIndex = 0;
+
+    const gap = 24;
+    const viewportWidth = grid.parentElement.offsetWidth;
+    // Each card width is (viewportWidth - (gap * (cardsPerView - 1))) / cardsPerView
+    const cardWidth = (viewportWidth - (gap * (cardsPerView - 1))) / cardsPerView;
+    const moveAmount = currentIndex * (cardWidth + gap);
+
+    grid.style.transform = `translateX(-${moveAmount}px)`;
+    
+    prevBtn.disabled = currentIndex <= 0;
+    nextBtn.disabled = currentIndex >= maxIndex;
+    
+    // Hide arrows if all cards fit
+    if (cards.length <= cardsPerView) {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+    } else {
+      prevBtn.style.display = '';
+      nextBtn.style.display = '';
+    }
+  }
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    updateCarousel();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex--;
+    updateCarousel();
+  });
+
+  window.addEventListener('resize', () => {
+    updateCarousel();
+  });
+
+  // Re-sync on filter changes
+  const certFilters = document.getElementById('certFilters');
+  const certSearch  = document.getElementById('certSearch');
+  
+  if (certFilters) {
+    certFilters.addEventListener('click', () => {
+      currentIndex = 0;
+      setTimeout(updateCarousel, 50); // wait for filter logic to hide cards
+    });
+  }
+  if (certSearch) {
+    certSearch.addEventListener('input', () => {
+      currentIndex = 0;
+      setTimeout(updateCarousel, 50);
+    });
+  }
+
+  // Initial
+  setTimeout(updateCarousel, 300);
+})();
