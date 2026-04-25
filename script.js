@@ -6,6 +6,7 @@
 /* ── Scroll Spy (Highlight active nav link) ───────────────────── */
 const sections = document.querySelectorAll('.page-section');
 const navLinks = document.querySelectorAll('.nav__link, .mobile-menu__link');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 const observerOptions = {
   root: null,
@@ -413,7 +414,7 @@ window.addEventListener('scroll', () => {
 (function() {
   const cards = document.querySelectorAll('.interactive-card');
   
-  if (window.matchMedia('(hover: hover)').matches) {
+  if (window.matchMedia('(hover: hover)').matches && !prefersReducedMotion.matches) {
     cards.forEach(card => {
       card.addEventListener('mousemove', e => {
         const rect = card.getBoundingClientRect();
@@ -562,7 +563,7 @@ window.addEventListener('scroll', () => {
   }, { passive: true });
 
   btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: prefersReducedMotion.matches ? 'auto' : 'smooth' });
   });
 })();
 
@@ -608,10 +609,15 @@ window.addEventListener('scroll', () => {
 /* ── CURSOR TRACKING GLOW ────────────────────────────────── */
 (function initCursorGlow() {
   const orb = document.getElementById('bgOrb');
-  if (!orb) return;
+  const canUseCursorGlow = window.matchMedia('(hover: hover)').matches && !prefersReducedMotion.matches;
+  if (!orb || !canUseCursorGlow) {
+    if (orb) orb.style.display = 'none';
+    return;
+  }
 
   // Track cursor movement
   document.addEventListener('mousemove', (e) => {
+    if (document.visibilityState !== 'visible') return;
     // Only smooth if we are tracking fast, requestAnimationFrame helps
     requestAnimationFrame(() => {
       orb.style.left = `${e.clientX}px`;
@@ -632,9 +638,10 @@ window.addEventListener('scroll', () => {
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
         e.preventDefault();
+        const scrollBehavior = prefersReducedMotion.matches ? 'auto' : 'smooth';
         // Allow mobile menu/other click listeners to do their work first
         setTimeout(() => {
-          targetElement.scrollIntoView({ behavior: 'smooth' });
+          targetElement.scrollIntoView({ behavior: scrollBehavior });
           
           // Re-check position after typical smooth scroll duration.
           // If layout shifted during scroll, scroll again.
@@ -642,7 +649,7 @@ window.addEventListener('scroll', () => {
              const rect = targetElement.getBoundingClientRect();
              // If the section is still more than 100px away from the top, scroll again
              if (Math.abs(rect.top) > 100) {
-                 targetElement.scrollIntoView({ behavior: 'smooth' });
+                 targetElement.scrollIntoView({ behavior: scrollBehavior });
              }
           }, 850); 
         }, 10);
