@@ -628,31 +628,33 @@ window.addEventListener('scroll', () => {
 
 /* ── SMOOTH SCROLL ANCHOR FIX ────────────────────────────── */
 (function fixAnchorScroll() {
-  // Fix for "sometimes not reaching the section" due to dynamic heights
-  // loading or animations expanding elements during the scroll.
+  // Deterministic anchor scrolling with explicit offset for fixed navbar.
+  // This avoids edge cases from repeated scrollIntoView + delayed rechecks.
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
+      const targetHash = this.getAttribute('href');
+      if (!targetHash || targetHash === '#') return;
       
-      const targetElement = document.querySelector(targetId);
+      const targetId = decodeURIComponent(targetHash.slice(1));
+      const targetElement = document.getElementById(targetId);
       if (targetElement) {
         e.preventDefault();
         const scrollBehavior = prefersReducedMotion.matches ? 'auto' : 'smooth';
-        // Allow mobile menu/other click listeners to do their work first
-        setTimeout(() => {
-          targetElement.scrollIntoView({ behavior: scrollBehavior });
-          
-          // Re-check position after typical smooth scroll duration.
-          // If layout shifted during scroll, scroll again.
-          setTimeout(() => {
-             const rect = targetElement.getBoundingClientRect();
-             // If the section is still more than 100px away from the top, scroll again
-             if (Math.abs(rect.top) > 100) {
-                 targetElement.scrollIntoView({ behavior: scrollBehavior });
-             }
-          }, 850); 
-        }, 10);
+        const navHeightVar = getComputedStyle(document.documentElement)
+          .getPropertyValue('--nav-height')
+          .trim();
+        const navHeight = Number.parseInt(navHeightVar, 10) || 80;
+        const extraOffset = 24;
+        const targetTop = targetElement.getBoundingClientRect().top + window.scrollY - (navHeight + extraOffset);
+
+        window.scrollTo({
+          top: Math.max(0, targetTop),
+          behavior: scrollBehavior
+        });
+
+        if (history.replaceState) {
+          history.replaceState(null, '', targetHash);
+        }
       }
     });
   });

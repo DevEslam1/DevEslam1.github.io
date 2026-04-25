@@ -223,7 +223,24 @@ a:focus:not(:focus-visible) { outline: none; }
   background-clip: text;
 }
 
-/* ── 5. Layout ────────────────────────────────────────────── */
+/* Utility classes for repeated inline styles */
+.u-delay-100 { transition-delay: 0.1s; }
+.u-delay-150 { transition-delay: 0.15s; }
+.u-delay-200 { transition-delay: 0.2s; }
+.u-delay-300 { transition-delay: 0.3s; }
+.u-section-title { color: var(--clr-on-surface); margin-bottom: 20px; }
+.u-section-subtitle { font-size: var(--text-body-lg-size); color: var(--clr-outline); max-width: 640px; line-height: 1.6; }
+.u-chip-mono-mini { font-size: 0.65rem; padding: 3px 8px; }
+.u-link-reset { text-decoration: none; color: inherit; }
+.u-tag-muted { border-color: rgba(255, 255, 255, 0.08); color: var(--clr-on-surface-variant); }
+.u-icon-16-primary { font-size: 16px; color: var(--clr-primary); }
+.u-icon-16-fill { font-size: 16px; font-variation-settings: 'FILL' 1; }
+.u-inline-flex-center-gap8 { display: flex; align-items: center; gap: 8px; }
+.u-flex-wrap-gap6-mb8 { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.u-flex-wrap-gap12 { display: flex; flex-wrap: wrap; gap: 12px; }
+.u-text-on-surface { color: var(--clr-on-surface); }
+
+/* Layout */
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -2430,7 +2447,7 @@ a:focus:not(:focus-visible) { outline: none; }
   justify-content: center;
 }
 .cert-mockup__seal::before {
-  content: "â˜…";
+  content: "\2605";
   font-size: 14px;
   color: #fff;
 }
