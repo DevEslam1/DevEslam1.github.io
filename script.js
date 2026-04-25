@@ -620,3 +620,34 @@ window.addEventListener('scroll', () => {
   }, { passive: true });
 })();
 
+/* ── SMOOTH SCROLL ANCHOR FIX ────────────────────────────── */
+(function fixAnchorScroll() {
+  // Fix for "sometimes not reaching the section" due to dynamic heights
+  // loading or animations expanding elements during the scroll.
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        e.preventDefault();
+        // Allow mobile menu/other click listeners to do their work first
+        setTimeout(() => {
+          targetElement.scrollIntoView({ behavior: 'smooth' });
+          
+          // Re-check position after typical smooth scroll duration.
+          // If layout shifted during scroll, scroll again.
+          setTimeout(() => {
+             const rect = targetElement.getBoundingClientRect();
+             // If the section is still more than 100px away from the top, scroll again
+             if (Math.abs(rect.top) > 100) {
+                 targetElement.scrollIntoView({ behavior: 'smooth' });
+             }
+          }, 850); 
+        }, 10);
+      }
+    });
+  });
+})();
+
