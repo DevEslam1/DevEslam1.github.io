@@ -628,8 +628,8 @@ window.addEventListener('scroll', () => {
 
 /* ── SMOOTH SCROLL ANCHOR FIX ────────────────────────────── */
 (function fixAnchorScroll() {
-  // Deterministic anchor scrolling with explicit offset for fixed navbar.
-  // This avoids edge cases from repeated scrollIntoView + delayed rechecks.
+  // Use native anchor scrolling behavior so mobile browsers handle layout
+  // and dynamic viewport changes correctly.
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const targetHash = this.getAttribute('href');
@@ -639,17 +639,9 @@ window.addEventListener('scroll', () => {
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         e.preventDefault();
-        const scrollBehavior = prefersReducedMotion.matches ? 'auto' : 'smooth';
-        const navHeightVar = getComputedStyle(document.documentElement)
-          .getPropertyValue('--nav-height')
-          .trim();
-        const navHeight = Number.parseInt(navHeightVar, 10) || 80;
-        const extraOffset = 24;
-        const targetTop = targetElement.getBoundingClientRect().top + window.scrollY - (navHeight + extraOffset);
-
-        window.scrollTo({
-          top: Math.max(0, targetTop),
-          behavior: scrollBehavior
+        targetElement.scrollIntoView({
+          behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
+          block: 'start'
         });
 
         if (history.replaceState) {
