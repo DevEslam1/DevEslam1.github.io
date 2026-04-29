@@ -965,7 +965,9 @@ a:focus:not(:focus-visible) { outline: none; }
   transform: rotateX(5deg) rotateY(-20deg) translateZ(40px);
 }
 .hero__float-badge--play {
-  bottom: 18%; right: -8%;
+  top: 34%;
+  bottom: auto;
+  right: 4%;
   transform: rotateX(-10deg) rotateY(-15deg) translateZ(30px);
 }
 
@@ -988,7 +990,7 @@ a:focus:not(:focus-visible) { outline: none; }
   .hero__float-badge--web { display: none; }
   .hero__float-badge--flutter { left: -6%; }
   .hero__float-badge--rn { right: -6%; }
-  .hero__float-badge--play { right: -4%; }
+  .hero__float-badge--play { right: 4%; }
 }
 
 @media (max-width: 767px) {
@@ -1002,7 +1004,7 @@ a:focus:not(:focus-visible) { outline: none; }
   .hero__float-badge--dart { display: none; }
   .hero__float-badge--ts { display: none; }
   .hero__float-badge--web { display: none; }
-  .hero__float-badge--play { top: auto; bottom: 4%; right: 4%; transform: none; }
+  .hero__float-badge--play { top: 34%; bottom: auto; right: 4%; transform: none; }
   
   .hero__float-badge--apple { bottom: 0; transform: translateX(-50%); }
 }
