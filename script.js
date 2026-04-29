@@ -568,6 +568,30 @@ window.addEventListener('scroll', () => {
 })();
 
 /* ── ANIMATED NUMBER COUNTERS ────────────────────────────── */
+(function initFloatingHireButton() {
+  const btn = document.getElementById('floatingHireBtn');
+  const hero = document.getElementById('home');
+  if (!btn || !hero) return;
+
+  let ticking = false;
+  const update = () => {
+    const heroExitPoint = hero.offsetTop + hero.offsetHeight * 0.75;
+    btn.classList.toggle('is-visible', window.scrollY > heroExitPoint);
+    ticking = false;
+  };
+
+  const requestUpdate = () => {
+    if (!ticking) {
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  };
+
+  update();
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', requestUpdate);
+})();
+
 (function initCounters() {
   const counters = document.querySelectorAll('.stat-counter[data-target]');
   if (!counters.length) return;

@@ -68,7 +68,8 @@ git push origin main
 
 Main content lives in:
 - `index.html`
-- `styles.css`
+- `styles_improved.css`
 - `script.js`
+- `assets/Eslam_Mahmoud_CV.html` and `assets/Eslam_Mahmoud_CV.pdf`
 
-Update profile information, project cards, links, and section copy directly in `index.html`.
+Update profile information, project cards, links, and section copy directly in `index.html`; update the CV HTML source before regenerating the PDF.
