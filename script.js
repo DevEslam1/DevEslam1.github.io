@@ -430,7 +430,9 @@ window.addEventListener('scroll', () => {
         const centerY = rect.height / 2;
         const tiltX = (y - centerY) / (rect.height / 10);
         const tiltY = (centerX - x) / (rect.width / 10);
+        const rimAngle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI) + 90;
         
+        card.style.setProperty('--rim-angle', `${rimAngle}deg`);
         card.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-4px)`;
       });
       
@@ -438,6 +440,7 @@ window.addEventListener('scroll', () => {
         card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
         card.style.setProperty('--mouse-x', '50%');
         card.style.setProperty('--mouse-y', '50%');
+        card.style.setProperty('--rim-angle', '135deg');
       });
     });
   }
