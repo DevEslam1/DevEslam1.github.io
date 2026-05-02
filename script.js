@@ -595,6 +595,28 @@ window.addEventListener('scroll', () => {
   window.addEventListener('resize', requestUpdate);
 })();
 
+/* ── PROFICIENCY BAR ANIMATION ───────────────────────────── */
+(function initProficiencyBars() {
+  const bars = document.querySelectorAll('[data-proficiency]');
+  if (!bars.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target.querySelector('.proficiency-bar__fill');
+        if (fill) {
+          // Small delay for visual impact
+          setTimeout(() => {
+            fill.classList.add('proficiency-bar__fill--animated');
+          }, 200);
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  bars.forEach(bar => observer.observe(bar));
+})();
 (function initCounters() {
   const counters = document.querySelectorAll('.stat-counter[data-target]');
   if (!counters.length) return;
