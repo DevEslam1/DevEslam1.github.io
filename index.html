@@ -265,6 +265,62 @@
     "description": "Junior Mobile Developer building Flutter and React Native apps with clean architecture, Firebase, REST APIs, and store deployment experience."
   }
   </script>
+  <style>
+    /* Premium Project Enhancements */
+    .case-study-card {
+      position: relative;
+      overflow: hidden;
+    }
+    .case-study-card__orb {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 0;
+      opacity: 0.15;
+      pointer-events: none;
+    }
+    .case-study-card:hover .case-study-card__orb {
+      opacity: 0.25;
+      transform: scale(1.1);
+      transition: all 0.8s var(--tr-slow);
+    }
+    .tech-pills-mini span {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    .case-study-card:hover .tech-pills-mini span {
+      border-color: var(--clr-primary);
+      box-shadow: 0 0 10px rgba(173, 198, 255, 0.1);
+    }
+    .archive-card {
+      position: relative;
+    }
+    .archive-card__live-dot {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      width: 6px;
+      height: 6px;
+      background: var(--clr-secondary);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--clr-secondary);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.5); opacity: 0.5; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .case-study-card__visual img {
+      transition: transform 0.6s var(--tr-slow);
+    }
+    .case-study-card:hover .case-study-card__visual img {
+      transform: translateY(-5px) rotateY(-2deg);
+    }
+  </style>
 </head>
 <body>
 
@@ -637,15 +693,15 @@
         <div class="projects-stats mt-6">
           <div class="stat-glass">
             <span class="stat-glass__label text-primary">Projects</span>
-            <span class="stat-glass__value">12+</span>
+            <span class="stat-glass__value">13+</span>
           </div>
           <div class="stat-glass">
             <span class="stat-glass__label text-secondary">Tech Used</span>
-            <span class="stat-glass__value">8</span>
+            <span class="stat-glass__value">10</span>
           </div>
           <div class="stat-glass">
-            <span class="stat-glass__label text-tertiary">Featured</span>
-            <span class="stat-glass__value">3</span>
+            <span class="stat-glass__label text-tertiary">Live Store</span>
+            <span class="stat-glass__value">2</span>
           </div>
         </div>
         <!-- Tech stack glow pills -->
@@ -682,217 +738,229 @@
 
     <!-- Case Studies Section -->
     <section aria-label="Deep-dive Case Studies" class="reveal" id="projectsContent">
-      <p class="featured-label">Professional Case Studies</p>
+      <p class="featured-label">Published Applications</p>
 
-      <!-- Case Study: Maysur -->
-      <article class="case-study-card interactive-card" data-tags="flutter,api" data-project="maysur">
-        <div class="case-study-card__grid">
-          <div class="case-study-card__visual">
-            <img src="./assets/apps%20icons/maysour.webp" class="case-study-card__icon" alt="Maysur Logo">
-            <div class="case-study-card__mockup-mini">
-               <img src="./assets/Screenshots/maysour/1.webp" alt="Maysur Screenshot" loading="lazy">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 24px; margin-bottom: 48px;">
+        <!-- Case Study: Maysur (Production) -->
+        <article class="case-study-card interactive-card" data-tags="flutter,api,ecommerce" data-project="maysur">
+          <div class="case-study-card__orb" style="background:var(--clr-primary);top:-50px;right:-50px"></div>
+          <div class="case-study-card__grid" style="grid-template-columns: 1fr; text-align: center;">
+            <div class="case-study-card__visual" style="margin: 0 auto; padding: 24px 0; background: transparent; display: flex; justify-content: center; border: none;">
+              <a href="https://play.google.com/store/apps/details?id=com.AlexEgel.Maysur" target="_blank" rel="noopener noreferrer" style="display:contents">
+                <img src="./assets/apps%20icons/maysour.webp" alt="Maysur Logo" style="width: 100px; height: 100px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
+              </a>
             </div>
-          </div>
-          <div class="case-study-card__main">
-            <h2 class="text-h2" style="color:#fff;margin-bottom:8px">Maysur <span class="chip-mono" style="font-size:0.6rem;vertical-align:middle;background:rgba(173,198,255,0.15);color:var(--clr-primary);border-color:rgba(173,198,255,0.4)">&#x2022; Live</span></h2>
-            <div class="case-study-meta">
-              <span class="text-primary">Role: Junior Flutter Developer</span>
-              <span class="text-muted">•</span>
-              <span class="text-muted">Tech: Flutter, BLoC, REST APIs</span>
-            </div>
-            
-            <div class="case-study-details">
-              <div class="case-study-section">
-                <h4>Problem</h4>
-                <p>Contributing to a scalable multi-vendor e-commerce flow with product discovery, cart behavior, and reliable transaction states.</p>
+            <div class="case-study-card__main" style="padding-top: 0;">
+              <h2 class="text-h2" style="color:#fff;margin-bottom:8px">Maysur <span class="chip-mono" style="font-size:0.6rem;vertical-align:middle;background:rgba(173,198,255,0.15);color:var(--clr-primary);border-color:rgba(173,198,255,0.4)">&#x2022; Live</span></h2>
+              <div class="case-study-meta" style="justify-content: center;">
+                <span class="text-primary">Junior Flutter Developer</span>
               </div>
-              <div class="case-study-section">
-                <h4>Architecture</h4>
-                <p>Worked with <strong>Domain-Driven Clean Architecture</strong>, keeping BLoC state, domain logic, and UI responsibilities clearly separated.</p>
+              
+              <div class="case-study-details" style="text-align: center; margin-top: 16px; display: block;">
+                <div class="case-study-section">
+                  <p>Scalable multi-vendor e-commerce app featuring <strong>Clean Architecture</strong>, BLoC state management, and reliable transaction flows.</p>
+                </div>
               </div>
-              <div class="case-study-section">
-                <h4>Contribution</h4>
-                <p>Built production screens, handled API and error states, optimized long-list rendering, and supported payment-gateway integration.</p>
-              </div>
-            </div>
 
-            <div class="case-study-actions" style="flex-wrap:wrap;gap:8px">
-              <a href="https://play.google.com/store/apps/details?id=com.AlexEgel.Maysur" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px"><i class="ph ph-google-play-logo" style="font-size:16px"></i>Google Play</a>
-              <a href="https://apps.apple.com/app/maysur/id6740742736" target="_blank" rel="noopener noreferrer" class="btn btn-glass" style="font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px;border-color:rgba(173,198,255,0.3);color:var(--clr-primary)"><i class="ph ph-apple-logo" style="font-size:16px"></i>App Store</a>
-              <div class="tech-pills-mini" style="width:100%;margin-top:4px">
-                <span>Dart</span><span>Dio</span><span>Clean Arch</span>
+              <div class="case-study-actions" style="flex-wrap:wrap;gap:8px; justify-content: center; margin-top: 24px;">
+                <a href="https://play.google.com/store/apps/details?id=com.AlexEgel.Maysur" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px"><i class="ph ph-google-play-logo" style="font-size:16px"></i>Google Play</a>
+                <a href="https://apps.apple.com/app/maysur/id6740742736" target="_blank" rel="noopener noreferrer" class="btn btn-glass" style="font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px;border-color:rgba(173,198,255,0.3);color:var(--clr-primary)"><i class="ph ph-apple-logo" style="font-size:16px"></i>App Store</a>
               </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
 
-      <!-- Case Study: Free Zone -->
-      <article class="case-study-card interactive-card" data-tags="flutter,api" data-project="freezone" style="border-color:rgba(68,226,205,0.2)">
-        <div class="case-study-card__grid">
-          <div class="case-study-card__visual">
-            <img src="./assets/apps%20icons/free%20zone.webp" class="case-study-card__icon" alt="Free Zone Logo">
-            <div class="case-study-card__mockup-mini">
-               <img src="./assets/Screenshots/freezone/1.webp" alt="Free Zone Screenshot" loading="lazy">
+        <!-- Case Study: Free Zone (Production) -->
+        <article class="case-study-card interactive-card" data-tags="flutter,api" data-project="freezone" style="border-color:rgba(68,226,205,0.2)">
+          <div class="case-study-card__orb" style="background:var(--clr-secondary);bottom:-50px;left:-50px"></div>
+          <div class="case-study-card__grid" style="grid-template-columns: 1fr; text-align: center;">
+            <div class="case-study-card__visual" style="margin: 0 auto; padding: 24px 0; background: transparent; display: flex; justify-content: center; border: none;">
+              <a href="https://apps.apple.com/us/app/free-zone/id6754777406" target="_blank" rel="noopener noreferrer" style="display:contents">
+                <img src="./assets/apps%20icons/free%20zone.webp" alt="Free Zone Logo" style="width: 100px; height: 100px; border-radius: 20px; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
+              </a>
             </div>
-          </div>
-          <div class="case-study-card__main">
-            <h2 class="text-h2" style="color:#fff;margin-bottom:8px">Free Zone <span class="chip-mono" style="font-size:0.6rem;vertical-align:middle;background:rgba(68,226,205,0.15);color:var(--clr-secondary);border-color:rgba(68,226,205,0.4)">&#x2022; Live</span></h2>
-            <div class="case-study-meta">
-              <span class="text-secondary">Role: Flutter Developer (H Solution)</span>
-              <span class="text-muted">•</span>
-              <span class="text-muted">Tech: Flutter, Provider, Google Maps</span>
-            </div>
-            
-            <div class="case-study-details">
-              <div class="case-study-section">
-                <h4>The Challenge</h4>
-                <p>Building a robust marketplace that bridges specialized service providers and consumers with real-time location features and multi-vendor support.</p>
+            <div class="case-study-card__main" style="padding-top: 0;">
+              <h2 class="text-h2" style="color:#fff;margin-bottom:8px">Free Zone <span class="chip-mono" style="font-size:0.6rem;vertical-align:middle;background:rgba(68,226,205,0.15);color:var(--clr-secondary);border-color:rgba(68,226,205,0.4)">&#x2022; Live</span></h2>
+              <div class="case-study-meta" style="justify-content: center;">
+                <span class="text-secondary">Flutter Developer</span>
               </div>
-              <div class="case-study-section">
-                <h4>Technical Implementation</h4>
-                <p>Utilized <strong>Provider</strong> for efficient state management and integrated <strong>Google Maps API</strong> for location-aware vendor discovery and distance calculations.</p>
+              
+              <div class="case-study-details" style="text-align: center; margin-top: 16px; display: block;">
+                <div class="case-study-section">
+                  <p>Hyper-local marketplace utilizing <strong>Provider</strong> and <strong>Google Maps API</strong> to bridge users with specialized service vendors.</p>
+                </div>
               </div>
-              <div class="case-study-section">
-                <h4>Growth & Impact</h4>
-                <p>Focused on responsive cross-platform builds, predictable loading states, and clear marketplace flows for iOS and Android users.</p>
-              </div>
-            </div>
 
-            <div class="case-study-actions" style="flex-wrap:wrap;gap:8px">
-              <a href="https://apps.apple.com/us/app/free-zone/id6754777406" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:var(--clr-secondary);color:var(--clr-on-secondary);font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px"><i class="ph ph-apple-logo" style="font-size:16px"></i>App Store</a>
-              <a href="https://play.google.com/store/apps/details?id=com.hsolutions.freezone" target="_blank" rel="noopener noreferrer" class="btn btn-glass" style="font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px;border-color:rgba(68,226,205,0.3);color:var(--clr-secondary)"><i class="ph ph-google-play-logo" style="font-size:16px"></i>Google Play</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- Case Study: NovaStore -->
-      <article class="case-study-card interactive-card" data-tags="flutter,firebase,open-source" data-project="novastore">
-        <div class="case-study-card__grid">
-          <div class="case-study-card__visual">
-            <img src="./assets/apps%20icons/NovaStore_edited.webp" class="case-study-card__icon" alt="NovaStore Logo">
-            <div class="case-study-card__mockup-mini">
-               <img src="./assets/Screenshots/NovaStore/1.webp" alt="NovaStore App Screenshot" loading="lazy">
-            </div>
-          </div>
-          <div class="case-study-card__main">
-            <h2 class="text-h2" style="color:#fff;margin-bottom:8px">NovaStore <span class="chip-mono" style="font-size:0.6rem;vertical-align:middle;color:var(--clr-tertiary);border-color:var(--clr-tertiary)">Open Source</span></h2>
-            <div class="case-study-meta">
-              <span class="text-tertiary">Role: Creator & Lead Developer</span>
-              <span class="text-muted">•</span>
-              <span class="text-muted">Tech: Flutter, Firebase, BLoC</span>
-            </div>
-            
-            <div class="case-study-details">
-              <div class="case-study-section">
-                <h4>Objective</h4>
-                <p>Creating a reusable e-commerce foundation with a modern Flutter UI, Material 3 patterns, and clean feature organization.</p>
-              </div>
-              <div class="case-study-section">
-                <h4>Architecture</h4>
-                <p>A feature-first structure using <strong>Clean Architecture</strong>. Includes a full <strong>Firebase</strong> integration for Authentication, Firestore, and Storage.</p>
-              </div>
-              <div class="case-study-section">
-                <h4>Engineering Depth</h4>
-                <ul style="list-style-type:none;padding:0;font-size:0.85rem;color:var(--clr-outline);line-height:1.6">
-                  <li>&#x2022; <strong>Tonal Layering</strong>: Border-free design system ("No-Line" rule).</li>
-                  <li>&#x2022; <strong>Data Handling</strong>: Failure/Success patterns via Dartz (Either type).</li>
-                  <li>&#x2022; <strong>Real-time Sync</strong>: Automatic FCM token handling & deep-linking.</li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="case-study-actions">
-              <a href="https://github.com/DevEslam1/NovaStore" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:var(--clr-tertiary);font-size:0.75rem;padding:10px 20px">View Repository</a>
-              <div class="tech-pills-mini">
-                <span style="color:var(--clr-tertiary);border-color:rgba(221,183,255,0.3)">Firebase</span>
-                <span style="color:var(--clr-tertiary);border-color:rgba(221,183,255,0.3)">Material 3</span>
+              <div class="case-study-actions" style="flex-wrap:wrap;gap:8px; justify-content: center; margin-top: 24px;">
+                <a href="https://apps.apple.com/us/app/free-zone/id6754777406" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background:var(--clr-secondary);color:var(--clr-on-secondary);font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px"><i class="ph ph-apple-logo" style="font-size:16px"></i>App Store</a>
+                <a href="https://play.google.com/store/apps/details?id=com.hsolutions.freezone" target="_blank" rel="noopener noreferrer" class="btn btn-glass" style="font-size:0.75rem;padding:10px 16px;display:inline-flex;align-items:center;gap:6px;border-color:rgba(68,226,205,0.3);color:var(--clr-secondary)"><i class="ph ph-google-play-logo" style="font-size:16px"></i>Google Play</a>
               </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
 
       <!-- Archive Showcase -->
-      <p class="archive-label">Open Source & Experiments</p>
+      <p class="archive-label">Open Source & Flagship Prototypes</p>
       <div class="archive-grid" id="archiveGrid">
-        <!-- BeatFlow -->
-        <article class="interactive-card archive-card" data-tags="react-native,api,open-source" data-project="beatflow">
+        
+        <!-- Tazeeq -->
+        <article class="interactive-card archive-card" data-tags="react-native,firebase,api" data-project="tazeeq">
+          <div class="archive-card__live-dot" style="background:#10b981;box-shadow:0 0 8px #10b981"></div>
           <div class="archive-card__header">
-            <div class="archive-card__icon"><img src="./assets/apps%20icons/BeatFlow_Music_edited.webp" class="app-icon" loading="lazy" alt="BeatFlow"></div>
-            <a class="archive-card__action" href="https://github.com/DevEslam1/BeatFlow_Music" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">code</span></a>
+            <div class="archive-card__icon"><img src="./assets/apps%20icons/tazeeq.webp" class="app-icon" loading="lazy" alt="Tazeeq"></div>
+            </div>
+          <h3 class="archive-card__title">Tazeeq <span class="chip-mono" style="font-size:0.5rem;padding:2px 4px;color:#10b981;border-color:#10b981">Flagship</span></h3>
+          <p class="archive-card__desc">Premium grocery app with <strong>Liquid Glass UI</strong>, Gemini AI Assistant, and full RTL/Arabic localization.</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
+            <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span style="color:#10b981">React Native</span><span style="color:#10b981">Gemini AI</span></div>
+            <a href="https://github.com/DevEslam1/Tazeeq" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
+            </a>
           </div>
-          <h3 class="archive-card__title">BeatFlow</h3>
-          <p class="archive-card__desc">Advanced music player with <strong>background audio resilience</strong>, lock-screen controls, and network polling strategies.</p>
-          <div class="archive-card__tech"><span>React Native</span><span>Expo</span><span>NetInfo</span></div>
+        </article>
+
+        <!-- NovaStore -->
+        <article class="interactive-card archive-card" data-tags="flutter,firebase,open-source" data-project="novastore">
+          <div class="archive-card__live-dot" style="background:var(--clr-tertiary);box-shadow:0 0 8px var(--clr-tertiary)"></div>
+          <div class="archive-card__header">
+            <div class="archive-card__icon"><img src="./assets/apps%20icons/NovaStore_edited.webp" class="app-icon" loading="lazy" alt="NovaStore"></div>
+            </div>
+          <h3 class="archive-card__title">NovaStore</h3>
+          <p class="archive-card__desc">Clean Architecture e-commerce with <strong>Firebase</strong> and Material 3 design tokens.</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
+            <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>Flutter</span><span>BLoC</span></div>
+            <a href="https://github.com/DevEslam/NovaStore" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
+            </a>
+          </div>
         </article>
 
         <!-- DevSync -->
         <article class="interactive-card archive-card" data-tags="flutter,firebase,open-source" data-project="devsync">
+          <div class="archive-card__live-dot" style="background:var(--clr-primary);box-shadow:0 0 8px var(--clr-primary)"></div>
           <div class="archive-card__header">
             <div class="archive-card__icon"><img src="./assets/apps%20icons/devsync_edited.webp" class="app-icon" loading="lazy" alt="DevSync"></div>
-            <a class="archive-card__action" href="https://github.com/DevEslam1/DevSync" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">code</span></a>
-          </div>
+            </div>
           <h3 class="archive-card__title">DevSync</h3>
-          <p class="archive-card__desc">Team collaboration platform with interactive Kanban boards and real-time team chat.</p>
-          <div class="archive-card__tech"><span>Flutter</span><span>Firebase</span><span>BLoC</span></div>
+          <p class="archive-card__desc">Team workspace with <strong>real-time chat</strong>, Kanban boards, and executive dashboards.</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
+            <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>Flutter</span><span>Firebase</span></div>
+            <a href="https://github.com/DevEslam1/DevSync" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
+            </a>
+          </div>
         </article>
 
         <!-- FoodApp -->
         <article class="interactive-card archive-card" data-tags="react-native,ecommerce,firebase" data-project="foodapp">
+          <div class="archive-card__live-dot" style="background:var(--clr-secondary);box-shadow:0 0 8px var(--clr-secondary)"></div>
           <div class="archive-card__header">
             <div class="archive-card__icon"><img src="./assets/apps%20icons/foodapp_edited.webp" class="app-icon" loading="lazy" alt="FoodApp"></div>
-            <a class="archive-card__action" href="https://github.com/DevEslam1/foodapp" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">code</span></a>
-          </div>
+            </div>
           <h3 class="archive-card__title">FoodApp</h3>
-          <p class="archive-card__desc">Complete food-ordering ecosystem with Redux, Firebase Auth, cart workflow, and location-aware delivery.</p>
-          <div class="archive-card__tech"><span>React Native</span><span>Redux</span><span>Firebase</span></div>
+          <p class="archive-card__desc">Food ordering ecosystem with <strong>Redux Toolkit</strong>, Maps, and Location detection.</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
+            <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>React Native</span><span>Expo</span></div>
+            <a href="https://github.com/DevEslam1/foodapp" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
+            </a>
+          </div>
         </article>
 
-
-        <!-- NewsCloud -->
-        <article class="interactive-card archive-card" data-tags="flutter,open-source" data-project="newscloud">
+        <!-- BeatFlow -->
+        <article class="interactive-card archive-card" data-tags="react-native,api,open-source" data-project="beatflow">
+          <div class="archive-card__live-dot"></div>
           <div class="archive-card__header">
-            <div class="archive-card__icon"><img src="./assets/apps%20icons/news_app_edited.webp" class="app-icon" loading="lazy" alt="NewsCloud"></div>
-            <a class="archive-card__action" href="https://github.com/DevEslam1/news_app" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">code</span></a>
+            <div class="archive-card__icon"><img src="./assets/apps%20icons/BeatFlow_Music_edited.webp" class="app-icon" loading="lazy" alt="BeatFlow"></div>
+            </div>
+          <h3 class="archive-card__title">BeatFlow</h3>
+          <p class="archive-card__desc">Advanced music player with <strong>background audio resilience</strong>, lock-screen controls, and network polling strategies.</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
+            <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>React Native</span><span>Expo</span></div>
+            <a href="https://github.com/DevEslam1/BeatFlow_Music" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
+            </a>
           </div>
-          <h3 class="archive-card__title">NewsCloud</h3>
-          <p class="archive-card__desc">Premium news app featuring Clean Architecture, editorial UI, and multi-source API.</p>
-          <div class="archive-card__tech"><span>Flutter</span><span>Clean Arch</span></div>
+        </article>
+
+        <!-- Serene Weather -->
+        <article class="interactive-card archive-card" data-tags="flutter,api" data-project="weather">
+          <div class="archive-card__live-dot"></div>
+          <div class="archive-card__header">
+            <div class="archive-card__icon"><img src="./assets/apps%20icons/weather.webp" class="app-icon" loading="lazy" alt="Serene Weather"></div>
+            </div>
+          <h3 class="archive-card__title">Serene Weather</h3>
+          <p class="archive-card__desc">Elegant weather app with <strong>custom design system</strong>, pastel gradients, and Clean Architecture.</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
+            <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>Flutter</span><span>Provider</span></div>
+            <a href="https://github.com/DevEslam1/weather_app" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
+            </a>
+          </div>
         </article>
 
         <!-- CineCurator -->
         <article class="interactive-card archive-card" data-tags="flutter,api" data-project="cinecurator">
+          <div class="archive-card__live-dot"></div>
           <div class="archive-card__header">
             <div class="archive-card__icon"><img src="./assets/apps%20icons/movie.webp" class="app-icon" loading="lazy" alt="CineCurator"></div>
-            <a class="archive-card__action" href="https://github.com/DevEslam1/movie_app" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">code</span></a>
-          </div>
+            </div>
           <h3 class="archive-card__title">CineCurator</h3>
-          <p class="archive-card__desc">Cinematic movie discovery app with TMDB integration, offline caching, and curated UI.</p>
-          <div class="archive-card__tech"><span>Flutter</span><span>TMDB API</span></div>
-        </article>
-
-        <!-- Weather App -->
-        <article class="interactive-card archive-card" data-tags="flutter,api" data-project="weather">
-          <div class="archive-card__header">
-            <div class="archive-card__icon"><img src="./assets/apps%20icons/weather.webp" class="app-icon" loading="lazy" alt="Weather App"></div>
-            <a class="archive-card__action" href="https://github.com/DevEslam1/weather_app" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">code</span></a>
+          <p class="archive-card__desc">Cinematic discovery app with <strong>glassmorphism dark UI</strong> and smooth micro-animations.</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
+            <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>Flutter</span><span>TMDB API</span></div>
+            <a href="https://github.com/DevEslam1/movie_app" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
+            </a>
           </div>
-          <h3 class="archive-card__title">Weather App</h3>
-          <p class="archive-card__desc">Real-time weather detection with GPS, animated transitions, and floating UI.</p>
-          <div class="archive-card__tech"><span>Flutter</span><span>OpenWeather</span></div>
         </article>
 
         <!-- To-Do List -->
         <article class="interactive-card archive-card" data-tags="react-native" data-project="todo">
+          <div class="archive-card__live-dot"></div>
           <div class="archive-card__header">
             <div class="archive-card__icon"><img src="./assets/apps%20icons/to%20do%20list_edited.webp" class="app-icon" loading="lazy" alt="To-Do List"></div>
-            <a class="archive-card__action" href="https://github.com/DevEslam1/to-do" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">code</span></a>
-          </div>
+            </div>
           <h3 class="archive-card__title">To-Do List</h3>
-          <p class="archive-card__desc">Local-first task manager with minimal friction parsing and secure persistence.</p>
-          <div class="archive-card__tech"><span>React Native</span><span>AsyncStorage</span></div>
+          <p class="archive-card__desc">Task manager with <strong>focus timer</strong>, Redux Toolkit, and local persistence.</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
+            <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>React Native</span><span>Redux</span></div>
+            <a href="https://github.com/DevEslam1/To-Do-List-React-Native-App" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- NewsCloud -->
+        <article class="interactive-card archive-card" data-tags="flutter,open-source" data-project="newscloud">
+          <div class="archive-card__live-dot"></div>
+          <div class="archive-card__header">
+            <div class="archive-card__icon"><img src="./assets/apps%20icons/news_app_edited.webp" class="app-icon" loading="lazy" alt="NewsCloud"></div>
+            </div>
+          <h3 class="archive-card__title">NewsCloud</h3>
+          <p class="archive-card__desc">News app featuring <strong>Clean Architecture</strong>, editorial UI, and offline caching via SQLite.</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
+            <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>Flutter</span><span>sqflite</span></div>
+            <a href="https://github.com/DevEslam1/news_app" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
+            </a>
+          </div>
+        </article>
+
+        <!-- Little Lemon -->
+        <article class="interactive-card archive-card" data-tags="react-native" data-project="little-lemon">
+          <div class="archive-card__header">
+            <div class="archive-card__icon" style="display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--clr-secondary)">LL</div>
+            </div>
+          <h3 class="archive-card__title">Little Lemon</h3>
+          <p class="archive-card__desc">Multi-platform restaurant app showcasing <strong>MVVM architecture</strong> and universal components.</p>
+          <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
+            <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>React Native</span><span>Expo</span></div>
+            <a href="#" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
+            </a>
+          </div>
         </article>
       </div>
     </section>
