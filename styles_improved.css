@@ -1243,10 +1243,10 @@ a:focus:not(:focus-visible) {
 }
 
 .hero__float-badge--play {
-  top: 34%;
+  top: 32%;
   bottom: auto;
-  right: 4%;
-  transform: rotateX(-10deg) rotateY(-15deg) translateZ(30px);
+  right: -14%;
+  transform: rotateX(-5deg) rotateY(-20deg) translateZ(40px);
 }
 
 .hero__float-badge img {
@@ -1279,7 +1279,7 @@ a:focus:not(:focus-visible) {
   }
 
   .hero__float-badge--play {
-    right: 4%;
+    right: -6%;
   }
 }
 
@@ -1333,7 +1333,7 @@ a:focus:not(:focus-visible) {
   .hero__float-badge--play {
     top: 34%;
     bottom: auto;
-    right: 4%;
+    right: 2%;
     transform: none;
   }
 
