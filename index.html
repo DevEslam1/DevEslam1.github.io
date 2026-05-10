@@ -45,8 +45,9 @@
     .hero-bento__headline {
       font-size: clamp(2rem, 4vw, 3.25rem) !important;
       font-weight: 800 !important;
-      letter-spacing: -0.03em !important;
+      letter-spacing: 0 !important;
       line-height: 1.1 !important;
+      overflow-wrap: anywhere !important;
     }
     .hero-bento__headline-accent {
       background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-secondary) 60%, var(--clr-tertiary) 100%);
@@ -54,6 +55,20 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       font-style: italic;
+      overflow-wrap: anywhere;
+    }
+    .hero-mobile-break {
+      display: none;
+    }
+
+    @media (max-width: 480px) {
+      .hero-bento__headline {
+        font-size: 2.05rem !important;
+        line-height: 1.08 !important;
+      }
+      .hero-mobile-break {
+        display: block;
+      }
     }
 
     /* Section titles — balanced presence */
@@ -403,10 +418,10 @@
         <div class="hero-bento__header-inner">
             <div class="hero-bento__eyebrow">
                 <span class="hero-bento__eyebrow-line"></span>
-                Open to Junior Mobile Developer roles
+                Open to junior mobile roles
             </div>
             <h1 class="hero-bento__headline">
-                Engineering Production-Ready Mobile Solutions <br><span class="hero-bento__headline-accent">shipped to global stores</span>
+                Junior Mobile Developer <br><span class="hero-bento__headline-accent">Flutter &amp;<br class="hero-mobile-break"> React Native</span>
             </h1>
         </div>
     </header>
@@ -419,15 +434,15 @@
             
             <!-- Floating Badges Surround -->
             <div class="hero__float-badge hero__float-badge--web">
-                <img src="https://cdn.simpleicons.org/html5/44e2cd" width="16" height="16" alt="HTML5" loading="lazy" />
+                <i class="ph ph-code" aria-hidden="true"></i>
                 <span>HTML/CSS</span>
             </div>
             <div class="hero__float-badge hero__float-badge--flutter">
-                <img src="https://cdn.simpleicons.org/flutter/adc6ff" width="16" height="16" alt="Flutter" loading="lazy" />
+                <i class="ph ph-device-mobile" aria-hidden="true"></i>
                 <span>Flutter</span>
             </div>
             <div class="hero__float-badge hero__float-badge--rn">
-                <img src="https://cdn.simpleicons.org/react/44e2cd" width="16" height="16" alt="React Native" loading="lazy" />
+                <i class="ph ph-device-mobile-camera" aria-hidden="true"></i>
                 <span>React Native</span>
             </div>
             <div class="hero__float-badge hero__float-badge--dart">
@@ -435,7 +450,7 @@
                 <span>Dart</span>
             </div>
             <div class="hero__float-badge hero__float-badge--ts">
-                <img src="https://cdn.simpleicons.org/typescript/ddb7ff" width="16" height="16" alt="TypeScript" loading="lazy" />
+                <i class="ph ph-brackets-curly" aria-hidden="true"></i>
                 <span>TypeScript</span>
             </div>
             <div class="hero__float-badge hero__float-badge--play">
@@ -496,10 +511,10 @@
 
                 <div class="hero-bento__bio-body">
                     <p>
-                        <strong>Certified Mobile Software Engineer</strong> (Google &amp; Meta) specializing in architecting high-performance iOS and Android applications with <strong>5+ production launches</strong>.
+                        <strong>Junior Mobile Developer</strong> with Meta React Native and Google AI certificates, focused on Flutter, React Native, Firebase, REST APIs, and maintainable mobile UI.
                     </p>
                     <p>
-                        I orchestrate scalable solutions using <strong>Clean Architecture</strong>, robust state management (BLoC/Redux), and AI-augmented workflows to deliver crash-free user experiences.
+                        I contributed to production Flutter apps published on Google Play and the App Store, and I build open-source projects using <strong>Clean Architecture</strong>, BLoC/Provider, and Redux.
                     </p>
                 </div>
 
@@ -519,7 +534,7 @@
                     </div>
                     <div class="hero-hiring-snapshot__item">
                         <span>Proof</span>
-                        <strong>5+ Apps &amp; 100% Stability</strong>
+                        <strong>2 Store Apps &amp; 10+ Projects</strong>
                     </div>
                     <div class="hero-hiring-snapshot__item">
                         <span>Availability</span>
@@ -839,7 +854,7 @@
           <p class="archive-card__desc">Clean Architecture e-commerce with <strong>Firebase</strong> and Material 3 design tokens.</p>
           <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
             <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>Flutter</span><span>BLoC</span></div>
-            <a href="https://github.com/DevEslam/NovaStore" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
+            <a href="https://github.com/DevEslam1/NovaStore" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
               <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
             </a>
           </div>
@@ -966,9 +981,9 @@
           <p class="archive-card__desc">Multi-platform restaurant app showcasing <strong>MVVM architecture</strong> and universal components.</p>
           <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 12px; margin-top: auto;">
             <div class="archive-card__tech" style="border-top:none; padding-top:0; margin-top:0;"><span>React Native</span><span>Expo</span></div>
-            <a href="#" target="_blank" rel="noopener noreferrer" style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px; text-decoration: none; transition: background 0.2s;">
-              <i class="ph ph-github-logo" style="font-size:14px"></i> GitHub
-            </a>
+            <span style="padding: 6px 12px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; color: var(--clr-outline); display:flex; align-items:center; gap:4px;">
+              <i class="ph ph-code" style="font-size:14px"></i> Course Project
+            </span>
           </div>
         </article>
       </div>
@@ -1462,7 +1477,7 @@
           <article class="cert-card cc-secondary" data-cert-tags="flutter,packt">
             <div class="cert-card__img">
               <img
-                src="./assets/Certificates/State mangemennt_edited.webp"
+                src="./assets/Certificates/State mangemennt.webp"
                 alt="Advanced Flutter UI and State Management Certificate"
                 loading="lazy"
               />
@@ -1554,7 +1569,7 @@
           <article class="cert-card cc-tertiary" data-cert-tags="react-native,meta">
             <div class="cert-card__img">
               <img
-                src="./assets/Certificates/React-native_edited.webp"
+                src="./assets/Certificates/React-native.webp"
                 alt="React Native Certificate"
                 loading="lazy"
               />
@@ -1628,7 +1643,7 @@
                   <div class="timeline__period text-primary">Feb 2026 &ndash; Present &middot; Nile University</div>
                 </div>
               </div>
-              <p class="timeline__desc">Architecting cross-platform mobile prototypes sponsored by <strong>Banque Misr</strong>; leveraging AI-augmented workflows to accelerate feature delivery and reduce UI implementation cycles by <strong>20%</strong>.</p>
+              <p class="timeline__desc">Building cross-platform mobile prototypes sponsored by <strong>Banque Misr</strong>, with React Native, Flutter, maintainable component structure, Agile collaboration, and AI-assisted debugging/documentation.</p>
               <div class="timeline__achievement">
                 <div class="timeline__achievement-label">Focus Area</div>
                 <p>React Native & Modern Mobile Techniques in the Age of AI.</p>
@@ -1653,7 +1668,7 @@
                   <div class="timeline__period text-muted">Sep 2025 &ndash; Jan 2026 &middot; H Solution</div>
                 </div>
               </div>
-              <p class="timeline__desc"><strong>Spearheaded the production launch</strong> of 2 high-traffic mobile apps (Maysur, Free Zone) on both stores, ensuring <strong>100% crash-free sessions</strong> and engineered core modules using Clean Architecture.</p>
+              <p class="timeline__desc"><strong>Contributed to launching 2 production Flutter apps</strong> (Maysur, Free Zone) on Google Play and the App Store, implementing features with Clean Architecture, BLoC/Provider, Firebase, and REST APIs.</p>
               <div class="timeline__tags">
                 <span class="timeline__tag u-tag-muted">Clean Architecture</span>
                 <span class="timeline__tag u-tag-muted">BLoC / Provider</span>

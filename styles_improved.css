@@ -1206,6 +1206,12 @@ a:focus:not(:focus-visible) {
   transition: transform 0.3s var(--tr-base), border-color 0.3s;
 }
 
+.hero__float-badge i {
+  color: var(--clr-secondary);
+  font-size: 1rem;
+  line-height: 1;
+}
+
 .hero__float-badge:hover {
   border-color: rgba(255, 255, 255, 0.25);
   transform: translateZ(20px) !important;
@@ -1253,6 +1259,10 @@ a:focus:not(:focus-visible) {
   filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
 }
 
+img[src^="https://cdn.simpleicons.org"] {
+  display: none;
+}
+
 .hero__float-badge span:last-child {
   font-family: var(--font-display);
   font-size: 0.6875rem;
@@ -1298,10 +1308,15 @@ a:focus:not(:focus-visible) {
   .hero__float-badge {
     padding: 7px 10px;
     opacity: 0.9;
+    max-width: calc(50% - 12px);
+    overflow: hidden;
   }
 
   .hero__float-badge span:last-child {
     font-size: 0.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .hero__float-badge--flutter {
@@ -1359,6 +1374,7 @@ a:focus:not(:focus-visible) {
   .hero__float-badge--rn {
     top: 2%;
     right: 2%;
+    max-width: 42%;
   }
 }
 
@@ -4508,7 +4524,7 @@ a:focus:not(:focus-visible) {
 .hero-bento__headline {
   font-size: 2.25rem;
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
   line-height: 1.1;
   color: #fff;
   font-family: var(--font-display);
