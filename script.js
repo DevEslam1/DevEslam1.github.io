@@ -111,7 +111,7 @@ function filterProjects() {
   });
 
   // Also filter featured secondary cards (optional — show/hide by tag)
-  document.querySelectorAll('.featured-card-secondary, .featured-card-primary').forEach(card => {
+  document.querySelectorAll('.case-study-card').forEach(card => {
     if (!card.dataset.tags) return;
     const tags = card.dataset.tags.toLowerCase();
     const matchFilter = activeFilter === 'all' || tags.includes(activeFilter);
@@ -220,14 +220,13 @@ window.addEventListener('scroll', () => {
         './assets/Screenshots/food/4.webp'
       ]
     },
-    beatflow: {
-      name: "BEATFLOW",
-      icon: "./assets/apps icons/BeatFlow_Music_edited.webp",
+    gigplayer: {
+      name: "GIG PLAYER",
+      icon: "./assets/apps icons/Gig player.webp",
       images: [
-        './assets/Screenshots/beatflow/1.webp',
-        './assets/Screenshots/beatflow/2.webp',
-        './assets/Screenshots/beatflow/3.webp',
-        './assets/Screenshots/beatflow/4.webp'
+        './assets/Screenshots/Gig player/1.webp',
+        './assets/Screenshots/Gig player/2.webp',
+        './assets/Screenshots/Gig player/3.webp'
       ]
     },
     devsync: {
@@ -700,4 +699,7 @@ window.addEventListener('scroll', () => {
     });
   });
 })();
+
+
+
 
