@@ -663,15 +663,27 @@ window.addEventListener('scroll', () => {
     return;
   }
 
-  // Track cursor movement
+  // Track cursor movement with smooth lerp trailing
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let orbX = mouseX;
+  let orbY = mouseY;
+
   document.addEventListener('mousemove', (e) => {
     if (document.visibilityState !== 'visible') return;
-    // Only smooth if we are tracking fast, requestAnimationFrame helps
-    requestAnimationFrame(() => {
-      orb.style.left = `${e.clientX}px`;
-      orb.style.top = `${e.clientY}px`;
-    });
+    mouseX = e.clientX;
+    mouseY = e.clientY;
   }, { passive: true });
+
+  function animateOrb() {
+    // Linear interpolation for smooth trailing effect
+    orbX += (mouseX - orbX) * 0.1;
+    orbY += (mouseY - orbY) * 0.1;
+    orb.style.left = `${orbX}px`;
+    orb.style.top = `${orbY}px`;
+    requestAnimationFrame(animateOrb);
+  }
+  animateOrb();
 })();
 
 /* ── SMOOTH SCROLL ANCHOR FIX ────────────────────────────── */
